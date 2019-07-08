@@ -1,0 +1,10 @@
+node_modules/
+.idea/
+
+source/css/
+source/js/
+
+.DS_Store
+Thumbs.db
+*.log
+_config.yml

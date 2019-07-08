@@ -1,0 +1,9 @@
+<div class="homepage__base">
+  <% page.posts.each(function(post, i){ %>
+    <% if (i < 4) { %>
+      <div class="homepage__item">
+        <%- partial("_partial/teaser", { post: post }) %>
+      </div>
+    <% } %>
+  <% }) %>
+</div>

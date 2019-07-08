@@ -1,0 +1,13 @@
+<div class="sidebar__item">
+  <div class="sidebar__title">
+    <h1>By Year</h1>
+  </div>
+  <div class="sidebar__content">
+    <% if (site.tags.length){ %>
+      <%- list_archives({
+        show_count: theme.show_count,
+        type: "yearly"
+      }) %>
+    <% } %>
+  </div>
+</div>

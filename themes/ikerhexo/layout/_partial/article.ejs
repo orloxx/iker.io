@@ -1,0 +1,21 @@
+<article class="article" data-component="PageProgress">
+  <div class="progressbar">
+    <div class="progressbar__base"></div>
+  </div>
+  <div class="article__base">
+    <div class="article__title">
+      <% if (post.featured_image) { %>
+        <img src="<%= post.featured_image %>" alt="Title">
+      <% } %>
+      <h1><%= post.title %></h1>
+    </div>
+    <div class="article__content">
+      <%- post.content %>
+    </div>
+  </div>
+  <div class="article__share">
+    <% for (var socialMedia in theme.share ) { %>
+      <%- partial("share/" + theme.share[socialMedia]) %>
+    <% } %>
+  </div>
+</article>

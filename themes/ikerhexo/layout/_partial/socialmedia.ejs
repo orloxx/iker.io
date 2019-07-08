@@ -1,0 +1,9 @@
+<div class="socialmedia">
+  <div class="socialmedia__base">
+    <% for (var network in theme.social) { %>
+      <a class="socialmedia__link" href="<%= theme.social[network] %>" target="_blank" title="<%= _p(network) %>">
+        <span><%= _p(network) %></span>
+      </a>
+    <% } %>
+  </div>
+</div>

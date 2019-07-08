@@ -1,0 +1,16 @@
+<%- partial("_partial/header") %>
+
+<main class="main archive">
+  <div class="container">
+    <section class="section archive__section">
+      <ul class="archive__list">
+        <% page.posts.each(function(post){ %>
+        <li class="archive__listItem">
+          <%- partial("_partial/teaser", { post: post }) %>
+        </li>
+        <% }) %>
+      </ul>
+    </section>
+    <%- partial("_partial/sidebar") %>
+  </div>
+</main>

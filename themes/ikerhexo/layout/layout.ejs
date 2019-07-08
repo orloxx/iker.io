@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+    IIIIIIIIIIkkkkkkkk
+    I::::::::Ik::::::k
+    I::::::::Ik::::::k
+    II::::::IIk::::::k
+      I::::I   k:::::k    kkkkkkk    eeeeeeeeeeee    rrrrr   rrrrrrrrr
+      I::::I   k:::::k   k:::::k   ee::::::::::::ee  r::::rrr:::::::::r
+      I::::I   k:::::k  k:::::k   e::::::eeeee:::::eer:::::::::::::::::r
+      I::::I   k:::::k k:::::k   e::::::e     e:::::err::::::rrrrr::::::r
+      I::::I   k::::::k:::::k    e:::::::eeeee::::::e r:::::r     r:::::r
+      I::::I   k:::::::::::k     e:::::::::::::::::e  r:::::r     rrrrrrr
+      I::::I   k:::::::::::k     e::::::eeeeeeeeeee   r:::::r
+      I::::I   k::::::k:::::k    e:::::::e            r:::::r
+    II::::::IIk::::::k k:::::k   e::::::::e           r:::::r
+    I::::::::Ik::::::k  k:::::k   e::::::::eeeeeeee   r:::::r
+    I::::::::Ik::::::k   k:::::k   ee:::::::::::::e   r:::::r
+    IIIIIIIIIIkkkkkkkk    kkkkkkk    eeeeeeeeeeeeee   rrrrrrr
+ -->
+<!--[if IE]>
+<html class="you-suck" lang="<%= config.language %>">
+<![endif]-->
+<!--[if !IE]><!-->
+<html class="you-are-awesome" lang="<%= config.language %>">
+<!--<![endif]-->
+<head>
+  <%- partial("_partial/head") %>
+</head>
+<body>
+
+<%- body %>
+
+<div class="ie">
+  <a href="https://www.google.com/chrome/browser/desktop/index.html">
+    <img src="<%= url_for('img/rickpurpose.png') %>" alt="Download Chrome">
+  </a>
+</div>
+
+<%- partial("_partial/footer") %>
+
+<%- js('js/main') %>
+
+</body>
+</html>

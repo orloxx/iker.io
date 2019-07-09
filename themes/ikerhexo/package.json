@@ -4,8 +4,8 @@
   "description": "My own hexo theme",
   "private": true,
   "paths": {
-    "cssbuild": "node-sass-chokidar --include-path ./node_modules --include-path ./src/scss src/scss/ -o source/css/",
-    "postcss": "postcss --use autoprefixer -o source/css/main.post.css source/css/main.css"
+    "cssbuild": "node-sass-chokidar --include-path ./node_modules --include-path ./src src/index.scss -o source/css/",
+    "postcss": "postcss --use autoprefixer -o source/css/main.css source/css/index.css"
   },
   "scripts": {
     "build": "npm run build:css && npm run post:css && npm run build:js",

@@ -1,7 +1,7 @@
-body {
-  background: #efefef;
-}
+@import "variables/breakpoints";
+@import "variables/colors";
+@import "variables/fonts";
+@import "variables/mixins";
 
-img {
-  max-width: 100%;
-}
+@import "styles/body";
+@import "styles/highlight";

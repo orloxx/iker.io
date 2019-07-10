@@ -1,10 +1,7 @@
+<%- partial("_partial/mainnav") %>
 <%- partial("_partial/homeheader") %>
 
-<main class="main homepage">
-  <div class="container">
-    <section class="section homepage__section">
-      <%- partial("_partial/homepage", { page: page }) %>
-    </section>
-    <%- partial("_partial/sidebar") %>
-  </div>
+<main class="homepage">
+  <%- partial("_partial/homepage", { page: page }) %>
+  <%- partial("_partial/sidebar") %>
 </main>

@@ -1,15 +1,9 @@
 <header class="homeheader">
-  <div class="homeheader__content container">
-    <%- partial("_partial/mainnav") %>
-
-    <div class="homeheader__filling"></div>
-    <div class="homeheader__filling homeheader__gravatar">
-      <a href="<%- url_for('/') %>"><img src="<%= gravatar(config.email, 200) %>" alt="<%= config.author %>"></a>
-    </div>
-    <div class="homeheader__filling homeheader__info">
-      <h1><a href="<%- url_for('/') %>"><%= config.title %></a></h1>
-      <h3><a href="<%- url_for('/') %>"><%= config.subtitle %></a></h3>
-    </div>
-    <div class="homeheader__filling"></div>
+  <a class="homeheader__gravatar" href="<%- url_for('/') %>">
+    <img src="<%= gravatar(config.email, 200) %>" alt="<%= config.author %>">
+  </a>
+  <div class="homeheader__info">
+    <h1><a href="<%- url_for('/') %>"><%= config.title %></a></h1>
+    <h2><a href="<%- url_for('/') %>"><%= config.subtitle %></a></h2>
   </div>
 </header>

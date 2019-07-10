@@ -1,9 +1,7 @@
-<div class="homepage__base">
+<section class="homepage">
   <% page.posts.each(function(post, i){ %>
     <% if (i < 4) { %>
-      <div class="homepage__item">
-        <%- partial("_partial/teaser", { post: post }) %>
-      </div>
+      <%- partial("_partial/teaser", { post: post }) %>
     <% } %>
   <% }) %>
-</div>
+</section>

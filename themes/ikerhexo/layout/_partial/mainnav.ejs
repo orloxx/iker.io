@@ -1,15 +1,12 @@
-<nav class="mainnav"
-     data-component="MainNavigation">
+<nav class="mainnav">
   <ul class="mainnav__list">
     <% for (var icon in theme.menu) { %>
-    <li class="mainnav__listItem">
-      <a class="mainnav__link" href="<%- url_for(theme.menu[icon]) %>">
-        <span class="mainnav__linkLabel"><%= _p(icon) %></span>
-      </a>
+    <li class="mainnav__item">
+      <a class="mainnav__link" href="<%- url_for(theme.menu[icon]) %>"><%= _p(icon) %></a>
     </li>
     <% } %>
-    <li class="mainnav__listItem mainnav__listItem--isSearch hidden">
-      <%- search_form() %>
-    </li>
   </ul>
+  <div class="mainnav__search" hidden>
+    <%- search_form() %>
+  </div>
 </nav>

@@ -74,7 +74,7 @@
 @mixin apply-table-styles() {
   table {
     width: 100%;
-    font-family: $f-table;
+    font-family: $f-primary;
     margin: 1rem 0;
 
     thead {

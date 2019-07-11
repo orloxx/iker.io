@@ -14,3 +14,28 @@ body {
 img {
   max-width: 100%;
 }
+
+a {
+  color: $c-link;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($c-link, 20);
+  }
+}
+
+.icon {
+  fill: currentColor;
+  color: inherit;
+  vertical-align: middle;
+}
+
+.container, .textContainer {
+  padding: 0 10px;
+  max-width: $b-s;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: $b-m;
+}

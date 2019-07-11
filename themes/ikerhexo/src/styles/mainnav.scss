@@ -1,0 +1,38 @@
+$s-icon-size: 25px;
+$s-icon-size-xs: 20px;
+
+.mainnav {
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__link {
+    display: block;
+    padding: 20px 15px;
+
+    span {
+      display: none;
+      vertical-align: middle;
+
+      @media (min-width: $b-xs) {
+        display: inline;
+      }
+    }
+
+    .icon {
+      width: $s-icon-size;
+      height: $s-icon-size;
+
+      @media (min-width: $b-xs) {
+        width: $s-icon-size-xs;
+        height: $s-icon-size-xs;
+        margin-right: 7px;
+      }
+    }
+  }
+}

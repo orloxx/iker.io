@@ -1,2 +1,5 @@
 <a href="https://twitter.com/intent/tweet?text=<%= post.title %>&url=<%= url_for(post.permalink) %>&via=ikertxu"
-   target="_blank">Twitter</a>
+   target="_blank">
+  <%- partial('_partial/svg', { id: 'twitter-square' }) %>
+  <span>Twitter</span>
+</a>

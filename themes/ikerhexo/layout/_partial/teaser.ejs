@@ -1,14 +1,16 @@
-<article class="teaser <%= post.featured_image ? "" : "teaser--noImg"%>">
+<article class="teaser <%= post.featured_image ? '' : 'teaser--noImg'%>">
   <% if (post.featured_image) { %>
-    <a class="teaser__image" href="<%= url_for(post.path) %>">
+    <a class="teaser__image" href="<%= url_for(post.path) %>" title="<%= post.title %>">
       <img src="<%= url_for(post.path) + post.featured_image %>" alt="<%= post.title %>">
     </a>
   <% } %>
-  <a class="teaser__title" href="<%= url_for(post.path) %>"><h1><%= post.title %></h1></a>
+  <a class="teaser__title" href="<%= url_for(post.path) %>" title="<%= post.title %>">
+    <h1><%= post.title %></h1>
+  </a>
   <% if (post.excerpt) { %>
-    <div class="teaser__content">
-      <%- post.excerpt %>
-    </div>
-    <a class="teaser__readMore" href="<%= url_for(post.path) %>">Read more...</a>
+    <%- post.excerpt %>
+    <a class="teaser__readMore" href="<%= url_for(post.path) %>" title="<%= _p('Read more...') %>">
+      <%= _p('Read more...') %>
+    </a>
   <% } %>
 </article>

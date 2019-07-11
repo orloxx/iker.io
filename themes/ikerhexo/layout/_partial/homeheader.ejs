@@ -3,7 +3,7 @@
     <img src="<%= gravatar(config.email, 200) %>" alt="<%= config.author %>">
   </a>
   <div class="homeheader__info">
-    <h1><a href="<%- url_for('/') %>"><%= config.title %></a></h1>
-    <h2><a href="<%- url_for('/') %>"><%= config.subtitle %></a></h2>
+    <a href="<%- url_for('/') %>"><h1><%= config.title %></h1></a>
+    <a href="<%- url_for('/') %>"><h2><%= config.subtitle %></h2></a>
   </div>
 </header>

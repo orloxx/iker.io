@@ -1,6 +1,10 @@
 <footer class="footer">
-  <div class="footer__base container">
-    <p>&copy; <span class="footer__year"><%= date(new Date(), 'YYYY') %></span> <%= config.author || config.title %></p>
-    <%- partial("_partial/socialmedia") %>
-  </div>
+  <p>&copy; <span class="footer__year"><%= date(new Date(), 'YYYY') %></span> <%= config.author || config.title %></p>
+  <section class="socialmedia">
+    <% for (var network in theme.social) { %>
+      <a class="socialmedia__link" href="<%= theme.social[network] %>" target="_blank" title="<%= _p(network) %>">
+        <%= _p(network) %>
+      </a>
+    <% } %>
+  </section>
 </footer>

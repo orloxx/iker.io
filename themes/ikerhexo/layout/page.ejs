@@ -1,10 +1,6 @@
-<%- partial("_partial/header") %>
+<%- partial('_partial/mainnav') %>
 
-<main class="main page">
-  <div class="container">
-    <section class="section page__section">
-      <%- partial("_partial/article", { post: page }) %>
-    </section>
-    <%- partial("_partial/sidebar") %>
-  </div>
+<main class="page">
+  <%- partial('_partial/article', { post: page }) %>
+  <%- partial('_partial/sidebar') %>
 </main>

@@ -3,8 +3,8 @@ var title = page.title || config.title + " | " + config.subtitle,
   description = page.excerpt ? strip_html(page.excerpt) : config.description,
   url = page.permalink || config.url,
   keywords = strip_html(list_tags({
-    style: "keywords",
-    separator: ",",
+    style: 'keywords',
+    separator: ',',
     show_count: false
   })),
   image = page.featured_image ? url + page.featured_image : gravatar(config.email, 200);
@@ -20,10 +20,10 @@ var title = page.title || config.title + " | " + config.subtitle,
 
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@ikertxu">
+<meta name="twitter:site" content="@<%= config.twitter %>">
 <meta name="twitter:title" content="<%= title %>">
 <meta name="twitter:description" content="<%= description %>">
-<meta name="twitter:creator" content="@ikertxu">
+<meta name="twitter:creator" content="@<%= config.twitter %>">
 <meta name="twitter:image:src" content="<%= image %>">
 
 <!-- Open Graph data -->

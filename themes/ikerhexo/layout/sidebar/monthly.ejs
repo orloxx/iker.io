@@ -1,12 +1,7 @@
-<div class="sidebar__item">
-  <div class="sidebar__title">
-    <h1>By Month</h1>
-  </div>
-  <div class="sidebar__content">
-    <% if (site.tags.length){ %>
-      <%- list_archives({
-        show_count: theme.show_count
-      }) %>
-    <% } %>
-  </div>
-</div>
+<section class="sidebar__item sidebar__monthly">
+  <h1>By Month</h1>
+  <%- list_archives({
+    show_count: theme.show_count,
+    type: 'monthly'
+  }) %>
+</section>

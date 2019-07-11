@@ -2,8 +2,10 @@
   <p>&copy; <span class="footer__year"><%= date(new Date(), 'YYYY') %></span> <%= config.author || config.title %></p>
   <section class="socialmedia">
     <% for (var network in theme.social) { %>
-      <a class="socialmedia__link" href="<%= theme.social[network] %>" target="_blank" title="<%= _p(network) %>">
-        <%= _p(network) %>
+      <a class="socialmedia__link"
+         href="<%= theme.social[network] %>"
+         target="_blank" title="<%= _p(network) %>">
+        <%- partial('_partial/svg', { id: network }) %>
       </a>
     <% } %>
   </section>

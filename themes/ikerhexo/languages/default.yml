@@ -1,11 +1,11 @@
 # Main-nav
-fa-home: Home
-fa-archive: Archive
-fa-search: Search
+home: Home
+archive: Archive
+search: Search
 
 # Socialmedia
-fa-linkedin: LinkedIn
-fa-github: GitHub
-fa-twitter: Twitter
+linkedin: LinkedIn
+github: GitHub
+twitter: Twitter
 
 Read more...: Read more...

@@ -24,9 +24,11 @@
 <html class="you-are-awesome" lang="<%= config.language %>">
 <!--<![endif]-->
 <head>
-  <%- partial("_partial/head") %>
+  <%- partial('_partial/head') %>
 </head>
 <body>
+
+<div hidden><%- inline_svg('svg/sprite.svg') %></div>
 
 <%- body %>
 
@@ -36,7 +38,7 @@
   </a>
 </div>
 
-<%- partial("_partial/footer") %>
+<%- partial('_partial/footer') %>
 
 <%- js('js/main') %>
 

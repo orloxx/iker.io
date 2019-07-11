@@ -3,6 +3,7 @@ node_modules/
 
 source/css/
 source/js/
+source/svg/
 
 .DS_Store
 Thumbs.db

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   height: 100%;
   font-size: $f-base-size;
@@ -31,11 +35,15 @@ a {
 }
 
 .container, .textContainer {
-  padding: 0 10px;
+  padding: 0 1rem;
   max-width: $b-s;
   margin: 0 auto;
 }
 
 .container {
   max-width: $b-m;
+}
+
+.center {
+  text-align: center;
 }

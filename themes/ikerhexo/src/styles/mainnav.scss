@@ -13,7 +13,7 @@ $s-icon-size-xs: 20px;
 
   &__link {
     display: block;
-    padding: 20px 15px;
+    padding: 1.5rem 1rem;
 
     span {
       display: none;
@@ -31,7 +31,7 @@ $s-icon-size-xs: 20px;
       @media (min-width: $b-xs) {
         width: $s-icon-size-xs;
         height: $s-icon-size-xs;
-        margin-right: 7px;
+        margin-right: 0.5rem;
       }
     }
   }

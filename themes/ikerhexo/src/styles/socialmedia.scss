@@ -1,0 +1,13 @@
+.socialmedia {
+  text-align: center;
+
+  &__link {
+    display: inline-block;
+    padding: 0.8rem;
+
+    .icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

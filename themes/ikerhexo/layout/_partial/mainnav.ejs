@@ -3,6 +3,7 @@
     <% for (var icon in theme.menu) { %>
     <li class="mainnav__item">
       <a class="mainnav__link" href="<%- url_for(theme.menu[icon]) %>" title="<%= _p(icon) %>">
+        <%- partial('_partial/svg', { id: icon }) %>
         <%= _p(icon) %>
       </a>
     </li>

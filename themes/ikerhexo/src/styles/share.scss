@@ -1,0 +1,45 @@
+.share {
+  padding: 0.5rem;
+  border: solid $c-border;
+  border-width: 1px 0;
+  margin: 2rem 0;
+
+  p {
+    margin: 0.3rem 0;
+    padding: 0 0.5rem;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 0.5rem;
+
+    .icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    &--twitter {
+      color: $c-twitter;
+
+      &:hover {
+        color: darken($c-twitter, 20);
+      }
+    }
+
+    &--facebook {
+      color: $c-facebook;
+
+      &:hover {
+        color: darken($c-facebook, 20);
+      }
+    }
+
+    &--reddit {
+      color: $c-reddit;
+
+      &:hover {
+        color: darken($c-reddit, 20);
+      }
+    }
+  }
+}

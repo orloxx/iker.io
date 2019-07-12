@@ -1,5 +1,5 @@
-<a href="https://facebook.com/sharer/sharer.php?u=<%= url_for(post.permalink) %>"
-   target="_blank">
+<a class="share__link share__link--facebook"
+   href="https://facebook.com/sharer/sharer.php?u=<%= url_for(post.permalink) %>"
+   target="_blank" title="Facebook">
   <%- partial('_partial/svg', { id: 'facebook-square' }) %>
-  <span>Facebook</span>
 </a>

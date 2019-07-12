@@ -1,5 +1,4 @@
 <footer class="footer">
-  <p class="center">&copy; <span class="footer__year"><%= date(new Date(), 'YYYY') %></span> <%= config.author || config.title %></p>
   <section class="socialmedia">
     <% for (var network in theme.social) { %>
       <a class="socialmedia__link"
@@ -9,4 +8,5 @@
       </a>
     <% } %>
   </section>
+  <p class="center">&copy; <span class="footer__year"><%= date(new Date(), 'YYYY') %></span> <%= config.author || config.title %></p>
 </footer>

@@ -1,6 +1,3 @@
-$s-icon-size: 25px;
-$s-icon-size-xs: 20px;
-
 .mainnav {
   &__list {
     margin: 0;
@@ -13,7 +10,7 @@ $s-icon-size-xs: 20px;
 
   &__link {
     display: block;
-    padding: 1.5rem 1rem;
+    padding: $s-mainnav-v-padding 1rem;
 
     span {
       display: none;
@@ -25,12 +22,12 @@ $s-icon-size-xs: 20px;
     }
 
     .icon {
-      width: $s-icon-size;
-      height: $s-icon-size;
+      width: $s-mainnav-icon-size;
+      height: $s-mainnav-icon-size;
 
       @media (min-width: $b-xs) {
-        width: $s-icon-size-xs;
-        height: $s-icon-size-xs;
+        width: $s-mainnav-icon-size-xs;
+        height: $s-mainnav-icon-size-xs;
         margin-right: 0.5rem;
       }
     }

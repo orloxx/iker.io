@@ -1,9 +1,9 @@
 <header class="homeheader">
-  <a class="homeheader__gravatar" href="<%- url_for('/') %>">
-    <img src="<%= gravatar(config.email, 200) %>" alt="<%= config.author %>">
-  </a>
   <div class="homeheader__info">
-    <a href="<%- url_for('/') %>"><h1><%= config.title %></h1></a>
-    <a href="<%- url_for('/') %>"><h2><%= config.subtitle %></h2></a>
+    <div class="homeheader__gravatar" href="<%- url_for('/') %>">
+      <img src="<%= gravatar(config.email, 200) %>" alt="<%= config.author %>">
+    </div>
+    <h1><%= config.title %></h1>
+    <h2><%= config.subtitle %></h2>
   </div>
 </header>

@@ -47,10 +47,30 @@
     line-height: $s-homeheader-h1;
     padding-bottom: $s-homeheader-pad;
     border-bottom: 1px solid $c-border-light;
+
+    @media (min-width: $b-xs) {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+
+    @media (min-width: $b-s) {
+      font-size: 4rem;
+      line-height: 4rem;
+    }
   }
 
   h2 {
     font-size: $s-homeheader-h2;
     line-height: $s-homeheader-h2;
+
+    @media (min-width: $b-xs) {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+
+    @media (min-width: $b-s) {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+    }
   }
 }

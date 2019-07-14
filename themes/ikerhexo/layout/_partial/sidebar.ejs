@@ -1,5 +1,7 @@
 <aside class="sidebar">
-  <% for (var widget in theme.widgets ) { %>
-    <%- partial('sidebar/' + theme.widgets[widget]) %>
-  <% } %>
+  <div class="sidebar__container container">
+    <% for (var widget in theme.widgets ) { %>
+      <%- partial('sidebar/' + theme.widgets[widget]) %>
+    <% } %>
+  </div>
 </aside>

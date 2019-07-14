@@ -5,7 +5,7 @@
   <h1><%= post.title %></h1>
   <%- post.content %>
   <section class="share">
-    <p><%= _p('Share it') %></p>
+    <p><%= _p('Share') %></p>
     <% for (var socialMedia in theme.share ) { %>
       <%- partial('share/' + theme.share[socialMedia]) %>
     <% } %>

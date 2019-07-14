@@ -1,11 +1,57 @@
 .sidebar {
   padding: 3rem 0;
   background-image: linear-gradient(
-      $c-action,
+      darken($c-action, 5),
       darken($c-action, 40)
   );
 
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   &__item {
-    @include container;
+    padding: 0 1rem 1rem 0;
+    margin: 0 1rem 1rem 0;
+    min-width: 200px;
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.4rem;
+      }
+    }
+
+    a {
+      color: $c-primary-light;
+
+      &:hover {
+        color: $c-primary;
+      }
+    }
+
+    h1 {
+      margin: 0 0 1rem;
+      font-size: 2rem;
+    }
+
+    h1, .archive-list-count, .tag-list-count {
+      color: $c-primary-light;
+    }
+  }
+
+  .archive-list-count, .tag-list-count {
+    margin-left: 0.5rem;
+
+    &:before {
+      content: '(';
+    }
+
+    &:after {
+      content: ')';
+    }
   }
 }

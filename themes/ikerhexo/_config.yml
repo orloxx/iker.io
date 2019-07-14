@@ -1,0 +1,25 @@
+# Header
+menu:
+  home: /
+  archive: /archives
+  search: "javascript:void(0)"
+
+# Sidebar
+sidebar: right
+show_count: true
+widgets:
+  - tags
+  - monthly
+#  - yearly
+
+# Share on social media
+share:
+  - twitter
+  - facebook
+  - reddit
+
+# Social media handlers
+social:
+  linkedin: https://www.linkedin.com/in/ikertxu
+  github: http://github.com/orloxx
+  twitter: http://twitter.com/ikertxu

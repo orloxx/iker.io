@@ -1,6 +1,6 @@
 # Main-nav
 home: Home
-archive: Blog
+archive: Archives
 search: Search
 
 # Socialmedia
@@ -9,4 +9,7 @@ github: GitHub
 twitter: Twitter
 
 Read more...: Read more...
-Share it: 'Share'
+Share: Share
+Monthly: By Month
+Yearly: Yearly
+Tags: Tags

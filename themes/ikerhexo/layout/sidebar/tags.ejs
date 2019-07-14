@@ -1,6 +1,6 @@
 <% if (site.tags.length){ %>
   <section class="sidebar__item sidebar__tags">
-    <h1>By Tag</h1>
+    <h1><%= _p('Tags') %></h1>
     <%- list_tags({
       show_count: theme.show_count
     }) %>

@@ -33,24 +33,6 @@ p {
   margin: 0 0 1rem;
 }
 
-//main {
-//  display: flex;
-//  flex-direction: row-reverse;
-//  flex-wrap: wrap;
-//
-//  aside, article {
-//    width: 100%;
-//  }
-//
-//  article {
-//    @media (min-width: $b-m) {
-//      width: 70%;
-//    }
-//  }
-//
-//  aside {
-//    @media (min-width: $b-m) {
-//      width: 30%;
-//    }
-//  }
-//}
+main {
+  padding-top: 2rem;
+}

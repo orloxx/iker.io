@@ -1,6 +1,6 @@
 .article {
   h1, h2, h3, h4, p, ul, ol, .highlight {
-    @include textContainer();
+    @include textContainer;
   }
 
   p, ol, ul {

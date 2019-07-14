@@ -1,5 +1,5 @@
-<nav class="mainnav container">
-  <ul class="mainnav__list">
+<nav class="mainnav">
+  <ul class="mainnav__list container">
     <% for (var icon in theme.menu) { %>
     <li class="mainnav__item">
       <a class="mainnav__link" href="<%- url_for(theme.menu[icon]) %>" title="<%= _p(icon) %>">

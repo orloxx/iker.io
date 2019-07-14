@@ -1,9 +1,10 @@
 .mainnav {
   margin-bottom: 0;
+  border-bottom: 2px solid darken($c-action, 20);
 
   &__list {
-    margin: 0;
     padding: 0;
+    margin-bottom: 0;
   }
 
   &__item {

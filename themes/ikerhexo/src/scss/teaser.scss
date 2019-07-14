@@ -1,3 +1,36 @@
 .teaser {
+  $this: &;
+
   margin-bottom: 3rem;
+
+  &__title {
+    $img-height: 200px;
+    $title-height: 4rem;
+
+    @include container;
+
+    padding: 0;
+
+    #{$this}--img & {
+      background-position: center center;
+      background-size: cover;
+      height: $img-height;
+      color: $c-primary-light;
+
+      &:hover {
+        color: $c-link;
+      }
+    }
+
+    h1 {
+      #{$this}--img & {
+        position: relative;
+        font-size: 2.5rem;
+        line-height: $title-height;
+        top: calc(#{$img-height} - #{$title-height});
+        margin-bottom: 0;
+        background-color: rgba($c-primary-bg-light, 0.75);
+      }
+    }
+  }
 }

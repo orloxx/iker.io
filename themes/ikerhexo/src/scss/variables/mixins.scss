@@ -1,96 +1,10 @@
-@mixin apply-list-styles() {
-  $spacing: 1.3rem;
-
-  ul, ol {
-    li {
-      margin-left: $spacing;
-      margin-bottom: 1rem;
-
-      &:before {
-        position:absolute;
-        display: inline-block;
-        text-align: right;
-        margin-left: -$spacing;
-        content: '\2022';
-      }
-    }
-  }
-
-  ol {
-    counter-reset: post;
-
-    li:before {
-      counter-increment: post;
-      content: counter(post) '.';
-    }
-  }
+@mixin container($max-width: $b-m) {
+  margin: 0 auto 1rem;
+  max-width: $max-width;
+  padding: 0 1rem;
+  display: block;
 }
 
-@mixin apply-text-styles() {
-  p, h1, h2, h3, h4, ol, ul {
-    margin-bottom: 1rem;
-  }
-
-  p, ol, ul {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    line-height: 3.5rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-    line-height: 3rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-  }
-
-  h4 {
-    font-size: 1rem;
-    line-height: 2rem;
-    font-weight: bold;
-  }
-
-  em {
-    font-style: italic;
-  }
-
-  strong {
-    font-weight: 700;
-  }
-
-  code {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-  }
-}
-
-@mixin apply-table-styles() {
-  table {
-    width: 100%;
-    font-family: $f-primary;
-    margin: 1rem 0;
-
-    thead {
-      font-weight: bold;
-      border-bottom: 2px solid $c-action;
-    }
-
-    tbody {
-      tr:nth-child(even) {
-        background: lighten($c-action, 32%);
-      }
-    }
-
-    th, td {
-      padding: 1rem;
-      text-align: left;
-    }
-  }
+@mixin textContainer($max-width: $b-s) {
+  @include container($b-s);
 }

@@ -1,4 +1,4 @@
-<article class="article <%= post.featured_image ? "" : "teaser--noImg"%>">
+<article class="article <%= post.featured_image ? "" : "article--noImg"%>">
   <% if (post.featured_image) { %>
     <img src="<%= post.featured_image %>" alt="<%= post.title %>">
   <% } %>

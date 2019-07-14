@@ -1,4 +1,4 @@
-<article class="teaser <%= post.featured_image ? '' : 'teaser--noImg'%>">
+<article class="article teaser <%= post.featured_image ? '' : 'teaser--noImg'%>">
   <% if (post.featured_image) { %>
     <a class="teaser__image" href="<%= url_for(post.path) %>" title="<%= post.title %>">
       <img src="<%= url_for(post.path) + post.featured_image %>" alt="<%= post.title %>">
@@ -9,8 +9,8 @@
   </a>
   <% if (post.excerpt) { %>
     <%- post.excerpt %>
-    <a class="teaser__readMore" href="<%= url_for(post.path) %>" title="<%= _p('Read more...') %>">
+    <p><a href="<%= url_for(post.path) %>" title="<%= _p('Read more...') %>">
       <%= _p('Read more...') %>
-    </a>
+    </a></p>
   <% } %>
 </article>

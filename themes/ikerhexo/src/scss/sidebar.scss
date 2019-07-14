@@ -1,0 +1,11 @@
+.sidebar {
+  padding: 3rem 0;
+  background-image: linear-gradient(
+      $c-action,
+      darken($c-action, 40)
+  );
+
+  &__item {
+    @include container;
+  }
+}

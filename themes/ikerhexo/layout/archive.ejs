@@ -1,10 +1,8 @@
 <%- partial('_partial/mainnav') %>
 
 <main class="archive">
-  <section class="archive__section">
-    <% page.posts.each(function(post){ %>
-      <%- partial('_partial/teaser', { post: post }) %>
-    <% }) %>
-  </section>
+  <% page.posts.each(function(post){ %>
+    <%- partial('_partial/teaser', { post: post }) %>
+  <% }) %>
   <%- partial('_partial/sidebar') %>
 </main>

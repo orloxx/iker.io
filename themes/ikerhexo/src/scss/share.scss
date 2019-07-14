@@ -1,12 +1,16 @@
 .share {
+  @include container;
+
   padding: 0.5rem;
   border: solid $c-border;
   border-width: 1px 0;
-  margin: 2rem 0;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 
   p {
     margin: 0.3rem 0;
-    padding: 0 0.5rem;
+    padding: 0 0.7rem;
+    max-width: none;
   }
 
   &__link {

@@ -7,4 +7,5 @@ public/
 Thumbs.db
 db.json
 *.log
-_config.yml
+_deploy.yml
+_multiconfig.yml

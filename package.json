@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "stmux [ [ 'npm run hexo' .. 'npm run js' ] : [ 'npm run css' .. 'npm run post' ] ]",
-    "hexo": "hexo server",
+    "hexo": "hexo server --config _config.yml,_deploy.yml",
     "js": "cd ./themes/ikerhexo && npm run watch:js",
     "css": "cd ./themes/ikerhexo && npm run watch:css",
     "post": "cd ./themes/ikerhexo && npm run watch:post"

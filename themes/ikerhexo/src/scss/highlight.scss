@@ -14,19 +14,13 @@ $h-purple: #cc99cc;
 .article pre,
 .article .highlight {
   background: $h-background;
-  padding: 1rem 0.5rem;
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
   overflow: auto;
   color: $h-foreground;
   line-height: 22px;
-  margin: 0 0 1rem;
   font-size: 0.85rem;
-
-  @media (min-width: $b-l) {
-    margin: 0 0 1rem;
-  }
 }
 .article .highlight .gutter pre,
 .article .gist .gist-file .gist-data .line-numbers {

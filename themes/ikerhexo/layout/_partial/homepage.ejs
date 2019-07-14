@@ -1,7 +1,5 @@
 <main class="homepage">
   <% page.posts.each(function(post, i){ %>
-    <% if (i < 4) { %>
-      <%- partial('_partial/teaser', { post: post }) %>
-    <% } %>
+    <%- partial('_partial/teaser', { post: post }) %>
   <% }) %>
 </main>

@@ -1,0 +1,9 @@
+<section class="paginator container">
+  <% if (page.prev) { %>
+    <a href="<%= url_for(page.prev_link) %>"><%= _p('Prev page') %></a>
+  <% } %>
+  <%= page.current %> / <%= page.total %>
+  <% if (page.next) { %>
+    <a href="<%= url_for(page.next_link) %>"><%= _p('Next page') %></a>
+  <% } %>
+</section>

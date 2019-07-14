@@ -4,5 +4,6 @@
   <% page.posts.each(function(post){ %>
     <%- partial('_partial/teaser', { post: post }) %>
   <% }) %>
+  <%- partial('_partial/paginator') %>
   <%- partial('_partial/sidebar') %>
 </main>

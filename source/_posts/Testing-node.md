@@ -1,6 +1,5 @@
 ---
-title: Another Post for the kicks
-date: 2019-07-14 22:36:07
+title: Testing Node
 tags:
   - JavaScript
   - Front end

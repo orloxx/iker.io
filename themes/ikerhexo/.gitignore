@@ -1,9 +1,7 @@
 node_modules/
 .idea/
 
-source/css/
-source/js/
-source/svg/
+source/
 
 .DS_Store
 Thumbs.db

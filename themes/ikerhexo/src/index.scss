@@ -6,19 +6,20 @@
 @import "scss/variables/spacing";
 
 // Initial reset
-@import "scss/reset";
-@import "scss/body";
+@import "scss/modules/reset";
+@import "scss/modules/body";
 
 // modules
-@import "scss/article";
-@import "scss/footer";
-@import "scss/homeheader";
-@import "scss/mainnav";
-@import "scss/paginator";
-@import "scss/share";
-@import "scss/sidebar";
-@import "scss/socialmedia";
-@import "scss/teaser";
+@import "scss/modules/article";
+@import "scss/modules/footer";
+@import "scss/modules/homeheader";
+@import "scss/modules/mainnav";
+@import "scss/modules/paginator";
+@import "scss/modules/progress-bar";
+@import "scss/modules/share";
+@import "scss/modules/sidebar";
+@import "scss/modules/socialmedia";
+@import "scss/modules/teaser";
 
 // vendor
-@import "scss/highlight";
+@import "scss/modules/highlight";

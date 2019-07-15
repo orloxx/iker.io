@@ -1,5 +1,5 @@
 <%
-var title = page.title || config.title + " | " + config.subtitle,
+const title = page.title || config.title + " | " + config.subtitle,
   description = page.excerpt ? strip_html(page.excerpt) : config.description,
   url = page.permalink || config.url,
   keywords = strip_html(list_tags({

@@ -29,7 +29,7 @@ $h-purple: #cc99cc;
 }
 .article pre,
 .article code {
-  font-family: Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: $f-console;
 }
 .article code {
   background: #eee;
@@ -88,7 +88,7 @@ $h-purple: #cc99cc;
 }
 .article .gist .gist-file {
   border: none;
-  font-family: Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: $f-console;
   margin: 0;
 }
 .article .gist .gist-file .gist-data {

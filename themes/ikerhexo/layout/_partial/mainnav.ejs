@@ -1,12 +1,18 @@
 <nav class="mainnav">
   <ul class="mainnav__list container">
     <% for (var icon in theme.menu) { %>
-    <li class="mainnav__item">
-      <a class="mainnav__link" href="<%- url_for(theme.menu[icon]) %>" title="<%= _p(icon) %>">
-        <%- partial('_partial/svg', { id: icon }) %>
-        <span><%= _p(icon) %></span>
-      </a>
-    </li>
+      <li class="mainnav__item">
+        <a class="mainnav__link" href="<%- url_for(theme.menu[icon]) %>" title="<%= _p(icon) %>">
+          <%- partial('_partial/svg', { id: icon }) %>
+          <span><%= _p(icon) %></span>
+        </a>
+      </li>
+    <% } %>
+    <% if (theme.show_search) { %>
+      <li class="mainnav__item mainnav__item--search"
+          data-components="SearchBar">
+        <%- search_form({ text: _p('search'), button: true }) %>
+      </li>
     <% } %>
   </ul>
   <div class="mainnav__search" hidden>

@@ -1,8 +1,8 @@
 # Header
+show_search: true
 menu:
   home: /
   archive: /archives
-  search: "javascript:void(0)"
 
 # Sidebar
 sidebar: right

@@ -1,3 +1,5 @@
+import Log from 'utils/log';
+
 let instance;
 
 class ComponentLoader {
@@ -35,11 +37,11 @@ class ComponentLoader {
       try {
         const Component = this.components[componentName];
         const config = JSON.parse(el.getAttribute(`data-config-${componentName}`));
-        console.log(`${componentName} Component initialised`, el, config);
+        Log.info(`${componentName} Component initialised`, el, config);
         const instance = new Component(el, config, componentName);
         instance.init();
       } catch (e) {
-        console.error(`${componentName}: Problem initialising component`, e);
+        Log.error(`${componentName}: Problem initialising component.`, e);
       }
     });
   }

@@ -50,19 +50,24 @@
     }
   }
 
-  table {
+  > table {
+    @include container;
+
     width: 100%;
     font-family: $f-primary;
-    margin: 1rem 0;
+    margin: 1rem auto;
+    display: table;
+    border-collapse: collapse;
+    border-bottom: 2px solid $c-action;
 
-    thead {
+    thead th {
       font-weight: bold;
       border-bottom: 2px solid $c-action;
     }
 
     tbody {
       tr:nth-child(even) {
-        background: lighten($c-action, 32%);
+        background: rgba($c-action, 0.15);
       }
     }
 

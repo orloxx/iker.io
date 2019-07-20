@@ -1,13 +1,9 @@
-// Only variables
-@import "scss/variables/breakpoints";
-@import "scss/variables/colors";
-@import "scss/variables/fonts";
-@import "scss/variables/mixins";
-@import "scss/variables/spacing";
-
 // Initial reset
 @import "scss/modules/reset";
 @import "scss/modules/body";
+
+// vendor
+@import "scss/modules/highlight";
 
 // modules
 @import "scss/modules/article";
@@ -20,6 +16,3 @@
 @import "scss/modules/sidebar";
 @import "scss/modules/socialmedia";
 @import "scss/modules/teaser";
-
-// vendor
-@import "scss/modules/highlight";

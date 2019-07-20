@@ -1,6 +1,13 @@
+@import "scss/variables/variables";
+
 .article {
-  h1, h2, h3, h4, p, ul, ol, .highlight {
+  h1, h2, h3, h4, p, ul, ol {
     @include textContainer;
+  }
+
+  img, .highlight {
+    @include container;
+    padding: 0;
   }
 
   p, ol, ul {
@@ -17,6 +24,7 @@
   h2 {
     font-size: 2rem;
     line-height: 3rem;
+    border-bottom: 1px solid $c-action;
   }
 
   h3 {

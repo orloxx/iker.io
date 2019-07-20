@@ -13,12 +13,14 @@
   "hexo": {
     "version": "3.9.0"
   },
+  "theme": "ikerhexo",
   "scripts": {
     "start": "stmux [ [ 'npm run hexo' .. 'npm run js' ] : [ 'npm run css' .. 'npm run post' ] ]",
     "hexo": "hexo server --config _config.yml,_deploy.yml",
-    "js": "cd ./themes/ikerhexo && npm run watch:js",
-    "css": "cd ./themes/ikerhexo && npm run watch:css",
-    "post": "cd ./themes/ikerhexo && npm run watch:post"
+    "js": "cd ./themes/$npm_package_theme && npm run watch:js",
+    "css": "cd ./themes/$npm_package_theme && npm run watch:css",
+    "post": "cd ./themes/$npm_package_theme && npm run watch:post",
+    "postinstall": "cd ./themes/$npm_package_theme && npm i"
   },
   "dependencies": {
     "hexo": "3.9.0",

@@ -3,6 +3,7 @@
   max-width: $max-width;
   padding: 0 1rem;
   display: block;
+  width: 100%;
 }
 
 @mixin textContainer($max-width: $b-s) {

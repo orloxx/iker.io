@@ -1,12 +1,14 @@
-<nav class="mainnav">
+<nav class="mainnav <%= is_home() ? 'mainnav--home' : '' %>">
   <ul class="mainnav__list container">
     <% for (var icon in theme.menu) { %>
-      <li class="mainnav__item">
-        <a class="mainnav__link" href="<%- url_for(theme.menu[icon]) %>" title="<%= _p(icon) %>">
-          <%- partial('_partial/svg', { id: icon }) %>
-          <span><%= _p(icon) %></span>
-        </a>
-      </li>
+      <% if (!is_home() || icon !== 'home') { %>
+        <li class="mainnav__item">
+          <a class="mainnav__link" href="<%- url_for(theme.menu[icon]) %>" title="<%= _p(icon) %>">
+            <%- partial('_partial/svg', { id: icon }) %>
+            <span><%= _p(icon) %></span>
+          </a>
+        </li>
+      <% } %>
     <% } %>
     <% if (theme.show_search) { %>
       <li class="mainnav__item mainnav__item--search"

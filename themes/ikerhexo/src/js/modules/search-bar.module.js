@@ -3,8 +3,10 @@ import Component from 'modules/component.module';
 
 class SearchBar extends Component {
   init() {
-    this.$submit = this.el.querySelector('.search-form-submit');
-    this.$submit.innerHTML = `<svg class="icon"><use xlink:href="#src--svg--search"></use></svg>`;
+    const $form = this.el.querySelector('.search-form');
+    $form.setAttribute('autocomplete', 'off');
+    const $submit = this.el.querySelector('.search-form-submit');
+    $submit.innerHTML = `<svg class="icon"><use xlink:href="#src--svg--search"></use></svg>`;
   }
 }
 

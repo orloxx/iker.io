@@ -5,11 +5,13 @@
 
   &__title {
     $img-height: 200px;
+    $img-height-s: 300px;
+    $img-height-l: 400px;
     $title-height: 4rem;
 
-    @include container;
-
+    display: block;
     padding: 0;
+    margin-bottom: 1rem;
 
     #{$this}--img & {
       background-position: center center;
@@ -19,6 +21,14 @@
 
       &:hover {
         color: $c-link;
+      }
+
+      @media (min-width: $b-s) {
+        height: $img-height-s;
+      }
+
+      @media (min-width: $b-l) {
+        height: $img-height-l;
       }
     }
 
@@ -30,6 +40,14 @@
         top: calc(#{$img-height} - #{$title-height});
         margin-bottom: 0;
         background-color: rgba($c-primary-bg-light, 0.75);
+
+        @media (min-width: $b-s) {
+          top: calc(#{$img-height-s} - #{$title-height});
+        }
+
+        @media (min-width: $b-l) {
+          top: calc(#{$img-height-l} - #{$title-height});
+        }
       }
     }
   }

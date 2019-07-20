@@ -6,13 +6,11 @@ class ProgressBar extends Component {
   init() {
     this.appendBar();
     this.addEventListeners();
-    console.log(this.el.getBoundingClientRect());
   }
 
   appendBar() {
     this.$bar = document.createElement('DIV');
     this.$progress = document.createElement('DIV');
-    this.$bar.id = Math.random().toString(36).substring(2);
     this.$bar.classList.add('progressBar');
     this.$progress.classList.add('progressBar__current');
     this.$bar.appendChild(this.$progress);
@@ -20,11 +18,15 @@ class ProgressBar extends Component {
   }
 
   addEventListeners() {
-    onScroll(this.updateCurrentPosition.bind(this));
+    onScroll(this.updateCurrentPosition.bind(this), 20);
   }
 
-  updateCurrentPosition(scroll) {
-    console.log(this.el.getBoundingClientRect());
+  updateCurrentPosition() {
+    const { top, height } = this.el.getBoundingClientRect();
+    const realHeight = Math.max(0, height - innerHeight);
+    const percent = Math.min(Math.max(0, (-top) * 100 / realHeight), 100);
+
+    this.$progress.style.width = `${percent}%`;
   }
 }
 

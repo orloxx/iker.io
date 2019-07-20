@@ -29,16 +29,17 @@
       color: $c-primary-light;
 
       &:hover {
-        color: $c-primary;
+        color: lighten($c-link, 30);
       }
     }
 
     h1 {
       margin: 0 0 1rem;
       font-size: 2rem;
+      color: lighten($c-link, 30);
     }
 
-    h1, .archive-list-count, .tag-list-count {
+    .archive-list-count, .tag-list-count {
       color: $c-primary-light;
     }
   }

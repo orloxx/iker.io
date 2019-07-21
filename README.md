@@ -1,13 +1,7 @@
----
-title: Hello World
-featured_image: vzla.jpg
-disable_sharing: true
-date: 2019-07-21 22:15:16
-tags:
----
-I started coding at the age of 12 when I discovered **QBasic** and since then I haven't really stopped doing it nor do I want to. My dad had just told me how to run some games in our **Intel 286** computer which was already getting obsolete.
+Hello World
+===========
 
-<!-- more -->
+I started coding at the age of 12 when I discovered **QBasic** and since then I haven't really stopped doing it nor do I want to. My dad had just told me how to run some games in our **Intel 286** computer which was already getting obsolete.
 
 I had to open the source code of the game, compile it and run it on the go. For days I was just playing but then I started messing around with the code and found out I could do whatever I wanted. I cheated, a lot. 
 

@@ -8,6 +8,7 @@
     padding: 0;
     margin-bottom: 0;
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
   }
 
@@ -16,7 +17,7 @@
   }
 
   &__item--search {
-    flex: 1;
+    flex: 1 1 175px;
 
     .search-form {
       position: relative;

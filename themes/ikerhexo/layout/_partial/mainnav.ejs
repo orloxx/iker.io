@@ -10,6 +10,14 @@
         </li>
       <% } %>
     <% } %>
+    <% site.pages.each(function(pageObj){ %>
+      <li class="mainnav__item">
+        <a class="mainnav__link" href="<%- url_for(pageObj.path) %>" title="<%= pageObj.title %>">
+          <%- partial('_partial/svg', { id: pageObj.icon }) %>
+          <span><%= pageObj.title %></span>
+        </a>
+      </li>
+    <% }) %>
     <% if (theme.show_search) { %>
       <li class="mainnav__item mainnav__item--search"
           data-components="SearchBar">

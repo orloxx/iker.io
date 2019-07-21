@@ -1,13 +1,13 @@
-<article class="article <%= post.featured_image ? 'article--img' : '' %>"
+<article class="article <%= page.featured_image ? 'article--img' : '' %>"
          data-components="ProgressBar">
-  <% if (post.featured_image) { %>
+  <% if (page.featured_image) { %>
     <div class="container">
-      <img src="<%= post.featured_image %>" alt="<%= post.title %>">
+      <img src="<%= page.featured_image %>" alt="<%= page.title %>">
     </div>
   <% } %>
-  <h1><%= post.title %></h1>
-  <%- post.content %>
-  <% if (!post.disable_sharing) { %>
+  <h1><%= page.title %></h1>
+  <%- page.content %>
+  <% if (!page.disable_sharing) { %>
     <section class="share">
       <p><%= _p('Share') %></p>
       <% for (var socialMedia in theme.share ) { %>

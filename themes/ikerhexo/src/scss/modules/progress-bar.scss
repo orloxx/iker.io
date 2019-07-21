@@ -11,10 +11,11 @@ $titles-height: 3.5rem;
   max-height: 100%;
 
   h1, h2, h3, h4, h5 {
-    position: relative;
+    @include textContainer;
+
     font-size: 1rem;
     line-height: $titles-height;
-    margin: 0 0 0 1rem;
+    margin-bottom: 0;
 
     .headerlink {
       position: absolute;
@@ -22,6 +23,10 @@ $titles-height: 3.5rem;
       bottom: 0;
       left: 0;
       right: 0;
+
+      &:hover {
+        background: rgba($c-action, 0.15);
+      }
     }
   }
 
@@ -41,6 +46,10 @@ $titles-height: 3.5rem;
     &:not([hidden]) {
       display: block;
     }
+
+    .headerlink {
+      display: none;
+    }
   }
 
   &__titles {
@@ -53,6 +62,7 @@ $titles-height: 3.5rem;
   }
 
   &__title {
+    position: relative;
     border-bottom: 1px solid $c-action;
   }
 }

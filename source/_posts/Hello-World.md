@@ -145,10 +145,6 @@ One last detail is to install an extra plugin to be able to use the function to 
 npm install --save hexo-helper-inline-svg
 ```
 
-At this point you can run the start command and you'll be ready to develop your own hexo theme.
-
-
-
 [1]: https://hexo.io/
 [2]: https://github.com/orloxx/iker.io
 [3]: https://www.markdownguide.org/

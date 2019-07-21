@@ -11,6 +11,10 @@
     list-style: none;
   }
 
+  &__item:first-child {
+    padding-left: 1rem;
+  }
+
   &__item--search {
     .search-form {
       position: relative;

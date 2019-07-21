@@ -1,26 +1,25 @@
 ---
-title: A new start with Hexo
-date: 2019-07-20 22:29:50
+title: Hello World
+date: 2019-07-21 12:15:40
 tags:
   - Hexo
   - Node.js
 ---
-I started using [Hexo][1] a while ago but hadn't had the time to unify the blog and the theme development process until now. The core stack consists in: `hexo`, `webpack`, `node-sass`, `postcss`, and `stmux`. You can checkout the code in [orloxx/iker.io][2] at GitHub.
+
+I started using [Hexo][1] a while ago but hadn't had the time to unify the blog and the theme development process until now. The core stack consists in: `hexo`, `webpack`, `node-sass`, `postcss`, and `stmux`. You can checkout the code at [orloxx/iker.io][2].
 
 <!-- more -->
 
-In one part I have the blog where all the pages and posts reside, even this post you're reading, written in [Markdown][3], and on the other hand the theme which is built using [Embed JavaScript templates (EJS)][4]. Then I configured some scripts to build the assets production versions and some watchers for the continuous development process.
-
-If you cloned my repository you can run these commands and you will have a development setup running so you can create you're own theme and watch all your changes live as you code.
+By the end of this post we should be able to run `start` executing the development watchers and the Hexo server all in one terminal window.
 
 ```shell
 npm install
 npm start
 ```
 
-You should have a result similar to this in your terminal window:
-
 {% asset_img stmux.png Stmux running %}
+
+In one part there's the blog where all the pages and posts reside, even this post you're reading, written in [Markdown][3], and on the other hand there's the theme which is built using [Embed JavaScript templates (EJS)][4]. Then I configured some scripts to build the assets with some watchers for the continuous development process.
 
 ## The theme folder
 
@@ -135,6 +134,14 @@ With `stmux` we just need to divide the terminal window, so the root `package.js
   },
   ...
 }
+```
+
+### Hexo Helper Inline SVG
+
+One last detail is to install an extra plugin to be able to use the function to inject inline SVG icons.
+
+```shell
+npm install --save hexo-helper-inline-svg
 ```
 
 At this point you can run the start command and you'll be ready to develop your own hexo theme.

@@ -27,6 +27,7 @@ class ProgressBar extends Component {
   addEventListeners() {
     onScroll(this.updateCurrentPosition.bind(this), 20);
     this.$currentTitle.addEventListener('click', this.toggleIndex.bind(this));
+    this.$titles.addEventListener('click', this.closeIndex.bind(this));
   }
 
   updateCurrentPosition() {
@@ -39,7 +40,7 @@ class ProgressBar extends Component {
     if (percent > 0) {
       this.$currentTitle.removeAttribute('hidden');
       const $selected = this.titles.reduce((a, b) => {
-        return (this.$bar.offsetHeight - top) < b.offsetTop ? a : b;
+        return ((this.$bar.offsetHeight * 2) - top) < b.offsetTop ? a : b;
       });
       this.$currentTitle.innerHTML = $selected.outerHTML;
     } else {
@@ -54,9 +55,13 @@ class ProgressBar extends Component {
       this.$titles.removeAttribute('hidden');
       document.body.classList.add('noScroll');
     } else {
-      this.$titles.setAttribute('hidden', true);
-      document.body.classList.remove('noScroll');
+      this.closeIndex();
     }
+  }
+
+  closeIndex() {
+    this.$titles.setAttribute('hidden', true);
+    document.body.classList.remove('noScroll');
   }
 }
 

@@ -11,9 +11,18 @@ $titles-height: 3.5rem;
   max-height: 100%;
 
   h1, h2, h3, h4, h5 {
+    position: relative;
     font-size: 1rem;
     line-height: $titles-height;
     margin: 0 0 0 1rem;
+
+    .headerlink {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
   }
 
   h1, h2 {
@@ -41,5 +50,9 @@ $titles-height: 3.5rem;
     border-bottom: 2px solid $c-action;
     max-height: 255px;
     overflow: auto;
+  }
+
+  &__title {
+    border-bottom: 1px solid $c-action;
   }
 }

@@ -1,5 +1,9 @@
 @import "scss/variables/variables";
 
+body.noScroll {
+  overflow: hidden;
+}
+
 .icon {
   fill: currentColor;
   color: inherit;

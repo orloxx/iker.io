@@ -52,8 +52,10 @@ class ProgressBar extends Component {
     e.preventDefault();
     if (this.$titles.hidden) {
       this.$titles.removeAttribute('hidden');
+      document.body.classList.add('noScroll');
     } else {
       this.$titles.setAttribute('hidden', true);
+      document.body.classList.remove('noScroll');
     }
   }
 }

@@ -1,6 +1,8 @@
 @import "scss/variables/variables";
 
 .article {
+  margin-bottom: 4rem;
+
   h1, h2, h3, h4, p, ul, ol {
     @include textContainer;
   }

@@ -16,7 +16,7 @@
   "theme": "ikerhexo",
   "scripts": {
     "start": "stmux [ [ 'npm run hexo' .. 'npm run js' ] : [ 'npm run css' .. 'npm run post' ] ]",
-    "hexo": "hexo server --config _config.yml,_deploy.yml",
+    "hexo": "hexo server --config _config.yml,_deploy.yml --draft",
     "js": "cd ./themes/$npm_package_theme && npm run watch:js",
     "css": "cd ./themes/$npm_package_theme && npm run watch:css",
     "post": "cd ./themes/$npm_package_theme && npm run watch:post",

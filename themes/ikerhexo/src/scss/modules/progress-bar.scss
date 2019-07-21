@@ -41,6 +41,7 @@ $titles-height: 3.5rem;
   }
 
   &__currentTitle {
+    position: relative;
     border-bottom: 2px solid $c-action;
 
     &:not([hidden]) {
@@ -67,6 +68,23 @@ $titles-height: 3.5rem;
 
     &:last-child {
       border-bottom: 0;
+    }
+  }
+
+  &__toggle {
+    @include textContainer;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    margin: 0;
+    transform: translate(-50%, 0);
+    text-align: right;
+
+    .icon {
+      width: 30px;
+      height: $titles-height;
     }
   }
 }

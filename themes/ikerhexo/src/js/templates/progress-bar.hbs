@@ -1,7 +1,10 @@
 <section class="progressBar">
   <div class="progressBar__current"></div>
   {{#if titles.length}}
-    <a class="progressBar__currentTitle" href="" hidden></a>
+    <a class="progressBar__currentTitle" href="" hidden>
+      <span class="progressBar__text"></span>
+      <span class="progressBar__toggle">{{{svg 'angle-down'}}}</span>
+    </a>
     <ul class="progressBar__titles" hidden>
       {{#each titles}}
         <li class="progressBar__title" data-top="{{ offsetTop }}">

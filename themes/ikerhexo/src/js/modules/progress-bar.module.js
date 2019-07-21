@@ -42,7 +42,7 @@ class ProgressBar extends Component {
       const $selected = this.titles.reduce((a, b) => {
         return ((this.$bar.offsetHeight * 2) - top) < b.offsetTop ? a : b;
       });
-      this.$currentTitle.innerHTML = $selected.outerHTML;
+      this.$currentTitle.children[0].innerHTML = $selected.outerHTML;
     } else {
       this.$currentTitle.setAttribute('hidden', true);
       this.$titles.setAttribute('hidden', true);

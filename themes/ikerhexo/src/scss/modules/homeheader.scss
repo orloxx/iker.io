@@ -1,6 +1,5 @@
 @import "scss/variables/variables";
 
-$s-img-size: 200px;
 $s-h1: 2rem;
 $s-h1-xs: 3rem;
 $s-h1-s: 4rem;
@@ -14,7 +13,7 @@ $s-pad: 1rem;
   $s-text-height-xs: $s-h1-xs + $s-h2-xs + ($s-pad * 6);
 
   height: calc(100% - #{($s-mainnav-v-padding * 2)} - #{$s-mainnav-icon-size});
-  min-height: calc(#{$s-img-size} + #{$s-text-height});
+  min-height: calc(#{$s-coin-size} + #{$s-text-height});
   text-align: center;
   background-image: radial-gradient(
       $c-action,
@@ -23,7 +22,7 @@ $s-pad: 1rem;
 
   @media (min-width: $b-xs) {
     height: calc(100% - #{($s-mainnav-v-padding * 2)} - #{$s-mainnav-icon-size-xs});
-    min-height: calc(#{$s-img-size} + #{$s-text-height-xs});
+    min-height: calc(#{$s-coin-size} + #{$s-text-height-xs});
   }
 
   &__info {
@@ -32,58 +31,8 @@ $s-pad: 1rem;
     top: 50%;
     transform: translate(0, -50%);
     max-width: 100%;
-  }
-
-  &__gravatar {
-    display: block;
-    width: $s-img-size;
     padding: 1rem;
     border-radius: 50%;
     background: $c-primary-bg;
-    margin: 0 auto;
-    max-width: 100%;
-
-    img {
-      border-radius: 50%;
-      display: block;
-    }
-  }
-
-  h1, h2 {
-    font-weight: 400;
-    color: $c-primary-light;
-    margin: $s-pad 0;
-  }
-
-  h1 {
-    font-size: $s-h1;
-    line-height: $s-h1;
-    padding-bottom: $s-pad;
-    border-bottom: 1px solid $c-border-light;
-
-    @media (min-width: $b-xs) {
-      font-size: $s-h1-xs;
-      line-height: $s-h1-xs;
-    }
-
-    @media (min-width: $b-s) {
-      font-size: $s-h1-s;
-      line-height: $s-h1-s;
-    }
-  }
-
-  h2 {
-    font-size: $s-h2;
-    line-height: $s-h2;
-
-    @media (min-width: $b-xs) {
-      font-size: $s-h2-xs;
-      line-height: $s-h2-xs;
-    }
-
-    @media (min-width: $b-s) {
-      font-size: $s-h2-s;
-      line-height: $s-h2-s;
-    }
   }
 }

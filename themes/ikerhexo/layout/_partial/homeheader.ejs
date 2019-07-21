@@ -1,9 +1,15 @@
 <header class="homeheader">
   <div class="homeheader__info">
-    <div class="homeheader__gravatar" href="<%- url_for('/') %>">
-      <img src="<%= gravatar(config.email, 200) %>" alt="<%= config.author %>">
-    </div>
-    <h1><%= config.title %></h1>
-    <h2><%= config.subtitle %></h2>
+    <a class="coin" href=""
+       title="<%= config.author %>"
+       data-components="CoinFlip">
+      <span class="coin__side coin__side--front">
+        <%- partial('_partial/svg', { id: 'user' }) %>
+        <h1><%= config.title %></h1>
+      </span>
+      <img class="coin__side coin__side--back"
+           src="<%= gravatar(config.email, 200) %>"
+           alt="<%= config.author %>">
+    </a>
   </div>
 </header>

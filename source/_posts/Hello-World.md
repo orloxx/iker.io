@@ -4,13 +4,14 @@ date: 2019-07-21 12:15:40
 tags:
   - Hexo
   - Node.js
+featured_image: HelloWorld.jpg
 ---
 
 I started using [Hexo][1] a while ago but hadn't had the time to unify the blog and the theme development process until now. The core stack consists in: `hexo`, `webpack`, `node-sass`, `postcss`, and `stmux`. You can checkout the code at [orloxx/iker.io][2].
 
 <!-- more -->
 
-By the end of this post we should be able to run `start` executing the development watchers and the Hexo server all in one terminal window.
+By the end of this post you should be able to run `start` executing the development watchers and the Hexo server all in one terminal window.
 
 ```shell
 npm install

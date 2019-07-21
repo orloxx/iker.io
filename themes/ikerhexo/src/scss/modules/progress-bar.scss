@@ -64,5 +64,9 @@ $titles-height: 3.5rem;
   &__title {
     position: relative;
     border-bottom: 1px solid $c-action;
+
+    &:last-child {
+      border-bottom: 0;
+    }
   }
 }

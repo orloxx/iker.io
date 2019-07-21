@@ -1,0 +1,13 @@
+<section class="progressBar">
+  <div class="progressBar__current"></div>
+  {{#if titles.length}}
+    <a class="progressBar__currentTitle" href="" hidden></a>
+    <ul class="progressBar__titles" hidden>
+      {{#each titles}}
+        <li class="progressBar__title" data-top="{{ offsetTop }}">
+          {{{ outerHTML }}}
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</section>

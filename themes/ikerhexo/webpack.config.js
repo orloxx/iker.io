@@ -9,5 +9,16 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'source/js')
-  }
+  },
+  module: {
+    rules: [{
+      test: /\.hbs$/,
+      use: [{
+        loader: 'handlebars-loader',
+        options: {
+          helperDirs: ['src/handlebars/helpers'],
+        },
+      }],
+    }],
+  },
 };

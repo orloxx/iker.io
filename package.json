@@ -21,7 +21,8 @@
     "css": "cd ./themes/$npm_package_theme && npm run watch:css",
     "post": "cd ./themes/$npm_package_theme && npm run watch:post",
     "postinstall": "cd ./themes/$npm_package_theme && npm i",
-    "build": "cd ./themes/$npm_package_theme && npm run build",
+    "build": "npm run clean && cd ./themes/$npm_package_theme && npm run build",
+    "clean": "rm -rf public && rm -rf themes/$npm_package_theme/source",
     "deploy": "npm run build && hexo deploy --config _config.yml,_deploy.yml"
   },
   "dependencies": {

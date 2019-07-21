@@ -16,6 +16,8 @@
   }
 
   &__item--search {
+    flex: 1;
+
     .search-form {
       position: relative;
       padding: 0.8rem 1rem;
@@ -24,10 +26,11 @@
     .search-form-input {
       background: rgba($c-action, 0.1);
       border: 0;
-      padding: 0.8rem 3rem 0.8rem 1rem;
+      padding: 0.8rem 4rem 0.8rem 1rem;
       font-size: 1rem;
       width: 100%;
       border-radius: 1.5rem;
+      text-align: right;
     }
 
     .search-form-submit {

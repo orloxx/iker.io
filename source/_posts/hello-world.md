@@ -5,7 +5,7 @@ disable_sharing: true
 date: 2019-07-21 22:15:16
 tags:
 ---
-I started coding at the age of 12 when I discovered **QBasic** and since then I haven't really stopped doing it nor do I want to. My dad had just told me how to run some games in our **Intel 286** computer which was already getting obsolete.
+I started coding at the age of 12 when I discovered **QBasic** and since then I haven't really stopped doing it. My dad had just told me how to run some games in our **Intel 286** computer which was already getting obsolete.
 
 <!-- more -->
 

@@ -34,15 +34,17 @@ class ComponentLoader {
   traverse(el) {
     const dataComponents = el.getAttribute('data-components').split(' ');
     dataComponents.forEach((componentName) => {
-      try {
-        const Component = this.components[componentName];
-        const config = JSON.parse(el.getAttribute(`data-config-${componentName}`));
-        Log.info(`${componentName} Component initialised`, el, config);
-        const instance = new Component(el, config, componentName);
-        instance.init();
-      } catch (e) {
-        Log.error(`${componentName}: Problem initialising component.`, e);
-      }
+      setTimeout(() => {
+        try {
+          const Component = this.components[componentName];
+          const config = JSON.parse(el.getAttribute(`data-config-${componentName}`));
+          Log.info(`${componentName} Component initialised`, el, config);
+          const instance = new Component(el, config, componentName);
+          instance.init();
+        } catch (e) {
+          Log.error(`${componentName}: Problem initialising component.`, e);
+        }
+      }, 1);
     });
   }
 }

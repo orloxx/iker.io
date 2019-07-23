@@ -16,6 +16,7 @@ $titles-height: 3.5rem;
     font-size: 1rem;
     line-height: $titles-height;
     margin-bottom: 0;
+    font-weight: 400;
 
     .headerlink {
       position: absolute;
@@ -31,7 +32,19 @@ $titles-height: 3.5rem;
   }
 
   h1, h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    padding-left: 1.5rem;
+  }
+
+  h4 {
+    padding-left: 2rem;
+  }
+
+  h5 {
+    padding-left: 2.5rem;
   }
 
   &__current {

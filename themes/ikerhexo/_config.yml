@@ -2,7 +2,7 @@
 show_search: true
 menu:
   home: /
-  file-alt: /archives
+  file-alt: /about
 
 # Sidebar
 sidebar: right

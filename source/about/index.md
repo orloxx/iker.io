@@ -1,9 +1,9 @@
 ---
-title: Hello World
-featured_image: vzla.jpg
+title: About
+featured_image: index/vzla.jpg
 disable_sharing: true
-date: 2019-07-21 22:15:16
-tags:
+date: 2019-07-26 15:32:48
+icon: file-alt
 ---
 I started coding at the age of 12 when I discovered **QBasic** and since then I haven't really stopped doing it. My dad had just told me how to run some games in our **Intel 386** computer which was already getting obsolete.
 

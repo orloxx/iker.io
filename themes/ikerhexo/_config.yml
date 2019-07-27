@@ -2,7 +2,13 @@
 show_search: true
 menu:
   home: /
-  file-alt: /about
+  address-card: /about
+
+homeMenu:
+  address-card: /about
+#  file-alt: /archives
+  linkedin: https://www.linkedin.com/in/ikertxu
+  github: http://github.com/orloxx
 
 # Sidebar
 sidebar: right

@@ -1,7 +1,7 @@
 @import "scss/variables/variables";
 
 .coin {
-  $coin-rotate-time: 3s;
+  $coin-rotate-time: 2s;
 
   position: relative;
   display: block;
@@ -10,6 +10,11 @@
   margin: 0 auto;
   max-width: 100%;
   transform-style: preserve-3d;
+
+  @media (min-width: $b-xs) {
+    width: $s-coin-size-xs;
+    height: $s-coin-size-xs;
+  }
 
   &__heads {
     animation: flipHeads $coin-rotate-time ease-out forwards;
@@ -37,19 +42,23 @@
       transform: rotateY(180deg);
     }
 
+    &Title {
+      display: none;
+    }
+
     .icon {
-      margin-top: 1.5rem;
-      width: 100px;
-      height: 100px;
+      margin-top: 24%;
+      width: 50%;
+      height: 50%;
     }
   }
 }
 
 @-webkit-keyframes flipHeads {
   from { transform: rotateY(0) }
-  to { transform: rotateY(1800deg) }
+  to { transform: rotateY(1080deg) }
 }
 @-webkit-keyframes flipTails {
   from { transform: rotateY(0) }
-  to { transform: rotateY(1980deg) }
+  to { transform: rotateY(900deg) }
 }

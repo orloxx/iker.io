@@ -1,11 +1,22 @@
-<header class="homeheader">
+<header class="homeheader" data-components="HomeMenu">
+  <ul class="homeheader__menu">
+    <% for (var icon in theme.homeMenu) { %>
+      <li class="homeheader__menuItem">
+        <a class="homeheader__menuLink homeheader__menuLink--<%= icon %>"
+           href="<%- url_for(theme.homeMenu[icon]) %>"
+           title="<%= _p(icon) %>">
+          <%- partial('_partial/svg', { id: icon }) %>
+        </a>
+      </li>
+    <% } %>
+  </ul>
   <div class="homeheader__info">
-    <a class="coin" href=""
+    <a class="homeheader__button coin" href=""
        title="<%= config.author %>"
        data-components="CoinFlip">
       <span class="coin__side coin__side--front">
         <%- partial('_partial/svg', { id: 'user' }) %>
-        <h1><%= config.title %></h1>
+        <h1 class="coin__sideTitle"><%= config.title %></h1>
       </span>
       <img class="coin__side coin__side--back"
            src="<%= gravatar(config.email, 200) %>"

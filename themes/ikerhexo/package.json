@@ -4,16 +4,16 @@
   "description": "My own hexo theme",
   "private": true,
   "paths": {
-    "cssbuild": "node-sass --include-path ./node_modules --include-path ./src src/index.scss source/css/index.css",
+    "cssbuild": "node-sass src/index.scss source/css/index.css --include-path ./node_modules --include-path ./src",
     "postcss": "postcss --use autoprefixer -o source/css/main.css source/css/index.css"
   },
   "scripts": {
     "build": "npm run build:css && npm run post:css && npm run build:js",
     "build:js": "NODE_ENV=production webpack",
-    "build:css": "npm run sprite && $npm_package_paths_cssbuild",
+    "build:css": "npm run sprite && $npm_package_paths_cssbuild  --output-style compressed",
     "post:css": "$npm_package_paths_postcss",
     "watch:js": "webpack --watch",
-    "watch:css": "npm run build:css && $npm_package_paths_cssbuild --watch --recursive",
+    "watch:css": "npm run build:css && $npm_package_paths_cssbuild -wr",
     "watch:post": "$npm_package_paths_postcss -w --verbose",
     "sprite": "svg-sprite -sD source --symbol-dest svg --symbol-sprite sprite.svg ./src/svg/*.svg"
   },

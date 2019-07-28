@@ -43,7 +43,8 @@ const image = page.featured_image ? url + page.featured_image : gravatar(config.
 <link rel="shortcut icon" href="<%= gravatar(config.email) %>">
 <link rel="apple-touch-icon" href="<%= gravatar(config.email) %>">
 
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Slab:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=<%= theme.google_fonts %>&display=swap"
+      rel="stylesheet">
 
 <script>
   (function(i,k,e,r,t,x,u){i['GoogleAnalyticsObject']=t;i[t]=i[t]||function(){

@@ -1,9 +1,8 @@
 <article class="article <%= page.featured_image ? 'article--img' : '' %>"
          data-components="ProgressBar">
   <% if (page.featured_image) { %>
-    <div class="container">
-      <img src="<%= page.featured_image %>" alt="<%= page.title %>">
-    </div>
+    <img class="article__featuredImage"
+         src="<%= page.featured_image %>" alt="<%= page.title %>">
   <% } %>
   <h1><%= page.title %></h1>
   <%- page.content %>

@@ -1,7 +1,7 @@
 .article {
   margin-bottom: 4rem;
 
-  h1, h2, h3, h4, p, ul, ol, hr {
+  h1, h2, h3, h4, p, ul, ol, hr, .highlight {
     @include textContainer;
   }
 
@@ -9,7 +9,7 @@
     padding-top: 1rem;
   }
 
-  img, .highlight {
+  img {
     @include container;
     padding: 0;
   }

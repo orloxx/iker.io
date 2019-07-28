@@ -4,19 +4,17 @@
   margin-bottom: 3rem;
 
   &__title {
-    $img-height: 200px;
-    $img-height-s: 300px;
-    $img-height-l: 400px;
     $title-height: 4rem;
 
     display: block;
     padding: 0;
     margin-bottom: 1rem;
+    position: relative;
 
     #{$this}--img & {
       background-position: center center;
       background-size: cover;
-      height: $img-height;
+      height: 250px;
       color: $c-primary-light;
 
       &:hover {
@@ -24,31 +22,25 @@
       }
 
       @media (min-width: $b-s) {
-        height: $img-height-s;
+        height: 350px;
       }
 
       @media (min-width: $b-l) {
-        height: $img-height-l;
+        height: 400px;
       }
     }
 
     h1 {
       #{$this}--img & {
-        position: relative;
+        position: absolute;
         font-size: 2.5rem;
         line-height: $title-height;
-        top: calc(#{$img-height} - #{$title-height});
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
         margin-bottom: 0;
         background-color: rgba($c-primary-bg-light, 0.75);
         padding-top: 0;
-
-        @media (min-width: $b-s) {
-          top: calc(#{$img-height-s} - #{$title-height});
-        }
-
-        @media (min-width: $b-l) {
-          top: calc(#{$img-height-l} - #{$title-height});
-        }
       }
     }
   }

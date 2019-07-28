@@ -74,6 +74,14 @@ $a-bounce: cubic-bezier(0.680, -0.550, 0.265, 1.550);
       }
     }
 
+    #{$this}__menu--open &--address-card {
+      transform: translate(-($s-menu-offset / 2), -($s-menu-offset / 1.1538));
+
+      @media (min-width: $b-xs) {
+        transform: translate(-($s-menu-offset-xs / 2), -($s-menu-offset-xs / 1.1538));
+      }
+    }
+
     #{$this}__menu--open &--file-alt {
       transform: translate(($s-menu-offset / 2), -($s-menu-offset / 1.1538));
 

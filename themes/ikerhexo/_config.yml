@@ -1,12 +1,13 @@
 # Header
-show_search: true
+show_search: false
 menu:
   home: /
   address-card: /about
+  file-alt: /archives
 
 homeMenu:
   address-card: /about
-#  file-alt: /archives
+  file-alt: /archives
   linkedin: https://www.linkedin.com/in/ikertxu
   github: http://github.com/orloxx
 

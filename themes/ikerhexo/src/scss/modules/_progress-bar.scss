@@ -59,6 +59,13 @@ $titles-height: 3.5rem;
       display: block;
     }
 
+    h1 {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 3rem;
+    }
+
     .headerlink {
       display: none;
     }

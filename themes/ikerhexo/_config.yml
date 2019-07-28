@@ -3,11 +3,11 @@ show_search: false
 menu:
   home: /
   address-card: /about
-  file-alt: /archives
+  blog: /archives
 
 homeMenu:
   address-card: /about
-  file-alt: /archives
+  blog: /archives
   linkedin: https://www.linkedin.com/in/ikertxu
   github: http://github.com/orloxx
 

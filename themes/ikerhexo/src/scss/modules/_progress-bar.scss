@@ -30,19 +30,7 @@ $titles-height: 3.5rem;
   }
 
   h1, h2 {
-    font-size: 1.3rem;
-  }
-
-  h3 {
-    padding-left: 1.5rem;
-  }
-
-  h4 {
-    padding-left: 2rem;
-  }
-
-  h5 {
-    padding-left: 2.5rem;
+    font-size: 1.1rem;
   }
 
   &__current {
@@ -72,12 +60,31 @@ $titles-height: 3.5rem;
   }
 
   &__titles {
-    margin: 0;
+    @include textContainer;
+
+    display: none;
     padding: 0;
+    margin-bottom: 0;
     list-style: none;
     border-bottom: 2px solid $c-action;
     max-height: 255px;
     overflow: auto;
+
+    &--open {
+      display: block;
+    }
+
+    h3 {
+      padding-left: 1.5rem;
+    }
+
+    h4 {
+      padding-left: 2rem;
+    }
+
+    h5 {
+      padding-left: 2.5rem;
+    }
   }
 
   &__title {

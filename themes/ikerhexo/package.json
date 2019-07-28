@@ -9,9 +9,11 @@
   },
   "scripts": {
     "build": "npm run build:css && npm run post:css && npm run build:js",
-    "build:js": "NODE_ENV=production webpack",
+    "build:js": "NODE_ENV=production webpack && npm run compress:js",
     "build:css": "npm run sprite && $npm_package_paths_cssbuild  --output-style compressed",
-    "post:css": "$npm_package_paths_postcss",
+    "post:css": "$npm_package_paths_postcss && npm run compress:css && rm ./source/css/index.css",
+    "compress:js": "gzip -k ./source/js/main.js",
+    "compress:css": "gzip -k ./source/css/main.css",
     "watch:js": "webpack --watch",
     "watch:css": "npm run build:css && $npm_package_paths_cssbuild -wr",
     "watch:post": "$npm_package_paths_postcss -w --verbose",

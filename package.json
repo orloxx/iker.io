@@ -22,7 +22,7 @@
     "post": "cd ./themes/$npm_package_theme && npm run watch:post",
     "postinstall": "cd ./themes/$npm_package_theme && npm i",
     "build": "npm run clean && cd ./themes/$npm_package_theme && npm run build",
-    "clean": "rm -rf public && rm -rf themes/$npm_package_theme/source",
+    "clean": "hexo clean && rm -rf themes/$npm_package_theme/source",
     "deploy": "npm run build && hexo deploy --config _config.yml,_deploy.yml"
   },
   "dependencies": {

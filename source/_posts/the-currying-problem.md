@@ -7,7 +7,7 @@ tags:
   - Currying
   - Recursion
 ---
-As part of a challenge (kata) at [Codewars][1] I was asked to create a function that adds numbers together when called in succession and it would return a value of type `number`.
+As part of a challenge at [Codewars][1] I was asked to create a function that adds numbers together when called in succession and it would return a value of type `number`.
 
 ```javascript
 add(4) // 4
@@ -18,7 +18,7 @@ add(4)(1)(1)(9) // 15
 
 <!-- more -->
 
-Also we should be able to save the reference to use it later. We can assume any number being passed in will be a valid JavaScript number so no validation required.
+Also we should be able to save the reference to use it later. Let's assume any number being passed as parameter will be a valid JavaScript number.
 
 ```javascript
 const addTwo = add(2);

@@ -1,3 +1,7 @@
+import 'core-js/stable/array/for-each';
+import 'core-js/stable/array/reduce';
+import 'core-js/stable/object/assign';
+
 import ComponentLoader from 'component.loader';
 
 import 'modules/coin-flip.module';

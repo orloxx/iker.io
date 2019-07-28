@@ -20,7 +20,8 @@
     "sprite": "svg-sprite -sD source --symbol-dest svg --symbol-sprite sprite.svg ./src/svg/*.svg"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "5.9.0"
+    "@fortawesome/fontawesome-free": "5.9.0",
+    "core-js": "3.1.4"
   },
   "devDependencies": {
     "autoprefixer": "9.6.1",

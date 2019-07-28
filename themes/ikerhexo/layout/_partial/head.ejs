@@ -3,7 +3,7 @@ const title = page.title ?
   `${page.title} by ${config.author}` :
   `${config.author} | ${config.subtitle}`;
 const description = page.excerpt ? strip_html(page.excerpt) : config.description;
-const url = page.permalink || config.url;
+const url = page.permalink ? page.permalink.replace('index.html', '') : config.url;
 const keywords = strip_html(list_tags({
     style: 'keywords',
     separator: ',',

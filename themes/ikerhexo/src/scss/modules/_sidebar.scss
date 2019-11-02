@@ -34,8 +34,9 @@
     }
 
     h1 {
+      @include font($f-h02);
+
       margin: 0 0 1rem;
-      font-size: 2rem;
       color: lighten($c-link, 30);
     }
 

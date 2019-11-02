@@ -1,5 +1,9 @@
-body.noScroll {
-  overflow: hidden;
+body {
+  @include font($f-primary);
+
+  &.noScroll {
+    overflow: hidden;
+  }
 }
 
 .icon {

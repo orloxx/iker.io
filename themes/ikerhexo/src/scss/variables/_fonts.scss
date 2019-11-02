@@ -2,5 +2,101 @@ $f-roboto: 'Roboto', sans-serif;
 $f-roboto-s: 'Roboto Slab', serif;
 $f-console: Consolas, Monaco, Menlo, monospace;
 
-$f-base-size: 16px;
-$f-primary: $f-roboto;
+$f-primary: (
+  default: (
+    font-family: $f-roboto,
+    font-size: 1rem,
+    font-weight: 400,
+  ),
+) !default;
+
+$f-txt01: (
+  default: (
+    font-family: $f-roboto-s,
+    font-size: 1.2rem,
+    line-height: 2rem,
+  ),
+) !default;
+
+$f-strong01: (
+  default: (
+    font-weight: 700,
+  ),
+) !default;
+
+$f-h01: (
+  default: (
+    font-family: $f-roboto,
+    font-size: 2.5rem,
+    line-height: 3.5rem,
+  ),
+) !default;
+
+$f-h02: (
+  default: (
+    font-family: $f-roboto,
+    font-size: 2rem,
+    line-height: 3rem,
+  ),
+) !default;
+
+$f-h03: (
+  default: (
+    font-family: $f-roboto,
+    font-size: 1.5rem,
+    line-height: 2.5rem,
+  ),
+) !default;
+
+$f-h04: (
+  default: (
+    font-family: $f-roboto,
+    font-size: 1.2rem,
+    line-height: 2rem,
+    font-weight: 700,
+  ),
+) !default;
+
+$f-h05: (
+  default: (
+    font-family: $f-roboto,
+    font-size: 2.5rem,
+    line-height: 4rem,
+    font-weight: 700,
+  ),
+) !default;
+
+$f-em01: (
+  default: (
+    font-style: italic,
+  ),
+) !default;
+
+$f-code01: (
+  default: (
+    font-family: $f-console,
+    font-size: 1rem,
+  ),
+) !default;
+
+$f-code02: (
+  default: (
+    font-family: $f-console,
+    font-size: 0.85rem,
+    line-height: 1.5rem,
+  ),
+) !default;
+
+$f-highlight: (
+  default: (
+    font-family: $f-roboto,
+    font-size: 0.85rem,
+    line-height: 1rem,
+  ),
+) !default;
+
+$f-progress-h: (
+  default: (
+    font-size: 1.1rem,
+  ),
+) !default;

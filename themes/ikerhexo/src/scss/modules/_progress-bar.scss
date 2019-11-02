@@ -9,11 +9,10 @@ $titles-height: 3.5rem;
 
   h1, h2, h3, h4, h5 {
     @include textContainer;
+    @include font($f-primary);
 
-    font-size: 1rem;
     line-height: $titles-height;
     margin-bottom: 0;
-    font-weight: 400;
 
     .headerlink {
       position: absolute;
@@ -29,7 +28,7 @@ $titles-height: 3.5rem;
   }
 
   h1, h2 {
-    font-size: 1.1rem;
+    @include font($f-progress-h);
   }
 
   &--showTitles {

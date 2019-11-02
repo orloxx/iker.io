@@ -4,7 +4,7 @@
 
 html {
   height: 100%;
-  font-size: $f-base-size;
+  font-size: 16px;
   text-size-adjust: 100%;
 }
 
@@ -12,7 +12,6 @@ body {
   height: 100%;
   background: $c-primary-bg;
   color: $c-primary;
-  font-family: $f-primary;
   margin: 0;
 }
 

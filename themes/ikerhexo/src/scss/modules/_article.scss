@@ -15,39 +15,33 @@
   }
 
   p, ol, ul {
-    font-size: 1.2rem;
-    line-height: 2rem;
-    font-family: $f-roboto-s;
+    @include font($f-txt01);
   }
 
   h1 {
-    font-size: 2.5rem;
-    line-height: 3.5rem;
+    @include font($f-h01);
   }
 
   h2 {
-    font-size: 2rem;
-    line-height: 3rem;
+    @include font($f-h02);
+
     border-bottom: 1px solid $c-action;
   }
 
   h3 {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
+    @include font($f-h03);
   }
 
   h4 {
-    font-size: 1.2rem;
-    line-height: 2rem;
-    font-weight: bold;
+    @include font($f-h04);
   }
 
   em {
-    font-style: italic;
+    @include font($f-em01);
   }
 
   strong {
-    font-weight: 700;
+    @include font($f-strong01);
   }
 
   ul, ol {
@@ -67,14 +61,14 @@
     @include container;
 
     width: 100%;
-    font-family: $f-primary;
     margin: 1rem auto;
     display: table;
     border-collapse: collapse;
     border-bottom: 2px solid $c-action;
 
     thead th {
-      font-weight: bold;
+      @include font($f-strong01);
+
       border-bottom: 2px solid $c-action;
     }
 
@@ -86,7 +80,6 @@
 
     th, td {
       padding: 1rem;
-      text-align: left;
     }
   }
 

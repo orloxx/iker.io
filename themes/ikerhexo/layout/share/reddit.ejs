@@ -1,5 +1,5 @@
 <a class="share__link share__link--reddit"
-   href="http://www.reddit.com/submit?url=<%= url_for(page.permalink) %>&title=<%= page.title %>"
+   href="http://www.reddit.com/submit?url=<%= url_for(page.permalink) %>&title=<%= encodeURIComponent(page.title) %>"
    target="_blank" title="Reddit">
   <%- partial('_partial/svg', { id: 'reddit-square' }) %>
 </a>

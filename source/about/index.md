@@ -26,7 +26,7 @@ Barcelona, Spain
 Barcelona, Spain
 
 ---
-**Freelance Webmaster**
+**Webmaster**
 *[Bari Studio][5] (Oct 2011 - Feb 2014)*
 New York, USA (Remote work)
 
@@ -36,7 +36,7 @@ New York, USA (Remote work)
 Barcelona, Spain
 
 ---
-**Senior Developer**
+**Web Developer**
 *[La Web Marketing Interactivo][7] (Apr 2009 - Dec 2012)*
 Caracas, Venezuela
 

@@ -8,7 +8,7 @@
       </a>
     <% } %>
   </section>
-  <p class="center">&copy; <span data-components="FooterDate">
-      <%= date(new Date(), 'YYYY') %>
-    </span> <%= config.author || config.title %></p>
+  <p class="center">&copy; <%= config.author || config.title %>
+    <span data-components="FooterDate"><%= date(new Date(), 'YYYY') %></span>
+  </p>
 </footer>

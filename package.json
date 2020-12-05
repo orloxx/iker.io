@@ -1,42 +1,21 @@
 {
   "name": "iker.io",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/orloxx/iker.io.git"
-  },
-  "bugs": {
-    "url": "https://github.com/orloxx/iker.io/issues"
-  },
-  "homepage": "http://iker.io",
-  "hexo": {
-    "version": "3.9.0"
-  },
-  "theme": "ikerhexo",
   "scripts": {
-    "start": "stmux [ [ 'npm run hexo' .. 'npm run js' ] : [ 'npm run css' .. 'npm run post' ] ]",
-    "hexo": "hexo server --config _config.yml,_deploy.yml --draft",
-    "js": "cd ./themes/$npm_package_theme && npm run watch:js",
-    "css": "cd ./themes/$npm_package_theme && npm run watch:css",
-    "post": "cd ./themes/$npm_package_theme && npm run watch:post",
-    "postinstall": "cd ./themes/$npm_package_theme && npm i",
-    "build": "npm run clean && cd ./themes/$npm_package_theme && npm run build",
-    "clean": "hexo clean && rm -rf themes/$npm_package_theme/source",
-    "deploy": "npm run build && hexo deploy --config _config.yml,_deploy.yml"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "hexo": "3.9.0",
-    "hexo-deployer-ftpsync": "0.1.1",
-    "hexo-generator-archive": "0.1.5",
-    "hexo-generator-category": "0.1.3",
-    "hexo-generator-index": "0.2.1",
-    "hexo-generator-tag": "0.2.0",
-    "hexo-helper-inline-svg": "1.1.3",
-    "hexo-renderer-ejs": "0.3.1",
-    "hexo-renderer-marked": "^2.0.0",
-    "hexo-renderer-stylus": "0.3.3",
-    "hexo-server": "0.3.3",
-    "stmux": "^1.8.0"
+    "@fortawesome/fontawesome-svg-core": "1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "5.15.1",
+    "@fortawesome/react-fontawesome": "0.1.13",
+    "next": "10.0.3",
+    "prop-types": "15.7.2",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "sass": "1.30.0"
   }
 }

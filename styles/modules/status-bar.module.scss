@@ -1,0 +1,29 @@
+@import "styles/common";
+
+.container {
+  --c-status-bar-bg: #{$c-grey};
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: $status-bar-height;
+  width: 100%;
+  padding: 0 1rem;
+  background-color: var(--c-status-bar-bg);
+
+  *:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+}
+
+.title, .time {
+  @extend %f-smaller;
+}
+
+.title {
+  flex-grow: 1;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

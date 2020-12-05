@@ -1,0 +1,21 @@
+@import "../common";
+
+:root {
+  // colors
+  --c-primary: #{$c-blue};
+  --c-primary-bg: #{$c-light};
+  --c-primary-text: #{$c-dark};
+  --c-contrast-text: #{$c-light};
+  --c-focus: #{rgba($c-blue, 0.50)};
+
+  // Text shadows
+  --s-small: 2px 2px 3px #{$c-text-shadow};
+
+  // box shadows
+  --s-box-smaller: 0px 4px 8px #{$c-box-shadow};
+  --s-box-small: 0 5px 10px #{$c-box-shadow};
+  --s-box-medium: 0 8px 30px #{$c-box-shadow};
+  --s-box-large: 0 30px 60px #{$c-box-shadow};
+  --s-box-hover: 0 30px 60px #{$c-box-shadow};
+  --s-box-sticky: 0 12px 10px -10px #{$c-box-shadow};
+}

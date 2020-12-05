@@ -1,0 +1,31 @@
+@import "styles/common";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1.5rem 1.5rem 0;
+  padding: 0.5rem;
+  background-color: transparent;
+  border: 0;
+  width: 80px;
+
+  &:focus, &:active {
+    background-color: var(--c-focus);
+  }
+}
+
+.icon {
+  @include svg-shadow(var(--s-small));
+
+  font-size: 2rem;
+  color: var(--c-contrast-text);
+}
+
+.label {
+  @extend %f-small;
+
+  margin-top: 0.5rem;
+  color: var(--c-contrast-text);
+  text-shadow: var(--s-small);
+}

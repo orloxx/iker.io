@@ -7,6 +7,9 @@
   --c-primary-text: #{$c-dark};
   --c-contrast-text: #{$c-light};
   --c-focus: #{rgba($c-blue, 0.50)};
+  --c-border: #{$c-grey5};
+  --c-border-light: #{$c-grey1};
+  --c-border-dark: #{$c-grey4};
 
   // Text shadows
   --s-small: 2px 2px 3px #{$c-text-shadow};

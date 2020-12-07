@@ -4,18 +4,23 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "next build && next export",
+    "start": "next start",
+    "deploy": "npm run build && node ftp-deploy.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "5.15.1",
     "@fortawesome/react-fontawesome": "0.1.13",
+    "marked": "1.2.5",
     "next": "10.0.3",
     "prop-types": "15.7.2",
     "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "ftp-deploy": "2.3.8",
     "sass": "1.30.0"
   }
 }

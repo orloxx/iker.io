@@ -1,0 +1,103 @@
+@import "styles/common";
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  padding: 1rem;
+  display: block;
+  height: calc(100% - #{$window-titlebar-height});
+  overflow: auto;
+
+  & > * {
+    margin-bottom: 1rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h1, h2, h3, h4, h5 {
+    margin-top: 3rem;
+  }
+
+  img {
+    padding: 0;
+  }
+
+  p, ol, ul {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    border-bottom: 1px solid var(--c-primary);
+    padding-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  em {
+    font-size: 1rem;
+    font-style: italic;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  ul, ol {
+    padding-left: 3rem;
+
+    li {
+      padding-left: 0.5rem;
+    }
+
+    ul, ol {
+      padding-left: 1rem;
+      margin-bottom: 0;
+    }
+  }
+
+  > table {
+    width: 100%;
+    margin: 1rem auto;
+    display: table;
+    border-collapse: collapse;
+    border-bottom: 2px solid var(--c-primary);
+
+    thead th {
+      font-size: 1rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--c-primary);
+    }
+
+    tbody {
+      tr:nth-child(even) {
+        background: rgba(var(--c-primary), 0.15);
+      }
+    }
+
+    th, td {
+      padding: 1rem;
+    }
+  }
+
+  hr {
+    border: dashed var(--c-primary);
+    border-width: 0 0 1px;
+  }
+
+  .highlight {
+    padding: 1rem;
+  }
+}

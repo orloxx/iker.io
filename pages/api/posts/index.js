@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const qs = require('querystring');
 const marked = require('marked');
 
-export default (req, res) => {
+export default async (req, res) => {
 
   async function getPost() {
     try {
@@ -13,6 +13,12 @@ export default (req, res) => {
       const response = await fetch(filename);
       const markdown = await response.text();
 
+      if (response.status !== 200) {
+        res.statusCode = response.status;
+        res.json({ error: response });
+        return;
+      }
+
       res.statusCode = 200;
       res.json({ markdown, html: marked(markdown) });
     } catch (error) {
@@ -21,5 +27,5 @@ export default (req, res) => {
     }
   }
 
-  getPost();
+  return getPost();
 };

@@ -1,6 +1,6 @@
 @import "styles/common";
 
-.container {
+.wrapper {
   width: calc(100% - 2rem);
   max-width: 800px;
   height: calc(100% - 2rem - #{$status-bar-height});
@@ -9,10 +9,16 @@
   top: calc(50% + #{($status-bar-height / 2)});
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.container {
   background-color: var(--c-primary-bg);
   border-radius: var(--r-border);
   box-shadow: var(--s-box-medium);
   border: 1px solid var(--c-border);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 .titleBar {
@@ -35,6 +41,14 @@
   padding: 0 0.5rem;
 }
 
+.title {
+  flex-grow: 1;
+  height: $window-titlebar-height;
+  line-height: $window-titlebar-height;
+  text-align: center;
+  cursor: grab;
+}
+
 .close, .minimize, .zoom {
   --c-close-bg: #ff5c5c;
   --c-close-border: #e33e41;
@@ -43,7 +57,6 @@
   display: block;
   cursor: pointer;
   background: var(--c-close-bg);
-  font-size: 9pt;
   width: 0.8rem;
   height: 0.8rem;
   border: 1px solid var(--c-close-border);

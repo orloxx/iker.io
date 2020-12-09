@@ -23,14 +23,6 @@ const Desktop = () => {
       <div className={styles.flexbox}>
         <LinkFile href="/window/readme" label="README" icon={faReadme} />
         <LinkFile
-          href="/window/projects"
-          label="Projects"
-          icon={faFolder} />
-        <LinkFile
-          href="/window/settings"
-          label="Settings"
-          icon={faCogs} />
-        <LinkFile
           href="https://www.linkedin.com/in/ikertxu/"
           label="LinkedIn"
           icon={faLinkedin} />

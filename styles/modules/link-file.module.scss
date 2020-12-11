@@ -15,11 +15,17 @@
   }
 }
 
-.icon {
+.icon,
+.image {
   @include svg-shadow(var(--s-small));
 
   font-size: 2rem;
   color: var(--c-contrast-text);
+  pointer-events: none;
+}
+
+.image {
+  width: 100%;
 }
 
 .label {

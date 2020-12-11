@@ -1,10 +1,10 @@
 import React from 'react';
-import { faFolder, faCogs } from '@fortawesome/free-solid-svg-icons';
-import { faReadme, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import LinkFile from 'atomic/link-file';
 
 import styles from 'styles/modules/desktop.module.scss';
 
+const gravatar = 'https://gravatar.com/avatar/0d6431f3ce241c8c688dfd7831b511c8?s=250';
 const BGS = [
   '/wp/dannylines.jpg',
   '/wp/daviddiveroli.jpg',
@@ -13,7 +13,7 @@ const BGS = [
   '/wp/roland_loesslein.jpg',
   '/wp/thevanegmond.jpg',
   '/wp/ussamaazam.jpg',
-]
+];
 
 const Desktop = () => {
   return (
@@ -21,7 +21,7 @@ const Desktop = () => {
       backgroundImage: `url("${BGS[4]}")`
     }}>
       <div className={styles.flexbox}>
-        <LinkFile href="/window/readme" label="README" icon={faReadme} />
+        <LinkFile href="/readme" label="README" src={gravatar} alt="A cartoon of myself" />
         <LinkFile
           href="https://www.linkedin.com/in/ikertxu/"
           label="LinkedIn"

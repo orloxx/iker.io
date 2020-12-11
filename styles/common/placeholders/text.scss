@@ -1,13 +1,6 @@
-@import "styles/common";
+@import "typography";
 
-.container {
-  margin: 0 auto;
-  width: 100%;
-  padding: 1rem;
-  display: block;
-  height: calc(100% - #{$window-titlebar-height});
-  overflow: auto;
-
+%text {
   & > * {
     margin-bottom: 1rem;
 
@@ -17,7 +10,7 @@
   }
 
   h1, h2, h3, h4, h5 {
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 
   img {
@@ -30,6 +23,14 @@
 
   p {
     line-height: 1.4rem;
+  }
+
+  a {
+    color: var(--c-primary);
+
+    &:hover, &:focus, &:active {
+      text-decoration: underline;
+    }
   }
 
   h1 {
@@ -103,5 +104,18 @@
 
   .highlight {
     padding: 1rem;
+  }
+
+  code {
+    @extend %f-mono;
+    background-color: var(--c-secundary-bg);
+    padding: 0.1rem 0.5rem;
+    border-radius: 1rem;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  img {
+    margin: 2rem auto;
   }
 }

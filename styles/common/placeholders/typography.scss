@@ -14,3 +14,9 @@
 
   font-size: 0.8rem;
 }
+
+%f-mono {
+  @extend %f-default;
+
+  font-family: monospace;
+}

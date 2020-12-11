@@ -21,6 +21,17 @@
   overflow: auto;
 }
 
+.children {
+  @extend %text;
+
+  margin: 0 auto;
+  width: 100%;
+  padding: 1rem;
+  display: block;
+  height: calc(100% - #{$window-titlebar-height});
+  overflow: auto;
+}
+
 .titleBar {
   --c-titlebar-gradient1: #{$c-grey2};
   --c-titlebar-gradient2: #{$c-grey3};

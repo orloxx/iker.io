@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Draggable from 'react-draggable';
 import { useRouter } from 'next/router'
@@ -9,6 +9,7 @@ import styles from 'styles/modules/link-file.module.scss';
 
 const LinkFile = (props) => {
   const { href, label, icon, src, alt } = props;
+  const [dragging, isDragging] = useState(false);
   const router = useRouter();
   const $button = useRef();
 
@@ -16,14 +17,26 @@ const LinkFile = (props) => {
     router.push(href);
   }
 
+  function handleDrag() {
+    isDragging(true);
+  }
+
+  function stopDragging() {
+    setTimeout(() => isDragging(false), 150);
+  }
+
+  function handleTouch() {
+    if (!dragging) routeHref();
+  }
+
   return (
-    <Draggable>
+    <Draggable onDrag={handleDrag} onStop={stopDragging}>
       <button
         className={styles.container}
         type="button"
         ref={$button}
         onClick={() => $button.current.focus()}
-        onTouchEnd={routeHref}
+        onTouchEndCapture={handleTouch}
         onDoubleClick={routeHref}>
         {icon && !src && (
           <FontAwesomeIcon className={styles.icon} icon={icon} />

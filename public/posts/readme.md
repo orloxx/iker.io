@@ -1,3 +1,5 @@
+# Hello
+
 My name is Iker Garitaonandia. I'm a **professional software developer** with **10+ years** experience.
 
 ## Languages
@@ -21,7 +23,7 @@ Barcelona, Spain
 Barcelona, Spain
 
 ---
-**Webmaster**
+**Freelance Webmaster**
 *[Bari Studio][5] (Oct 2011 - Feb 2014)*
 New York, USA
 

@@ -7,8 +7,13 @@ import Link from 'next/link';
 
 import styles from 'styles/modules/window.module.scss';
 
+export const WINDOW_STYLES = {
+  normal: { maxWidth: 800, maxHeight: 800 },
+  system: { maxWidth: 500, maxHeight: 200 },
+}
+
 const Window = (props) => {
-  const { children, title, slug } = props;
+  const { children, title, slug, containerStyle } = props;
   const [html, setHtml] = useState('');
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const $window = useRef();
@@ -38,7 +43,7 @@ const Window = (props) => {
       handle={`.${styles.title}`}
       position={position}
       onStop={(e, { x, y }) => setPosition({ x, y })}>
-      <div className={styles.container} ref={$window}>
+      <div className={styles.container} ref={$window} style={containerStyle}>
         <div className={styles.titleBar}>
           <Link href="/">
             <button className={styles.close}>
@@ -61,13 +66,15 @@ const Window = (props) => {
 Window.defaultProps = {
   children: null,
   title: '',
-  slug: ''
+  slug: '',
+  containerStyle: WINDOW_STYLES.normal
 };
 
 Window.propTypes = {
   children: PropTypes.shape(),
   title: PropTypes.string,
   slug: PropTypes.string,
+  containerStyle: PropTypes.string,
 };
 
 export default Window;

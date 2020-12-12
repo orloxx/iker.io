@@ -1,8 +1,12 @@
 @import "typography";
 
 %text {
+  max-width: 630px;
+  margin: 0 auto;
+  padding: 1rem;
+
   & > * {
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
 
     &:first-child {
       margin-top: 0;
@@ -41,6 +45,7 @@
     font-size: 2rem;
     border-bottom: 1px solid var(--c-primary);
     padding-bottom: 0.5rem;
+    color: var(--c-primary);
   }
 
   h3 {

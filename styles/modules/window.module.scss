@@ -1,35 +1,29 @@
 @import "styles/common";
 
-.wrapper {
+.container {
   width: calc(100% - 2rem);
   max-width: 800px;
-  height: calc(100% - 2rem - #{$status-bar-height});
+  height: calc(100% - 2rem);
   max-height: 800px;
   position: fixed;
-  top: calc(50% + #{($status-bar-height / 2)});
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.container {
   background-color: var(--c-primary-bg);
   border-radius: var(--r-border);
   box-shadow: var(--s-box-medium);
   border: 1px solid var(--c-border);
-  width: 100%;
-  height: 100%;
   overflow: auto;
+  top: 0;
+  left: 0;
 }
 
 .children {
-  @extend %text;
-
-  margin: 0 auto;
   width: 100%;
-  padding: 1rem;
   display: block;
   height: calc(100% - #{$window-titlebar-height});
   overflow: auto;
+}
+
+.text {
+  @extend %text;
 }
 
 .titleBar {

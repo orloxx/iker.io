@@ -1,8 +1,8 @@
-# About
+My name is Iker Garitaonandia. I'm a **professional software developer** with **10+ years** experience.
 
-Information Technology Engineer from [Andres Bello Catholic University][2] in Caracas, Venezuela.
+## Languages
 
-I'm a **professional software developer** with **10+ years** experience.
+`Spanish` `English` `JavaScript` `Java` `PHP` `C++` `Python`
 
 ## Experience
 
@@ -45,9 +45,10 @@ Caracas, Venezuela
 *Tecnología Creativa (Sep 2006 - Dec 2007)*
 Caracas, Venezuela
 
-## Languages
-
-`Spanish` `English` `JavaScript` `Java` `PHP` `C++` `Python`
+## Education
+**Information Technology Engineer**
+*[Universidad Católica Andrés Bello][2] (2011)*
+Caracas, Venezuela
 
 ## Other Skills
 

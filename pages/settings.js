@@ -33,7 +33,7 @@ const Slug = () => {
               name="bgImage"
               id="bgImage"
               onChange={onBgChange}
-              defaultValue={settings.bgImage}>
+              value={settings.background.src}>
               {BACKGROUNDS.map(background => (
                 <option
                   value={background.src}

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { BGS, AppContext } from 'config';
+import { BACKGROUNDS, AppContext } from 'config';
+import { randomId } from 'atomic/utils';
 import CustomHead from 'shared/custom-head';
 import Desktop from 'shared/desktop';
 import Window, { WINDOW_STYLES } from 'shared/window';
@@ -10,8 +11,12 @@ import settingsStyles from 'styles/modules/settings.module.scss'
 const Slug = () => {
   const { settings, updateSettings } = useContext(AppContext);
 
+  function getBackground(src) {
+    return BACKGROUNDS.find(item => item.src === src);
+  }
+
   function onBgChange({ target: imageSelect }) {
-    updateSettings({ bgImage: imageSelect.value });
+    updateSettings({ background: getBackground(imageSelect.value) });
   }
 
   return (
@@ -24,12 +29,16 @@ const Slug = () => {
             <label htmlFor="bgImage">
               Background Image:
             </label>
-            <select name="bgImage" id="bgImage" onChange={onBgChange}>
-              {BGS.map(bgImage => (
+            <select
+              name="bgImage"
+              id="bgImage"
+              onChange={onBgChange}
+              defaultValue={settings.bgImage}>
+              {BACKGROUNDS.map(background => (
                 <option
-                  value={bgImage}
-                  selected={settings.bgImage === bgImage}>
-                  {bgImage}
+                  value={background.src}
+                  key={randomId()}>
+                  {background.src}
                 </option>
               ))}
             </select>

@@ -41,6 +41,7 @@ const Window = (props) => {
   return (
     <Draggable
       handle={`.${styles.title}`}
+      bounds={{ left: 0, top: 0 }}
       position={position}
       onStop={(e, { x, y }) => setPosition({ x, y })}>
       <div className={styles.container} ref={$window} style={containerStyle}>
@@ -74,7 +75,7 @@ Window.propTypes = {
   children: PropTypes.shape(),
   title: PropTypes.string,
   slug: PropTypes.string,
-  containerStyle: PropTypes.string,
+  containerStyle: PropTypes.shape(),
 };
 
 export default Window;

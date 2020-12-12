@@ -10,6 +10,7 @@ import styles from 'styles/modules/link-file.module.scss';
 const LinkFile = (props) => {
   const { href, label, icon, src, alt } = props;
   const [dragging, isDragging] = useState(false);
+  const [dragTimeout, setDragTimeout] = useState(null);
   const router = useRouter();
   const $button = useRef();
 
@@ -17,12 +18,13 @@ const LinkFile = (props) => {
     router.push(href);
   }
 
-  function handleDrag() {
-    isDragging(true);
+  function startDragging() {
+    setDragTimeout(setTimeout(() => isDragging(true), 200));
   }
 
   function stopDragging() {
-    setTimeout(() => isDragging(false), 150);
+    if (dragTimeout) clearTimeout(dragTimeout);
+    setTimeout(() => isDragging(false), 200);
   }
 
   function handleTouch() {
@@ -30,7 +32,10 @@ const LinkFile = (props) => {
   }
 
   return (
-    <Draggable onDrag={handleDrag} onStop={stopDragging}>
+    <Draggable
+      bounds="body"
+      onStart={startDragging}
+      onStop={stopDragging}>
       <button
         className={styles.container}
         type="button"

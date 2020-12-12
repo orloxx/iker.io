@@ -12,7 +12,7 @@ const Desktop = () => {
 
   return (
     <div className={styles.container} style={{
-      backgroundImage: `url("${settings.bgImage}")`
+      backgroundImage: `url("${settings.background.src}")`
     }}>
       <div className={styles.flexbox}>
         <LinkFile href="/readme" label="README" src={settings.gravatar} alt="A cartoon of myself" />
@@ -28,6 +28,9 @@ const Desktop = () => {
           href="https://github.com/orloxx"
           label="Github"
           icon={faGithub} />
+      </div>
+      <div className={styles.credits}>
+        {settings.background.credits}
       </div>
     </div>
   );

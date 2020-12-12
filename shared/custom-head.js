@@ -8,7 +8,7 @@ const CustomHead = (props) => {
   return (
     <React.Fragment>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content="<%= keywords %>" />

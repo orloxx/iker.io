@@ -21,7 +21,7 @@ const Desktop = () => {
           label="Settings"
           icon={faCogs} />
         <LinkFile
-          href="https://play.wa-test.rc3.cccv.de/_/awq-fng-qbt/orloxx.github.io/remote-chaos-map/map.json"
+          href="https://play.workadventu.re/_/xvg-ohr-ews4xo/orloxx.github.io/remote-chaos-map/map.json"
           label="Virtual Office"
           icon={faBuilding} />
         <LinkFile

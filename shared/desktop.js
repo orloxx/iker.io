@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { faCogs, faBuilding } from '@fortawesome/free-solid-svg-icons';
+import { faCogs } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { AppContext } from 'config';
 import LinkFile from 'atomic/link-file';
@@ -20,10 +20,6 @@ const Desktop = () => {
           href="/settings"
           label="Settings"
           icon={faCogs} />
-        <LinkFile
-          href="https://play.workadventu.re/_/oficinade/lopanas.github.io/lomapas/iker.json"
-          label="Virtual Office"
-          icon={faBuilding} />
         <LinkFile
           href="https://www.linkedin.com/in/ikertxu/"
           label="LinkedIn"

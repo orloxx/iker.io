@@ -10,10 +10,12 @@ import styles from 'styles/modules/window.module.scss';
 export const WINDOW_STYLES = {
   normal: { maxWidth: 800, maxHeight: 800 },
   system: { maxWidth: 500, maxHeight: 200 },
-}
+};
 
 const Window = (props) => {
-  const { children, title, slug, containerStyle } = props;
+  const {
+    children, title, slug, containerStyle,
+  } = props;
   const [html, setHtml] = useState('');
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const $window = useRef();
@@ -43,11 +45,12 @@ const Window = (props) => {
       handle={`.${styles.title}`}
       bounds={{ left: 0, top: 0 }}
       position={position}
-      onStop={(e, { x, y }) => setPosition({ x, y })}>
+      onStop={(e, { x, y }) => setPosition({ x, y })}
+    >
       <div className={styles.container} ref={$window} style={containerStyle}>
         <div className={styles.titleBar}>
           <Link href="/">
-            <button className={styles.close}>
+            <button type="button" className={styles.close}>
               <FontAwesomeIcon icon={faTimes} />
             </button>
           </Link>
@@ -56,6 +59,7 @@ const Window = (props) => {
         <div className={styles.children}>
           {children}
           {!!html && (
+            // eslint-disable-next-line react/no-danger
             <div className={styles.text} dangerouslySetInnerHTML={{ __html: html }} />
           )}
         </div>
@@ -68,7 +72,7 @@ Window.defaultProps = {
   children: null,
   title: '',
   slug: '',
-  containerStyle: WINDOW_STYLES.normal
+  containerStyle: WINDOW_STYLES.normal,
 };
 
 Window.propTypes = {

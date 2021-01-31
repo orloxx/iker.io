@@ -4,7 +4,6 @@ const qs = require('querystring');
 const marked = require('marked');
 
 export default async (req, res) => {
-
   async function getPost() {
     try {
       const { slug } = qs.parse(req.url.split('?').pop());

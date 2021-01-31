@@ -24,10 +24,12 @@ export function getPersistedState(req) {
   try {
     const cookies = parseCookies(req);
     iconPosition = JSON.parse(cookies.iconPosition);
-  } catch (e) {}
+  } catch (e) {
+    iconPosition = {};
+  }
 
   return {
-    iconPosition
+    iconPosition,
   };
 }
 

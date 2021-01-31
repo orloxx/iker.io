@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBatteryFull, faBatteryThreeQuarters, faBatteryHalf,
-  faBatteryQuarter, faBatteryEmpty
+  faBatteryQuarter, faBatteryEmpty,
 } from '@fortawesome/free-solid-svg-icons';
 
 const Battery = () => {
@@ -41,7 +41,7 @@ const Battery = () => {
       if (thisBattery) {
         thisBattery.removeEventListener('levelchange', levelChangeListener);
       }
-    }
+    };
   }, []);
 
   return icon && (

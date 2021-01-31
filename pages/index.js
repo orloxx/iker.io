@@ -2,7 +2,7 @@ import React from 'react';
 import CustomHead from 'shared/custom-head';
 import Desktop from 'shared/desktop';
 
-import styles from 'styles/modules/home.module.scss'
+import styles from 'styles/modules/home.module.scss';
 
 function Home() {
   return (
@@ -10,7 +10,7 @@ function Home() {
       <CustomHead />
       <Desktop />
     </div>
-  )
+  );
 }
 
 export default Home;

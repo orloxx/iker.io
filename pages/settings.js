@@ -5,14 +5,14 @@ import CustomHead from 'shared/custom-head';
 import Desktop from 'shared/desktop';
 import Window, { WINDOW_STYLES } from 'shared/window';
 
-import styles from 'styles/modules/home.module.scss'
-import settingsStyles from 'styles/modules/settings.module.scss'
+import styles from 'styles/modules/home.module.scss';
+import settingsStyles from 'styles/modules/settings.module.scss';
 
 const Settings = () => {
   const { settings, updateSettings } = useContext(AppContext);
 
   function getBackground(src) {
-    return BACKGROUNDS.find(item => item.src === src);
+    return BACKGROUNDS.find((item) => item.src === src);
   }
 
   function onBgChange({ target: imageSelect }) {
@@ -25,24 +25,24 @@ const Settings = () => {
       <Desktop />
       <Window containerStyle={WINDOW_STYLES.system} title="Settings">
         <form className={settingsStyles.form} action="">
-          <div>
-            <label htmlFor="bgImage">
-              Background Image:
-            </label>
+          <label htmlFor="bgImage">
+            Background Image:
             <select
               name="bgImage"
               id="bgImage"
               onChange={onBgChange}
-              value={settings.background.src}>
-              {BACKGROUNDS.map(background => (
+              value={settings.background.src}
+            >
+              {BACKGROUNDS.map((background) => (
                 <option
                   value={background.src}
-                  key={randomId()}>
+                  key={randomId()}
+                >
                   {background.src}
                 </option>
               ))}
             </select>
-          </div>
+          </label>
         </form>
       </Window>
     </div>

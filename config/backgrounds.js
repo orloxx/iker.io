@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function BackgroundCredits({ href, name }) {
   return (
@@ -7,6 +8,11 @@ function BackgroundCredits({ href, name }) {
     </React.Fragment>
   );
 }
+
+BackgroundCredits.propTypes = {
+  href: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
 
 export const BACKGROUNDS = [{
   src: '/wp/venezuela.jpg',

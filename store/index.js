@@ -1,12 +1,13 @@
-import React  from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { createStore, compose } from 'redux';
 import rootReducer from './reducers';
 import persistMiddleware, { getPersistedState } from './persist';
 
 function Store({ children, initialState }) {
-  const composeEnhanced = typeof window === 'undefined' ?
-    compose : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  const composeEnhanced = typeof window === 'undefined'
+    ? compose : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
   const enhancers = composeEnhanced(
     persistMiddleware(),
@@ -21,15 +22,22 @@ function Store({ children, initialState }) {
   );
 }
 
-export function persist(App) {
-  App.getInitialProps = ({ ctx }) => {
+Store.defaultProps = {
+  initialState: {},
+};
 
-    return {
-      pageProps: {
-        initialState: getPersistedState(ctx.req)
-      },
-    };
-  };
+Store.propTypes = {
+  children: PropTypes.shape().isRequired,
+  initialState: PropTypes.shape(),
+};
+
+export function persist(App) {
+  // eslint-disable-next-line no-param-reassign
+  App.getInitialProps = ({ ctx }) => ({
+    pageProps: {
+      initialState: getPersistedState(ctx.req),
+    },
+  });
 
   return App;
 }

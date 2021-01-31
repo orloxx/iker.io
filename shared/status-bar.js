@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Battery from '../atomic/battery';
+import Battery from 'atomic/battery';
 
 import styles from 'styles/modules/status-bar.module.scss';
 
@@ -23,7 +23,7 @@ const StatusBar = (props) => {
 
     return () => {
       clearInterval(interval);
-    }
+    };
   }, []);
 
   return (
@@ -36,11 +36,11 @@ const StatusBar = (props) => {
 };
 
 StatusBar.defaultProps = {
-  title: ''
+  title: '',
 };
 
 StatusBar.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
 };
 
 export default StatusBar;

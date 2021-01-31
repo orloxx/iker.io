@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Draggable from 'react-draggable';
 import { useSelector, useDispatch } from 'react-redux';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile } from '@fortawesome/free-solid-svg-icons';
 import { changePosition } from 'store/icon-position/actions';
@@ -11,7 +11,9 @@ import { getIconPosition } from 'store/icon-position/selectors';
 import styles from 'styles/modules/link-file.module.scss';
 
 const LinkFile = (props) => {
-  const { href, label, name, icon, src, alt } = props;
+  const {
+    href, label, name, icon, src, alt,
+  } = props;
   const [dragging, isDragging] = useState(false);
   const [dragTimeout, setDragTimeout] = useState(null);
   const router = useRouter();
@@ -42,14 +44,16 @@ const LinkFile = (props) => {
       bounds="body"
       defaultPosition={position}
       onStart={startDragging}
-      onStop={stopDragging}>
+      onStop={stopDragging}
+    >
       <button
         className={styles.container}
         type="button"
         ref={$button}
         onClick={() => $button.current.focus()}
         onTouchEndCapture={handleTouch}
-        onDoubleClick={routeHref}>
+        onDoubleClick={routeHref}
+      >
         {icon && !src && (
           <FontAwesomeIcon className={styles.icon} icon={icon} />
         )}
@@ -64,6 +68,8 @@ const LinkFile = (props) => {
 
 LinkFile.defaultProps = {
   icon: faFile,
+  src: '',
+  alt: '',
 };
 
 LinkFile.propTypes = {

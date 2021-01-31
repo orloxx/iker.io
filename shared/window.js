@@ -4,6 +4,7 @@ import Draggable from 'react-draggable';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import Loading from 'atomic/loading';
 
 import styles from 'styles/modules/window.module.scss';
 
@@ -61,6 +62,9 @@ const Window = (props) => {
           {!!html && (
             // eslint-disable-next-line react/no-danger
             <div className={styles.text} dangerouslySetInnerHTML={{ __html: html }} />
+          )}
+          {slug && !html && (
+            <Loading />
           )}
         </div>
       </div>

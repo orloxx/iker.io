@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Provider } from 'react-redux';
 import { AppContext, initialContext } from 'config';
-import store from 'store';
+import Store, { persist } from 'store';
 
 import 'styles/globals.scss'
 
@@ -15,12 +14,12 @@ function MyApp({ Component, pageProps }) {
   const contextValues = { settings, updateSettings };
 
   return (
-    <Provider store={store}>
+    <Store initialState={pageProps.initialState}>
       <AppContext.Provider value={contextValues}>
         <Component {...pageProps} />
       </AppContext.Provider>
-    </Provider>
+    </Store>
   );
 }
 
-export default MyApp
+export default persist(MyApp);

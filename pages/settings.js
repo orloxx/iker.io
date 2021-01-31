@@ -8,7 +8,7 @@ import Window, { WINDOW_STYLES } from 'shared/window';
 import styles from 'styles/modules/home.module.scss'
 import settingsStyles from 'styles/modules/settings.module.scss'
 
-const Slug = () => {
+const Settings = () => {
   const { settings, updateSettings } = useContext(AppContext);
 
   function getBackground(src) {
@@ -49,4 +49,4 @@ const Slug = () => {
   );
 };
 
-export default Slug;
+export default Settings;

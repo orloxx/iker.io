@@ -1,18 +1,23 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Draggable from 'react-draggable';
+import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile } from '@fortawesome/free-solid-svg-icons';
+import { changePosition } from 'store/icon-position/actions';
+import { getIconPosition } from 'store/icon-position/selectors';
 
 import styles from 'styles/modules/link-file.module.scss';
 
 const LinkFile = (props) => {
-  const { href, label, icon, src, alt } = props;
+  const { href, label, name, icon, src, alt } = props;
   const [dragging, isDragging] = useState(false);
   const [dragTimeout, setDragTimeout] = useState(null);
   const router = useRouter();
   const $button = useRef();
+  const position = useSelector(getIconPosition(name));
+  const dispatch = useDispatch();
 
   function routeHref() {
     router.push(href);
@@ -22,7 +27,8 @@ const LinkFile = (props) => {
     setDragTimeout(setTimeout(() => isDragging(true), 200));
   }
 
-  function stopDragging() {
+  function stopDragging(e, { x, y }) {
+    dispatch(changePosition({ [name]: { x, y } }));
     if (dragTimeout) clearTimeout(dragTimeout);
     setTimeout(() => isDragging(false), 200);
   }
@@ -34,6 +40,7 @@ const LinkFile = (props) => {
   return (
     <Draggable
       bounds="body"
+      defaultPosition={position}
       onStart={startDragging}
       onStop={stopDragging}>
       <button
@@ -62,6 +69,7 @@ LinkFile.defaultProps = {
 LinkFile.propTypes = {
   href: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   icon: PropTypes.shape(),
   src: PropTypes.string,
   alt: PropTypes.string,

@@ -62,4 +62,4 @@ Caracas, Venezuela
 [4]: https://strands.com/
 [5]: http://www.thebaristudio.com/
 [6]: https://www.whisbi.com/
-[7]: http://hacemosloquenosgusta.com/
+[7]: https://www.lawebmercadeointeractivo.com/

@@ -3,12 +3,12 @@ import { BACKGROUNDS, AppContext } from 'config';
 import { randomId } from 'atomic/utils';
 import CustomHead from 'shared/custom-head';
 import Desktop from 'shared/desktop';
-import Window, { WINDOW_STYLES } from 'shared/window';
+import Window from 'shared/window';
 
 import styles from 'styles/modules/home.module.scss';
 import settingsStyles from 'styles/modules/settings.module.scss';
 
-const Settings = () => {
+function Settings() {
   const { settings, updateSettings } = useContext(AppContext);
 
   function getBackground(src) {
@@ -23,7 +23,7 @@ const Settings = () => {
     <div className={styles.container}>
       <CustomHead />
       <Desktop />
-      <Window containerStyle={WINDOW_STYLES.system} title="Settings">
+      <Window containerStyle="system" title="Settings">
         <form className={settingsStyles.form} action="">
           <label htmlFor="bgImage">
             Background Image:
@@ -47,6 +47,6 @@ const Settings = () => {
       </Window>
     </div>
   );
-};
+}
 
 export default Settings;

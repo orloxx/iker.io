@@ -6,7 +6,7 @@ import LinkFile from 'atomic/link-file';
 
 import styles from 'styles/modules/desktop.module.scss';
 
-const Desktop = () => {
+function Desktop() {
   const appContext = useContext(AppContext);
   const { settings } = appContext;
 
@@ -49,6 +49,6 @@ const Desktop = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Desktop;

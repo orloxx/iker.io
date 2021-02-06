@@ -5,7 +5,7 @@ import {
   faBatteryQuarter, faBatteryEmpty,
 } from '@fortawesome/free-solid-svg-icons';
 
-const Battery = () => {
+function Battery() {
   const [icon, setIcon] = useState(null);
 
   function onLevelChange(battery) {
@@ -49,6 +49,6 @@ const Battery = () => {
       <FontAwesomeIcon icon={icon} />
     </React.Fragment>
   );
-};
+}
 
 export default Battery;

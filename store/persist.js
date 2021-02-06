@@ -11,7 +11,7 @@ function persistMiddleware() {
     return (next) => (action) => {
       next(action);
       const { iconPosition } = store.getState();
-      Cookie.set('iconPosition', iconPosition);
+      Cookie.set('iconPosition', iconPosition, { secure: true });
     };
   }
 
@@ -19,7 +19,7 @@ function persistMiddleware() {
 }
 
 export function getPersistedState(req) {
-  let iconPosition = {};
+  let iconPosition;
 
   try {
     const cookies = parseCookies(req);

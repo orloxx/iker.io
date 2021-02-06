@@ -8,15 +8,14 @@ import Loading from 'atomic/loading';
 
 import styles from 'styles/modules/window.module.scss';
 
-export const WINDOW_STYLES = {
-  normal: { maxWidth: 800, maxHeight: 800 },
-  system: { maxWidth: 500, maxHeight: 200 },
-};
-
-const Window = (props) => {
-  const {
-    children, title, slug, containerStyle,
-  } = props;
+const Window = ({
+  children, title, slug, type,
+}) => {
+  const WINDOW_STYLES = {
+    normal: { maxWidth: 800, maxHeight: 800 },
+    system: { maxWidth: 500, maxHeight: 200 },
+  };
+  const containerStyle = WINDOW_STYLES[type] || WINDOW_STYLES.normal;
   const [html, setHtml] = useState('');
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const $window = useRef();
@@ -76,14 +75,14 @@ Window.defaultProps = {
   children: null,
   title: '',
   slug: '',
-  containerStyle: WINDOW_STYLES.normal,
+  type: 'normal',
 };
 
 Window.propTypes = {
   children: PropTypes.shape(),
   title: PropTypes.string,
   slug: PropTypes.string,
-  containerStyle: PropTypes.shape(),
+  type: PropTypes.string,
 };
 
 export default Window;

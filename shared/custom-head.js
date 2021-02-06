@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import StatusBar from './status-bar';
 
-const CustomHead = (props) => {
-  const { title, description } = props;
+function CustomHead({ title, description }) {
   return (
     <React.Fragment>
       <Head>
@@ -25,7 +24,7 @@ const CustomHead = (props) => {
       <StatusBar title={title} />
     </React.Fragment>
   );
-};
+}
 
 CustomHead.defaultProps = {
   title: 'Iker Garitaonandia | Software Developer',

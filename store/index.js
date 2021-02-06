@@ -6,8 +6,9 @@ import rootReducer from './reducers';
 import persistMiddleware, { getPersistedState } from './persist';
 
 function Store({ children, initialState }) {
-  const composeEnhanced = typeof window === 'undefined'
-    ? compose : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
+  const composeEnhanced = typeof window !== 'undefined' && IS_DEVELOPMENT
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose : compose;
 
   const enhancers = composeEnhanced(
     persistMiddleware(),

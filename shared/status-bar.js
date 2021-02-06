@@ -4,8 +4,7 @@ import Battery from 'atomic/battery';
 
 import styles from 'styles/modules/status-bar.module.scss';
 
-const StatusBar = (props) => {
-  const { title } = props;
+function StatusBar({ title }) {
   const [time, setTime] = useState('');
 
   function updateTime() {
@@ -33,7 +32,7 @@ const StatusBar = (props) => {
       <Battery />
     </div>
   );
-};
+}
 
 StatusBar.defaultProps = {
   title: '',

@@ -6,7 +6,7 @@ import Window from 'shared/window';
 
 import styles from 'styles/modules/home.module.scss';
 
-const Slug = () => {
+function Slug() {
   const router = useRouter();
   const { slug } = router.query;
   return (
@@ -16,6 +16,6 @@ const Slug = () => {
       <Window slug={slug} />
     </div>
   );
-};
+}
 
 export default Slug;

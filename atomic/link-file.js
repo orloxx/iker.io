@@ -10,10 +10,9 @@ import { getIconPosition } from 'store/icon-position/selectors';
 
 import styles from 'styles/modules/link-file.module.scss';
 
-const LinkFile = (props) => {
-  const {
-    href, label, name, icon, src, alt,
-  } = props;
+function LinkFile({
+  href, label, name, icon, src, alt,
+}) {
   const [dragging, isDragging] = useState(false);
   const [dragTimeout, setDragTimeout] = useState(null);
   const router = useRouter();
@@ -64,7 +63,7 @@ const LinkFile = (props) => {
       </button>
     </Draggable>
   );
-};
+}
 
 LinkFile.defaultProps = {
   icon: faFile,

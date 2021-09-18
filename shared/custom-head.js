@@ -28,7 +28,7 @@ function CustomHead({ title, description }) {
 
 CustomHead.defaultProps = {
   title: 'Iker Garitaonandia | Software Developer',
-  description: 'I\'m a professional software developer with 10+ years experience.',
+  description: 'My name is Iker Garitaonandia and I\'m a professional software developer with 15+ years of experience helping companies achieve digital transformation.',
 };
 
 CustomHead.propTypes = {

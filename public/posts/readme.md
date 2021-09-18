@@ -1,6 +1,6 @@
 # Hello
 
-My name is Iker Garitaonandia. I'm a **professional software developer** with **10+ years** experience.
+My name is Iker Garitaonandia and I’m a **professional software developer** with **15+ years** of experience helping companies achieve digital transformation. Mostly working as a web developer, and for the past 8 years I've been specializing as a frontend developer.
 
 ## Languages
 

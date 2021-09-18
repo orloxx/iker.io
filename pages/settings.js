@@ -23,7 +23,7 @@ function Settings() {
     <div className={styles.container}>
       <CustomHead />
       <Desktop />
-      <Window containerStyle="system" title="Settings">
+      <Window type="system" title="Settings">
         <form className={settingsStyles.form} action="">
           <label htmlFor="bgImage">
             Background Image:

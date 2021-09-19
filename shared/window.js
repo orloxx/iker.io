@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import Loading from 'atomic/loading';
+import { customFetch } from 'atomic/utils';
 
 import styles from 'styles/modules/window.module.scss';
 
@@ -27,9 +28,8 @@ const Window = ({
   }
 
   async function getPost() {
-    const data = await fetch(`/api/posts?slug=${slug}`);
-    const json = await data.json();
-    if (json.html) setHtml(json.html);
+    const response = await customFetch(`/api/posts?slug=${slug}`);
+    if (response.html) setHtml(response.html);
   }
 
   useEffect(() => {

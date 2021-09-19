@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { AppContext } from 'config';
 import StatusBar from './status-bar';
-import { AppContext } from '../config';
 
 function CustomHead({
   author, title, description, keywords,

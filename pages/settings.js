@@ -22,7 +22,7 @@ function Settings() {
   return (
     <div className={styles.container}>
       <CustomHead />
-      <Desktop />
+      <Desktop current="settings" />
       <Window type="system" title="Settings">
         <form className={settingsStyles.form} action="">
           <label htmlFor="bgImage">

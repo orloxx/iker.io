@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { faCogs } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { AppContext } from 'config';
@@ -6,7 +7,7 @@ import LinkFile from 'atomic/link-file';
 
 import styles from 'styles/modules/desktop.module.scss';
 
-function Desktop() {
+function Desktop({ current }) {
   const appContext = useContext(AppContext);
   const { settings } = appContext;
 
@@ -50,5 +51,13 @@ function Desktop() {
     </div>
   );
 }
+
+Desktop.defaultProps = {
+  current: '',
+};
+
+Desktop.propTypes = {
+  current: PropTypes.string,
+};
 
 export default Desktop;

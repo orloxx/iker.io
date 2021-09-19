@@ -7,3 +7,14 @@ export function randomId(size = 6) {
   }
   return result;
 }
+
+export async function customFetch(url) {
+  const res = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  return res.json();
+}

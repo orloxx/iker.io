@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSoundcloud } from '@fortawesome/free-brands-svg-icons';
 import Battery from 'atomic/battery';
+import SoundCloudPlayer from 'atomic/soundcloud-player';
 
 import styles from 'styles/modules/status-bar.module.scss';
 
 function StatusBar({ title }) {
   const [time, setTime] = useState('');
+  const [scOpen, setScOpen] = useState(false);
 
   function updateTime() {
     const now = new Date();
@@ -14,6 +18,13 @@ function StatusBar({ title }) {
     hours = hours < 10 ? `0${hours}` : hours;
     minutes = minutes < 10 ? `0${minutes}` : minutes;
     setTime(`${hours}:${minutes}`);
+  }
+
+  function getClasses(required, opened) {
+    return [
+      required,
+      ...(scOpen ? [opened] : []),
+    ].join(' ');
   }
 
   useEffect(() => {
@@ -26,11 +37,23 @@ function StatusBar({ title }) {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <p className={styles.title}>{title}</p>
-      <time className={styles.time}>{time}</time>
-      <Battery />
-    </div>
+    <React.Fragment>
+      <div className={getClasses(styles.container, styles.containerOpened)}>
+        <p className={styles.title}>{title}</p>
+        <button
+          className={getClasses(styles.scButton, styles.scButtonOpened)}
+          type="button"
+          onClick={() => setScOpen(!scOpen)}
+        >
+          <FontAwesomeIcon icon={faSoundcloud} />
+        </button>
+        <time className={styles.time}>{time}</time>
+        <Battery />
+        <div className={getClasses(styles.sc, styles.scOpened)}>
+          <SoundCloudPlayer />
+        </div>
+      </div>
+    </React.Fragment>
   );
 }
 

@@ -1,11 +1,9 @@
 import React, { useContext } from 'react';
 import { BACKGROUNDS, AppContext } from 'config';
 import { randomId } from 'atomic/utils';
-import CustomHead from 'shared/custom-head';
 import Desktop from 'shared/desktop';
 import Window from 'shared/window';
 
-import styles from 'styles/modules/home.module.scss';
 import settingsStyles from 'styles/modules/settings.module.scss';
 
 function Settings() {
@@ -20,8 +18,7 @@ function Settings() {
   }
 
   return (
-    <div className={styles.container}>
-      <CustomHead />
+    <React.Fragment>
       <Desktop current="settings" />
       <Window type="system" title="Settings">
         <form className={settingsStyles.form} action="">
@@ -45,7 +42,7 @@ function Settings() {
           </label>
         </form>
       </Window>
-    </div>
+    </React.Fragment>
   );
 }
 

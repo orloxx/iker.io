@@ -3,6 +3,7 @@
 .container {
   --c-status-bar-bg: #{$c-grey};
 
+  position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -10,13 +11,18 @@
   width: 100%;
   padding: 0 1rem;
   background-color: var(--c-status-bar-bg);
+  overflow: hidden;
 
   *:not(:last-child) {
     margin-right: 0.5rem;
   }
+
+  &Opened {
+    overflow: initial;
+  }
 }
 
-.title, .time {
+.title, .time, .playing {
   @extend %f-smaller;
 }
 
@@ -26,4 +32,34 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.sc {
+  position: absolute;
+  z-index: 1;
+  width: 450px;
+  max-width: calc(100% - 2rem);
+  top: calc(100% + 1rem);
+  right: 0;
+  transform: translate(100%, 0);
+  transition: transform 0.2s ease-in-out;
+  visibility: hidden;
+
+  &Opened {
+    transform: translate(-1rem, 0);
+    visibility: visible;
+  }
+}
+
+.scButton {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.5rem;
+
+  &:hover, &:focus, &Opened {
+    color: var(--c-sound-cloud);
+  }
 }

@@ -11,14 +11,9 @@
   width: 100%;
   padding: 0 1rem;
   background-color: var(--c-status-bar-bg);
-  overflow: hidden;
 
   *:not(:last-child) {
     margin-right: 0.5rem;
-  }
-
-  &Opened {
-    overflow: initial;
   }
 }
 

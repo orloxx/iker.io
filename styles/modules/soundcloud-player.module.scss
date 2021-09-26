@@ -7,13 +7,13 @@
   margin: 0 !important;
   max-width: calc(100% - 2rem);
   top: calc(100% + 1rem);
-  right: 0;
-  transform: translate(100%, 0);
+  right: 1rem;
+  transform: translate(0, -100%);
   transition: transform 0.2s ease-in-out;
   visibility: hidden;
 
   &Opened {
-    transform: translate(-1rem, 0);
+    transform: translate(0, 0);
     visibility: visible;
   }
 }

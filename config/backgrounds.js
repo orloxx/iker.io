@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function BackgroundCredits({ href, name }) {
   return (
     <React.Fragment>
-      Photo by <a href={href}>{name}</a>
+      Photo by <a href={href} target="_blank" rel="noreferrer noopener">{name}</a>
     </React.Fragment>
   );
 }

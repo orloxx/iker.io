@@ -12,6 +12,10 @@ import { injectScript } from 'atomic/utils';
 
 import styles from 'styles/modules/soundcloud-player.module.scss';
 
+/**
+ * Controls the SoundCloud Widget API
+ * https://developers.soundcloud.com/docs/api/html5-widget
+ */
 function SoundCloudPlayer({ visual, onOpen }) {
   const soundCloudUrl = 'https://w.soundcloud.com/player/';
   const options = {

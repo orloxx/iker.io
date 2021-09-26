@@ -8,7 +8,7 @@ import {
   faBackward, faForward, faPause, faPlay,
 } from '@fortawesome/free-solid-svg-icons';
 import { faSoundcloud } from '@fortawesome/free-brands-svg-icons';
-import { injectScript } from 'atomic/utils';
+import { injectScript, listenOutsideClick } from 'atomic/utils';
 
 import styles from 'styles/modules/soundcloud-player.module.scss';
 
@@ -33,6 +33,7 @@ function SoundCloudPlayer({ visual, onOpen }) {
   const [isOpen, setOpen] = useState(false);
   const [isPlaying, setPlaying] = useState(false);
   const $iframe = useRef(null);
+  const $buttons = useRef([]);
 
   function toggleVisibility() {
     onOpen(!isOpen);
@@ -75,6 +76,22 @@ function SoundCloudPlayer({ visual, onOpen }) {
   }, [isReady]);
 
   useEffect(() => {
+    let removeOutsideClick;
+    if (isReady && $iframe?.current && isOpen) {
+      removeOutsideClick = listenOutsideClick([
+        $iframe.current,
+        ...$buttons.current,
+      ], () => setOpen(false));
+    }
+
+    return () => {
+      if (removeOutsideClick) {
+        removeOutsideClick();
+      }
+    };
+  }, [isOpen, isPlaying]);
+
+  useEffect(() => {
     injectScript(`${soundCloudUrl}api.js`)
       .then(() => setReady(true));
   }, []);
@@ -84,26 +101,47 @@ function SoundCloudPlayer({ visual, onOpen }) {
   return (
     <React.Fragment>
       <button
+        ref={(el) => { $buttons.current[0] = el; }}
         className={getClasses(styles.sc, styles.scOpened, isPlaying)}
         type="button"
         onClick={toggleVisibility}
       >
         <FontAwesomeIcon icon={faSoundcloud} />
       </button>
-      <button className={styles.prev} type="button" onClick={prev}>
+      <button
+        ref={(el) => { $buttons.current[1] = el; }}
+        className={styles.prev}
+        type="button"
+        onClick={prev}
+      >
         <FontAwesomeIcon icon={faBackward} />
       </button>
       {!isPlaying && (
-        <button className={styles.play} type="button" onClick={play}>
+        <button
+          ref={(el) => { $buttons.current[2] = el; }}
+          className={styles.play}
+          type="button"
+          onClick={play}
+        >
           <FontAwesomeIcon icon={faPlay} />
         </button>
       )}
       {!!isPlaying && (
-        <button className={styles.pause} type="button" onClick={pause}>
+        <button
+          ref={(el) => { $buttons.current[3] = el; }}
+          className={styles.pause}
+          type="button"
+          onClick={pause}
+        >
           <FontAwesomeIcon icon={faPause} />
         </button>
       )}
-      <button className={styles.next} type="button" onClick={next}>
+      <button
+        ref={(el) => { $buttons.current[4] = el; }}
+        className={styles.next}
+        type="button"
+        onClick={next}
+      >
         <FontAwesomeIcon icon={faForward} />
       </button>
       <div className={getClasses(styles.player, styles.playerOpened)}>

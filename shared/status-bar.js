@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSoundcloud } from '@fortawesome/free-brands-svg-icons';
 import Battery from 'atomic/battery';
 import SoundCloudPlayer from 'atomic/soundcloud-player';
 
@@ -40,18 +38,9 @@ function StatusBar({ title }) {
     <React.Fragment>
       <div className={getClasses(styles.container, styles.containerOpened)}>
         <p className={styles.title}>{title}</p>
-        <button
-          className={getClasses(styles.scButton, styles.scButtonOpened)}
-          type="button"
-          onClick={() => setScOpen(!scOpen)}
-        >
-          <FontAwesomeIcon icon={faSoundcloud} />
-        </button>
+        <SoundCloudPlayer onOpen={(isOpen) => setScOpen(isOpen)} />
         <time className={styles.time}>{time}</time>
         <Battery />
-        <div className={getClasses(styles.sc, styles.scOpened)}>
-          <SoundCloudPlayer />
-        </div>
       </div>
     </React.Fragment>
   );

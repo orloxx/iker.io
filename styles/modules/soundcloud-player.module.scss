@@ -1,0 +1,43 @@
+@import "styles/common";
+
+.player {
+  position: absolute;
+  z-index: 1;
+  width: 450px;
+  margin: 0 !important;
+  max-width: calc(100% - 2rem);
+  top: calc(100% + 1rem);
+  right: 0;
+  transform: translate(100%, 0);
+  transition: transform 0.2s ease-in-out;
+  visibility: hidden;
+
+  &Opened {
+    transform: translate(-1rem, 0);
+    visibility: visible;
+  }
+}
+
+.sc, .prev, .play, .pause, .next {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+
+  &:hover, &:focus, &Opened {
+    color: var(--c-sound-cloud);
+  }
+}
+
+.sc {
+  font-size: 1.5rem;
+}
+
+.prev, .play, .pause, .next {
+  display: none;
+
+  @media (min-width: $b-s) {
+    display: inline-block;
+  }
+}

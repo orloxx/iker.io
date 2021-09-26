@@ -18,3 +18,15 @@ export async function customFetch(url) {
 
   return res.json();
 }
+
+export function injectScript(src) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.defer = true;
+    script.async = true;
+    script.src = src;
+    script.addEventListener('load', resolve);
+    script.addEventListener('error', (e) => reject(e.error));
+    document.head.appendChild(script);
+  });
+}

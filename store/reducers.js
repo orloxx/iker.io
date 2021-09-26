@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import iconPosition from './icon-position/reducer';
+import settings from 'store/settings/reducer';
 
 export default combineReducers({
-  iconPosition,
+  settings,
 });

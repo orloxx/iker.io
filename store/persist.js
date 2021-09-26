@@ -1,6 +1,7 @@
 import { applyMiddleware } from 'redux';
 import Cookie from 'js-cookie';
 import cookie from 'cookie';
+import { INITIAL_STATE } from 'store/settings/reducer';
 
 function parseCookies(req) {
   return cookie.parse(req ? req.headers.cookie || '' : document.cookie);
@@ -10,8 +11,8 @@ function persistMiddleware() {
   function cookiePersist(store) {
     return (next) => (action) => {
       next(action);
-      const { iconPosition } = store.getState();
-      Cookie.set('iconPosition', iconPosition, { secure: true });
+      const { settings } = store.getState();
+      Cookie.set('settings', settings, { secure: true });
     };
   }
 
@@ -19,17 +20,17 @@ function persistMiddleware() {
 }
 
 export function getPersistedState(req) {
-  let iconPosition;
+  let settings;
 
   try {
     const cookies = parseCookies(req);
-    iconPosition = JSON.parse(cookies.iconPosition);
+    settings = JSON.parse(cookies.settings);
   } catch (e) {
-    iconPosition = {};
+    settings = INITIAL_STATE;
   }
 
   return {
-    iconPosition,
+    settings,
   };
 }
 

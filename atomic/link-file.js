@@ -5,8 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile } from '@fortawesome/free-solid-svg-icons';
-import { changePosition } from 'store/icon-position/actions';
-import { getIconPosition } from 'store/icon-position/selectors';
+import { changeIconPosition } from 'store/settings/actions';
+import { getIconPosition } from 'store/settings/selectors';
 
 import styles from 'styles/modules/link-file.module.scss';
 
@@ -29,7 +29,7 @@ function LinkFile({
   }
 
   function stopDragging(e, { x, y }) {
-    dispatch(changePosition({ [name]: { x, y } }));
+    dispatch(changeIconPosition({ [name]: { x, y } }));
     if (dragTimeout) clearTimeout(dragTimeout);
     setTimeout(() => isDragging(false), 200);
   }

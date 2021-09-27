@@ -9,7 +9,7 @@ import {
   faBackward, faForward, faPause, faPlay,
 } from '@fortawesome/free-solid-svg-icons';
 import { faSoundcloud } from '@fortawesome/free-brands-svg-icons';
-import { getPlaylist } from 'store/settings/selectors';
+import { getCurrentPlaylist } from 'store/settings/selectors';
 import { injectScript, listenOutsideClick } from 'atomic/utils';
 
 import styles from 'styles/modules/soundcloud-player.module.scss';
@@ -19,10 +19,10 @@ import styles from 'styles/modules/soundcloud-player.module.scss';
  * https://developers.soundcloud.com/docs/api/html5-widget
  */
 function SoundCloudPlayer({ visual, onOpen }) {
-  const playlistUrl = useSelector(getPlaylist());
+  const currentPlaylist = useSelector(getCurrentPlaylist());
   const soundCloudUrl = 'https://w.soundcloud.com/player/';
   const options = {
-    url: playlistUrl,
+    url: currentPlaylist.src,
     color: '#ff5500',
     auto_play: false,
     show_comments: false,
@@ -75,7 +75,7 @@ function SoundCloudPlayer({ visual, onOpen }) {
 
   useEffect(() => {
     setPlaylistChange(playlistChange + 1);
-  }, [apiReady, playlistUrl]);
+  }, [apiReady, currentPlaylist]);
 
   useEffect(() => {
     setPlaying(false);

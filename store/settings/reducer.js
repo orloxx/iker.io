@@ -1,11 +1,12 @@
-import { BACKGROUNDS } from 'store/settings/backgrounds';
-
 import { ICON_POSITION, CHANGE_BG, CHANGE_PLAYLIST } from 'store/settings/actions';
+
+import { BACKGROUNDS } from 'store/settings/backgrounds';
+import { PLAYLISTS } from 'store/settings/playlists';
 
 export const INITIAL_STATE = {
   iconPosition: {},
   bgSrc: BACKGROUNDS[0].src,
-  playlist: 'https://api.soundcloud.com/playlists/1177045477',
+  playlist: PLAYLISTS[0].src,
 };
 
 const settings = (state = INITIAL_STATE, action) => {

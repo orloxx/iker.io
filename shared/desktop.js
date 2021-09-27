@@ -1,21 +1,22 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { faCogs } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { AppContext } from 'config';
+import { getCurrentBg } from 'store/settings/selectors';
 import LinkFile from 'atomic/link-file';
+import { GRAVATAR } from 'atomic/constants';
 
 import styles from 'styles/modules/desktop.module.scss';
 
 function Desktop({ current }) {
-  const appContext = useContext(AppContext);
-  const { settings } = appContext;
+  const currentBg = useSelector(getCurrentBg());
 
   return (
     <div
       className={styles.container}
       style={{
-        backgroundImage: `url("${settings.background.src}")`,
+        backgroundImage: `url("${currentBg.src}")`,
       }}
     >
       <div className={styles.flexbox}>
@@ -23,7 +24,7 @@ function Desktop({ current }) {
           href="/readme"
           label="README"
           name="readme"
-          src={settings.gravatar}
+          src={GRAVATAR}
           alt="A cartoon of myself"
         />
         <LinkFile
@@ -46,7 +47,7 @@ function Desktop({ current }) {
         />
       </div>
       <div className={styles.credits}>
-        {settings.background.credits}
+        {currentBg.credits}
       </div>
     </div>
   );

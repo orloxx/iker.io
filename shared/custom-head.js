@@ -1,16 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { AppContext } from 'config';
-import StatusBar from './status-bar';
+import StatusBar from 'shared/status-bar';
+import { GRAVATAR } from 'atomic/constants';
 
 function CustomHead({
   author, title, description, keywords,
 }) {
   const { asPath } = useRouter();
-  const appContext = useContext(AppContext);
-  const { settings } = appContext;
 
   return (
     <React.Fragment>
@@ -24,7 +22,7 @@ function CustomHead({
         <meta property="og:title" content={title} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://iker.io${asPath}`} />
-        <meta property="og:image" content={settings.gravatar} />
+        <meta property="og:image" content={GRAVATAR} />
         <meta property="og:description" content={description} />
         <meta property="og:site_name" content={title} />
         <meta property="article:tag" content={keywords.join()} />

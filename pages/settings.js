@@ -1,5 +1,8 @@
-import React, { useContext } from 'react';
-import { BACKGROUNDS, AppContext } from 'config';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { BACKGROUNDS } from 'store/settings/backgrounds';
+import { changeBackground } from 'store/settings/actions';
+import { getCurrentBg } from 'store/settings/selectors';
 import { randomId } from 'atomic/utils';
 import Desktop from 'shared/desktop';
 import Window from 'shared/window';
@@ -7,14 +10,11 @@ import Window from 'shared/window';
 import settingsStyles from 'styles/modules/settings.module.scss';
 
 function Settings() {
-  const { settings, updateSettings } = useContext(AppContext);
-
-  function getBackground(src) {
-    return BACKGROUNDS.find((item) => item.src === src);
-  }
+  const currentBg = useSelector(getCurrentBg());
+  const dispatch = useDispatch();
 
   function onBgChange({ target: imageSelect }) {
-    updateSettings({ background: getBackground(imageSelect.value) });
+    dispatch(changeBackground(imageSelect.value));
   }
 
   return (
@@ -28,7 +28,7 @@ function Settings() {
               name="bgImage"
               id="bgImage"
               onChange={onBgChange}
-              value={settings.background.src}
+              value={currentBg.src}
             >
               {BACKGROUNDS.map((background) => (
                 <option

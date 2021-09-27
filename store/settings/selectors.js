@@ -11,3 +11,7 @@ export function getCurrentBg() {
 
   return ({ settings }) => getBackground(settings.bgSrc);
 }
+
+export function getPlaylist() {
+  return ({ settings }) => settings.playlist;
+}

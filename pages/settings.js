@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BACKGROUNDS } from 'store/settings/backgrounds';
-import { changeBackground } from 'store/settings/actions';
-import { getCurrentBg } from 'store/settings/selectors';
+import { changeBackground, changePlaylist } from 'store/settings/actions';
+import { getCurrentBg, getPlaylist } from 'store/settings/selectors';
 import { randomId } from 'atomic/utils';
 import Desktop from 'shared/desktop';
 import Window from 'shared/window';
@@ -11,6 +11,7 @@ import settingsStyles from 'styles/modules/settings.module.scss';
 
 function Settings() {
   const currentBg = useSelector(getCurrentBg());
+  const playlistUrl = useSelector(getPlaylist());
   const dispatch = useDispatch();
 
   function onBgChange({ target: imageSelect }) {
@@ -39,6 +40,15 @@ function Settings() {
                 </option>
               ))}
             </select>
+          </label>
+          <label htmlFor="playlistUrl">
+            Soundcloud link:
+            <input
+              name="playlistUrl"
+              id="playlistUrl"
+              value={playlistUrl}
+              onChange={({ target }) => dispatch(changePlaylist(target.value))}
+            />
           </label>
         </form>
       </Window>

@@ -1,6 +1,7 @@
 import React, {
   useEffect, useRef, useState,
 } from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import qs from 'qs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +9,7 @@ import {
   faBackward, faForward, faPause, faPlay,
 } from '@fortawesome/free-solid-svg-icons';
 import { faSoundcloud } from '@fortawesome/free-brands-svg-icons';
+import { getPlaylist } from 'store/settings/selectors';
 import { injectScript, listenOutsideClick } from 'atomic/utils';
 
 import styles from 'styles/modules/soundcloud-player.module.scss';
@@ -17,9 +19,10 @@ import styles from 'styles/modules/soundcloud-player.module.scss';
  * https://developers.soundcloud.com/docs/api/html5-widget
  */
 function SoundCloudPlayer({ visual, onOpen }) {
+  const playlistUrl = useSelector(getPlaylist());
   const soundCloudUrl = 'https://w.soundcloud.com/player/';
   const options = {
-    url: 'https://api.soundcloud.com/playlists/1177045477',
+    url: playlistUrl,
     color: '#ff5500',
     auto_play: false,
     show_comments: false,
@@ -29,9 +32,12 @@ function SoundCloudPlayer({ visual, onOpen }) {
     visual,
   };
   const src = `${soundCloudUrl}?${qs.stringify(options)}`;
-  const [isReady, setReady] = useState(false);
+  const [apiReady, setApiReady] = useState(false);
+  const [widgetReady, setWidgetReady] = useState(false);
+  const [widgetError, setWidgetError] = useState(false);
   const [isOpen, setOpen] = useState(false);
   const [isPlaying, setPlaying] = useState(false);
+  const [playlistChange, setPlaylistChange] = useState(0);
   const $iframe = useRef(null);
   const $buttons = useRef([]);
 
@@ -68,16 +74,26 @@ function SoundCloudPlayer({ visual, onOpen }) {
   }
 
   useEffect(() => {
-    if (isReady && $iframe?.current) {
-      const widget = window.SC.Widget($iframe.current);
+    setPlaylistChange(playlistChange + 1);
+  }, [apiReady, playlistUrl]);
+
+  useEffect(() => {
+    setPlaying(false);
+    setWidgetReady(false);
+    setWidgetError(false);
+    let widget;
+    if (apiReady && $iframe?.current) {
+      widget = getWidget();
       widget.bind(window.SC.Widget.Events.PLAY, () => setPlaying(true));
       widget.bind(window.SC.Widget.Events.PAUSE, () => setPlaying(false));
+      widget.bind(window.SC.Widget.Events.READY, () => setWidgetReady(true));
+      widget.bind(window.SC.Widget.Events.ERROR, () => setWidgetError(true));
     }
-  }, [isReady]);
+  }, [playlistChange]);
 
   useEffect(() => {
     let removeOutsideClick;
-    if (isReady && $iframe?.current && isOpen) {
+    if (apiReady && $iframe?.current && isOpen) {
       removeOutsideClick = listenOutsideClick([
         $iframe.current,
         ...$buttons.current,
@@ -92,11 +108,13 @@ function SoundCloudPlayer({ visual, onOpen }) {
   }, [isOpen, isPlaying]);
 
   useEffect(() => {
-    injectScript(`${soundCloudUrl}api.js`)
-      .then(() => setReady(true));
+    if (!apiReady) {
+      injectScript(`${soundCloudUrl}api.js`)
+        .then(() => setApiReady(true));
+    }
   }, []);
 
-  if (!isReady) return null;
+  if (!apiReady) return null;
 
   return (
     <React.Fragment>
@@ -108,44 +126,49 @@ function SoundCloudPlayer({ visual, onOpen }) {
       >
         <FontAwesomeIcon icon={faSoundcloud} />
       </button>
-      <button
-        ref={(el) => { $buttons.current[1] = el; }}
-        className={styles.prev}
-        type="button"
-        onClick={prev}
-      >
-        <FontAwesomeIcon icon={faBackward} />
-      </button>
-      {!isPlaying && (
-        <button
-          ref={(el) => { $buttons.current[2] = el; }}
-          className={styles.play}
-          type="button"
-          onClick={play}
-        >
-          <FontAwesomeIcon icon={faPlay} />
-        </button>
+      {!!widgetReady && !widgetError && (
+        <React.Fragment>
+          <button
+            ref={(el) => { $buttons.current[1] = el; }}
+            className={styles.prev}
+            type="button"
+            onClick={prev}
+          >
+            <FontAwesomeIcon icon={faBackward} />
+          </button>
+          {!isPlaying && (
+            <button
+              ref={(el) => { $buttons.current[2] = el; }}
+              className={styles.play}
+              type="button"
+              onClick={play}
+            >
+              <FontAwesomeIcon icon={faPlay} />
+            </button>
+          )}
+          {!!isPlaying && (
+            <button
+              ref={(el) => { $buttons.current[3] = el; }}
+              className={styles.pause}
+              type="button"
+              onClick={pause}
+            >
+              <FontAwesomeIcon icon={faPause} />
+            </button>
+          )}
+          <button
+            ref={(el) => { $buttons.current[4] = el; }}
+            className={styles.next}
+            type="button"
+            onClick={next}
+          >
+            <FontAwesomeIcon icon={faForward} />
+          </button>
+        </React.Fragment>
       )}
-      {!!isPlaying && (
-        <button
-          ref={(el) => { $buttons.current[3] = el; }}
-          className={styles.pause}
-          type="button"
-          onClick={pause}
-        >
-          <FontAwesomeIcon icon={faPause} />
-        </button>
-      )}
-      <button
-        ref={(el) => { $buttons.current[4] = el; }}
-        className={styles.next}
-        type="button"
-        onClick={next}
-      >
-        <FontAwesomeIcon icon={faForward} />
-      </button>
       <div className={getClasses(styles.player, styles.playerOpened)}>
         <iframe
+          key={playlistChange}
           ref={$iframe}
           width="100%"
           height={visual ? 300 : 450}

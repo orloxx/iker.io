@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Store, { persist } from 'store';
 import CustomHead from 'shared/custom-head';
 
+// Need to explicitly import it when adding <link> to the head
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'styles/globals.scss';
 import styles from 'styles/modules/home.module.scss';
 

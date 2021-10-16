@@ -1,0 +1,31 @@
+{
+  "name": "Iker Garitaonandia | Software Engineer",
+  "short_name": "Iker IO",
+  "description": "My name is Iker Garitaonandia and I'm a professional software developer with 15 years of experience helping companies achieve digital transformation.",
+  "lang": "en-US",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "fullscreen",
+  "theme_color": "#0E5389",
+  "background_color": "#0E5389",
+  "icons": [
+    { "src": "/wp/icon16.png", "sizes": "16x16" },
+    { "src": "/wp/icon64.png", "sizes": "64x64" },
+    { "src": "/wp/icon192.png", "sizes": "192x192" },
+    { "src": "/wp/icon256.png", "sizes": "256x256" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Read more about me",
+      "short_name": "README",
+      "description": "My CV",
+      "url": "/readme?source=pwa",
+      "icons": [
+        { "src": "/wp/icon16.png", "sizes": "16x16" },
+        { "src": "/wp/icon64.png", "sizes": "64x64" },
+        { "src": "/wp/icon192.png", "sizes": "192x192" },
+        { "src": "/wp/icon256.png", "sizes": "256x256" }
+      ]
+    }
+  ]
+}

@@ -5,6 +5,13 @@ import { useRouter } from 'next/router';
 import StatusBar from 'shared/status-bar';
 import { GRAVATAR } from 'atomic/constants';
 
+const APP_ICONS = [
+  { src: '/wp/icon16.png', sizes: '16x16' },
+  { src: '/wp/icon64.png', sizes: '64x64' },
+  { src: '/wp/icon192.png', sizes: '192x192' },
+  { src: '/wp/icon256.png', sizes: '256x256' },
+];
+
 function CustomHead({
   author, title, description, keywords,
 }) {
@@ -14,6 +21,11 @@ function CustomHead({
     <React.Fragment>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-starturl" content="/" />
+        <meta name="theme-color" content="#0E5389" />
+
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords.join()} />
@@ -26,6 +38,15 @@ function CustomHead({
         <meta property="og:description" content={description} />
         <meta property="og:site_name" content={title} />
         <meta property="article:tag" content={keywords.join()} />
+
+        <link rel="manifest" href="/manifest.json" />
+
+        {APP_ICONS.map(({ src, sizes }) => (
+          <React.Fragment key={src}>
+            <link rel="icon" sizes={sizes} href={src} />
+            <link rel="apple-touch-icon" sizes={sizes} href={src} />
+          </React.Fragment>
+        ))}
       </Head>
       <StatusBar title={title} />
     </React.Fragment>
@@ -35,7 +56,7 @@ function CustomHead({
 CustomHead.defaultProps = {
   author: 'Iker Garitaonandia',
   title: 'Iker Garitaonandia | Software Developer',
-  description: 'My name is Iker Garitaonandia and I\'m a professional software developer with 15+ years of experience helping companies achieve digital transformation.',
+  description: 'My name is Iker Garitaonandia and I\'m a professional software developer with 15 years of experience helping companies achieve digital transformation.',
   keywords: ['Software developer', 'Engineer', 'Web developer', 'JavaScript', 'Frontend', 'HTML', 'CSS'],
 };
 

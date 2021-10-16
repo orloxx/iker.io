@@ -3,10 +3,12 @@
 :root {
   // colors
   --c-primary: #{$c-blue};
+  --c-primary-hover: #{darken($c-blue, 10)};
   --c-primary-bg: #{$c-light};
   --c-primary-text: #{$c-dark};
   --c-secundary-bg: #{$c-grey2};
 
+  --c-contrast-bg: #{$c-dark};
   --c-contrast-text: #{$c-light};
   --c-focus: #{rgba($c-blue, 0.50)};
   --c-border: #{$c-grey5};

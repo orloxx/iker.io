@@ -1,0 +1,43 @@
+@import "styles/common";
+
+.form {
+  width: 100%;
+  max-width: 630px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.label {
+  p {
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+
+  input {
+    @extend %input;
+
+    margin: 1rem 0;
+  }
+}
+
+.buttons {
+  text-align: center;
+
+  button[type=submit] {
+    @extend %button-primary;
+  }
+}
+
+.image {
+  display: block;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 400px;
+}
+
+.caption {
+  text-align: center;
+  margin: 1rem 0;
+  word-wrap: break-word;
+}

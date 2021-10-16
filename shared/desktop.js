@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { faCogs } from '@fortawesome/free-solid-svg-icons';
+import { faCogs, faQrcode } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { getCurrentBg } from 'store/settings/selectors';
 import LinkFile from 'atomic/link-file';
@@ -44,6 +44,12 @@ function Desktop({ current }) {
           label="Github"
           name="github"
           icon={faGithub}
+        />
+        <LinkFile
+          href="/qr"
+          label="QR Create"
+          name="qr-create"
+          icon={faQrcode}
         />
       </div>
       <div className={styles.credits}>

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import qs from 'qs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faBackward, faForward, faPause, faPlay,
+  faStepBackward, faStepForward, faPause, faPlay,
 } from '@fortawesome/free-solid-svg-icons';
 import { faSoundcloud } from '@fortawesome/free-brands-svg-icons';
 import { getCurrentPlaylist } from 'store/settings/selectors';
@@ -134,7 +134,7 @@ function SoundCloudPlayer({ visual, onOpen }) {
             type="button"
             onClick={prev}
           >
-            <FontAwesomeIcon icon={faBackward} />
+            <FontAwesomeIcon icon={faStepBackward} />
           </button>
           {!isPlaying && (
             <button
@@ -162,7 +162,7 @@ function SoundCloudPlayer({ visual, onOpen }) {
             type="button"
             onClick={next}
           >
-            <FontAwesomeIcon icon={faForward} />
+            <FontAwesomeIcon icon={faStepForward} />
           </button>
         </React.Fragment>
       )}

@@ -7,8 +7,11 @@ export function getMainScene() {
 
   // Light
   const intensity = 1;
-  const light = new THREE.DirectionalLight(0xFFFFFF, intensity);
-  light.position.set(-1, 2, 4);
+  const lightPosition = [-1, 2, 4];
+  const hemiLight = new THREE.HemisphereLight(0xFFFFFF, 0x000000, intensity);
+  const light = new THREE.PointLight(0xFFFFFF, intensity, 50);
+  light.position.set(...lightPosition);
+  hemiLight.position.set(...lightPosition);
 
   const cubes = [
     makeCube({}),
@@ -20,6 +23,7 @@ export function getMainScene() {
     scene.add(cube);
   });
 
+  scene.add(hemiLight);
   scene.add(light);
 
   return scene;

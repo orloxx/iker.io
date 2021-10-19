@@ -58,3 +58,31 @@ export function listenOutsideClick(insideEls, callback = () => {}) {
     window.removeEventListener('click', onClick);
   };
 }
+
+/**
+ * Initializes multi-key listeners for 3d-object control
+ *
+ * @return {{destroy(): void, controlMapping: {}}}
+ */
+export function addMultiTouchKeyboardControl() {
+  const controlMapping = {};
+
+  function handleKeydown({ key }) {
+    controlMapping[key.toLowerCase()] = true;
+  }
+
+  function handleKeyup({ key }) {
+    controlMapping[key.toLowerCase()] = false;
+  }
+
+  document.addEventListener('keydown', handleKeydown);
+  document.addEventListener('keyup', handleKeyup);
+
+  return {
+    controlMapping,
+    destroy() {
+      document.removeEventListener('keydown', handleKeydown);
+      document.removeEventListener('keyup', handleKeyup);
+    },
+  };
+}

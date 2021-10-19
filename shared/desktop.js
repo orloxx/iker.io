@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { faCogs, faQrcode } from '@fortawesome/free-solid-svg-icons';
+import { faCogs, faGamepad, faQrcode } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { getCurrentBg } from 'store/settings/selectors';
 import LinkFile from 'atomic/link-file';
@@ -50,6 +50,12 @@ function Desktop({ current }) {
           label="QR Create"
           name="qr-create"
           icon={faQrcode}
+        />
+        <LinkFile
+          href="/three"
+          label="3D fun"
+          name="three"
+          icon={faGamepad}
         />
       </div>
       <div className={styles.credits}>

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 // import PropTypes from 'prop-types';
-import { initCanvas } from 'shared/three-dee/renderer';
+import { Animate } from 'shared/three-dee/renderer';
 import { getMainScene } from 'shared/three-dee/scenes';
 import { addMultiTouchKeyboardControl } from 'atomic/utils';
 
@@ -9,31 +9,38 @@ import styles from 'styles/modules/canvas.module.scss';
 function ThreeDee() {
   const $canvas = useRef();
 
+  function updateCameraPosition({ camera, controlMapping }) {
+    const velocity = controlMapping.shift ? 0.1 : 0.03;
+    const vertical = (dir = 1) => camera.translateZ(dir * velocity);
+    const horizontal = (dir = 1) => camera.rotateY(dir * 0.03);
+    const mapping = {
+      arrowup: () => vertical(-1),
+      w: () => vertical(-1),
+      arrowdown: () => vertical(1),
+      s: () => vertical(1),
+      arrowleft: () => horizontal(1),
+      a: () => horizontal(1),
+      arrowright: () => horizontal(-1),
+      d: () => horizontal(-1),
+    };
+
+    Object.keys(controlMapping)
+      .filter((key) => controlMapping[key])
+      .forEach((key) => {
+        if (mapping[key]) {
+          mapping[key]();
+        }
+      });
+  }
+
   useEffect(() => {
     const { controlMapping, destroy } = addMultiTouchKeyboardControl();
-    const { camera } = initCanvas({
+    const animateOptions = {
       $canvas,
       scene: getMainScene(),
-    }, () => {
-      const velocity = controlMapping.shift ? 0.1 : 0.01;
-      const mapping = {
-        arrowup: () => camera.translateZ(-velocity),
-        w: () => camera.translateZ(-velocity),
-        arrowdown: () => camera.translateZ(velocity),
-        s: () => camera.translateZ(velocity),
-        arrowleft: () => camera.translateX(-velocity),
-        a: () => camera.translateX(-velocity),
-        arrowright: () => camera.translateX(velocity),
-        d: () => camera.translateX(velocity),
-      };
-
-      Object.keys(controlMapping)
-        .filter((key) => controlMapping[key])
-        .forEach((key) => {
-          if (mapping[key]) {
-            mapping[key]();
-          }
-        });
+    };
+    const { camera } = Animate(animateOptions, () => {
+      updateCameraPosition({ camera, controlMapping });
     });
 
     return () => {

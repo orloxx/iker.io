@@ -14,9 +14,9 @@ export function getMainScene() {
   hemiLight.position.set(...lightPosition);
 
   const cubes = [
-    makeCube({}),
-    makeCube({ color: 0x8844aa, position: { x: -2 } }),
-    makeCube({ color: 0xaa8844, position: { x: 2 } }),
+    makeCube({ position: new THREE.Vector3(0, 0, -2) }),
+    makeCube({ color: 0x8844aa, position: new THREE.Vector3(2, 0, 0) }),
+    makeCube({ color: 0xaa8844, position: new THREE.Vector3(-2, 0, 0) }),
   ];
 
   cubes.forEach((cube) => {

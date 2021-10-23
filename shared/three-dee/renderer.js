@@ -15,7 +15,7 @@ function resizeRenderer(renderer) {
   return false;
 }
 
-export function initCanvas({
+export function Animate({
   $canvas,
   scene,
   cameraOptions = {
@@ -23,7 +23,8 @@ export function initCanvas({
     aspect: 2,
     near: 0.1,
     far: 20,
-    z: 4,
+    position: new THREE.Vector3(0, 0, 0),
+    rotation: new THREE.Vector3(0, 0, 0),
   },
 }, callback = () => {}) {
   const renderer = new THREE.WebGLRenderer({
@@ -32,12 +33,15 @@ export function initCanvas({
 
   // Camera
   const {
-    fov, aspect, near, far,
+    fov, aspect, near, far, position, rotation,
   } = cameraOptions;
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-  camera.position.x = cameraOptions.x || 0;
-  camera.position.y = cameraOptions.y || 0;
-  camera.position.z = cameraOptions.z || 0;
+  camera.position.x = position.x;
+  camera.position.y = position.y;
+  camera.position.z = position.z;
+  camera.rotation.x = rotation.x;
+  camera.rotation.y = rotation.y;
+  camera.rotation.z = rotation.z;
 
   function onFrame() {
     if (!$canvas.current) return;
@@ -56,5 +60,5 @@ export function initCanvas({
   }
   requestAnimationFrame(onFrame);
 
-  return { renderer, camera };
+  return { renderer, scene, camera };
 }

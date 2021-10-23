@@ -5,14 +5,14 @@ export function makeBrick({
   width = 1,
   height = 1,
   depth = 1,
-  position = {},
+  position = new THREE.Vector3(0, 0, 0),
 }) {
   const geometry = new THREE.BoxGeometry(width, height, depth);
   const material = new THREE.MeshPhongMaterial({ color });
   const brick = new THREE.Mesh(geometry, material);
-  brick.position.x = position.x || 0;
-  brick.position.y = position.y || 0;
-  brick.position.z = position.z || 0;
+  brick.position.x = position.x;
+  brick.position.y = position.y;
+  brick.position.z = position.z;
 
   return brick;
 }

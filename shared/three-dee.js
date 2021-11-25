@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 // import PropTypes from 'prop-types';
 import { addMultiTouchKeyboardControl } from 'atomic/utils';
-import { loadApp } from 'shared/three-dee/loader';
+import { loadApp } from 'atomic/three-js-loader';
+import { getParticles } from 'atomic/particles';
 
 import styles from 'styles/modules/canvas.module.scss';
 
@@ -32,15 +33,25 @@ function ThreeDee() {
       });
   }
 
-  useEffect(() => {
-    const { controlMapping, destroy } = addMultiTouchKeyboardControl();
+  async function initialize(controlMapping) {
     const canvasOptions = {
       $canvas: $canvas.current,
+      file: '/js/3d-scene.json',
     };
 
-    loadApp(canvasOptions, ({ camera }) => {
+    const particles = getParticles();
+
+    const { camera, scene } = await loadApp(canvasOptions, () => {
       updateCameraPosition({ camera, controlMapping });
     });
+
+    scene.add(particles);
+  }
+
+  useEffect(() => {
+    const { controlMapping, destroy } = addMultiTouchKeyboardControl();
+
+    initialize(controlMapping);
 
     return () => {
       destroy();
@@ -48,7 +59,9 @@ function ThreeDee() {
   }, []);
 
   return (
-    <canvas className={styles.container} ref={$canvas} />
+    <div className={styles.container}>
+      <canvas className={styles.canvas} ref={$canvas} />
+    </div>
   );
 }
 

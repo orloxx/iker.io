@@ -1,9 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-const fetch = require('node-fetch');
-const qs = require('querystring');
-const marked = require('marked');
+import fetch from 'node-fetch';
+import qs from 'qs';
+import marked from 'marked';
 
-export default async (req, res) => {
+const Posts = async (req, res) => {
   async function getPost() {
     try {
       const { slug } = qs.parse(req.url.split('?').pop());
@@ -28,3 +28,5 @@ export default async (req, res) => {
 
   return getPost();
 };
+
+export default Posts;

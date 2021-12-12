@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { addMultiTouchKeyboardControl } from 'atomic/utils';
 import { loadApp } from 'atomic/three-js-loader';
 import { getParticles } from 'atomic/particles';
+import { flat2DMatrix, getEqualizer, updateEqualizer } from 'atomic/equalizer';
 
 import styles from 'styles/modules/canvas.module.scss';
 
@@ -36,16 +37,18 @@ function ThreeDee() {
   async function initialize(controlMapping) {
     const canvasOptions = {
       $canvas: $canvas.current,
-      file: '/js/3d-scene.json',
+      file: '/js/3d-empty.json',
     };
 
-    const particles = getParticles();
+    const cubes = getEqualizer();
 
     const { camera, scene } = await loadApp(canvasOptions, () => {
       updateCameraPosition({ camera, controlMapping });
+      updateEqualizer(cubes);
     });
 
-    scene.add(particles);
+    scene.add(getParticles());
+    scene.add(...flat2DMatrix(cubes));
   }
 
   useEffect(() => {

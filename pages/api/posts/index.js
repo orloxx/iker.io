@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import fetch from 'node-fetch';
 import qs from 'qs';
-import marked from 'marked';
+import { marked } from 'marked';
 
 const Posts = async (req, res) => {
   async function getPost() {

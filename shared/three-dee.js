@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-// import PropTypes from 'prop-types';
 import { addMultiTouchKeyboardControl } from 'atomic/utils';
-import { loadApp } from 'atomic/three-js-loader';
+import { loadApp, startAnimation } from 'atomic/three-js-loader';
 import { getParticles } from 'atomic/particles';
-import { flat2DMatrix, getEqualizer, updateEqualizer } from 'atomic/equalizer';
+import { addXRControllers } from 'atomic/xr-controllers';
+import { addBallShooter, handleController, updateBallAmmunitionGravity } from 'atomic/ball-shooter';
 
 import styles from 'styles/modules/canvas.module.scss';
 
@@ -40,26 +40,29 @@ function ThreeDee() {
       file: '/js/3d-empty.json',
     };
 
-    const cubes = getEqualizer();
-
-    const { camera, scene } = await loadApp(canvasOptions, () => {
-      updateCameraPosition({ camera, controlMapping });
-      updateEqualizer(cubes);
-    });
+    const { renderer, camera, scene } = await loadApp(canvasOptions);
+    const { controllers } = addXRControllers({ renderer, scene });
+    const { room } = addBallShooter({ scene });
 
     scene.add(getParticles());
-    scene.add(...flat2DMatrix(cubes));
+
+    startAnimation({ renderer, camera, scene }, () => {
+      handleController({ room, controller: controllers[0] });
+      handleController({ room, controller: controllers[1] });
+      updateCameraPosition({ camera, controlMapping });
+      updateBallAmmunitionGravity({ room });
+    });
   }
 
   useEffect(() => {
-    const { controlMapping, destroy } = addMultiTouchKeyboardControl();
+    const inputControl = addMultiTouchKeyboardControl();
 
-    initialize(controlMapping);
+    initialize(inputControl.controlMapping);
 
     return () => {
-      destroy();
+      inputControl.destroy();
     };
-  }, []);
+  });
 
   return (
     <div className={styles.container}>
@@ -67,11 +70,5 @@ function ThreeDee() {
     </div>
   );
 }
-
-ThreeDee.defaultProps = {
-};
-
-ThreeDee.propTypes = {
-};
 
 export default ThreeDee;

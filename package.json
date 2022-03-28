@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "adb:devices": "adb devices",
+    "adb:reverse": "adb reverse tcp:3000 tcp:3000"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",

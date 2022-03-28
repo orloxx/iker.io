@@ -5,7 +5,7 @@
   "project": {
     "shadows": true,
     "shadowType": 1,
-    "vr": false,
+    "vr": true,
     "physicallyCorrectLights": false,
     "toneMapping": 0,
     "toneMappingExposure": 1

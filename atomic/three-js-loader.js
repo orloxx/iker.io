@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { VRButton } from 'three/examples/jsm/webxr/VRButton';
 import { customFetch } from 'atomic/utils';
 
 function getRenderer({ $canvas, project }) {
@@ -8,8 +9,9 @@ function getRenderer({ $canvas, project }) {
     canvas: $canvas,
   });
 
-  if (project.vr) {
-    renderer.xr.enabled = project.vr;
+  if (project.vr && window.navigator.xr) {
+    document.body.appendChild(VRButton.createButton(renderer));
+    renderer.xr.enabled = true;
   }
   if (project.shadows) {
     renderer.shadowMap.enabled = project.shadows;
@@ -64,18 +66,19 @@ async function getConfiguration({ json, file = '/js/3d-empty.json' } = {}) {
   }
 }
 
+export function startAnimation(app, callback = () => {}) {
+  app.renderer.setAnimationLoop(() => {
+    animate(app);
+    callback();
+  });
+}
+
 export async function loadApp({ $canvas, json, file }, callback = () => {}) {
   const config = await getConfiguration({ json, file });
   const loader = new THREE.ObjectLoader();
   const renderer = getRenderer({ $canvas, project: config.project });
   const camera = loader.parse(config.camera);
   const scene = loader.parse(config.scene);
-  const exposed = { renderer, camera, scene };
 
-  renderer.setAnimationLoop(() => {
-    animate(exposed);
-    callback(exposed);
-  });
-
-  return exposed;
+  return { renderer, camera, scene };
 }

@@ -11,7 +11,7 @@ import { addMultiTouchKeyboardControl } from 'atomic/utils'
 import { addParticles } from 'atomic/utils/particles'
 import { fetchPlainConfig } from 'store/threejs/actions'
 
-function usePlainRender($canvas) {
+function useBallShooterBox($canvas) {
   const threeJSConfig = useSelector(({ threeJS }) => threeJS)
   const dispatch = useDispatch()
 
@@ -51,4 +51,4 @@ function usePlainRender($canvas) {
   }, [threeJSConfig])
 }
 
-export default usePlainRender
+export default useBallShooterBox

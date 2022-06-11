@@ -1,12 +1,12 @@
 import React, { useRef } from 'react'
-import usePlainRender from 'atomic/hooks/use-plain-render'
+import useBallShooterBox from 'atomic/hooks/use-ball-shooter-box'
 
 import styles from 'styles/modules/canvas.module.scss'
 
 function ThreeDee() {
   const $canvas = useRef()
 
-  usePlainRender($canvas)
+  useBallShooterBox($canvas)
 
   return (
     <div className={styles.container}>

@@ -40,15 +40,17 @@ function ThreeDee() {
       file: '/js/3d-empty.json',
     };
 
-    const { renderer, camera, scene } = await loadApp(canvasOptions);
+    const app = await loadApp(canvasOptions);
+    const { renderer, camera, scene } = app;
     const { controllers } = addXRControllers({ renderer, scene });
+    const [leftControl, rightControl] = controllers;
     const { room } = addBallShooter({ scene });
 
     scene.add(getParticles());
 
-    startAnimation({ renderer, camera, scene }, () => {
-      handleController({ room, controller: controllers[0] });
-      handleController({ room, controller: controllers[1] });
+    startAnimation(app, () => {
+      handleController({ room, controller: leftControl });
+      handleController({ room, controller: rightControl });
       updateCameraPosition({ camera, controlMapping });
       updateBallAmmunitionGravity({ room });
     });

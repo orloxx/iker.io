@@ -80,5 +80,5 @@ export async function loadApp({ $canvas, json, file }, callback = () => {}) {
   const camera = loader.parse(config.camera);
   const scene = loader.parse(config.scene);
 
-  return { renderer, camera, scene };
+  return { loader, renderer, camera, scene };
 }

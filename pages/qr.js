@@ -1,24 +1,22 @@
-import React from 'react';
+import React from 'react'
 // import PropTypes from 'prop-types';
-import Desktop from 'shared/desktop';
-import Window from 'shared/window';
-import QRGenerator from 'shared/qr-generator';
+import Desktop from 'shared/desktop'
+import Window from 'shared/window'
+import QRGenerator from 'shared/qr-generator'
 
 function QR() {
   return (
-    <React.Fragment>
+    <>
       <Desktop />
       <Window title="QR Create">
         <QRGenerator />
       </Window>
-    </React.Fragment>
-  );
+    </>
+  )
 }
 
-QR.defaultProps = {
-};
+QR.defaultProps = {}
 
-QR.propTypes = {
-};
+QR.propTypes = {}
 
-export default QR;
+export default QR

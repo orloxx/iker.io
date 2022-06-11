@@ -1,0 +1,22 @@
+.container {
+  display: block;
+  position: fixed;
+  z-index: 500;
+  background: var(--c-info);
+  color: var(--c-contrast-text);
+  padding: 1rem 2rem;
+  bottom: 3rem;
+  left: 3rem;
+}
+
+.error {
+  background: var(--c-error);
+}
+
+.warning {
+  background: var(--c-warning);
+}
+
+.success {
+  background: var(--c-success);
+}

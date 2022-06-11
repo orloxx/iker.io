@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import styles from 'styles/modules/loading.module.scss';
+import styles from 'styles/modules/loading.module.scss'
 
 function Loading() {
   return (
@@ -11,7 +11,7 @@ function Loading() {
         <div className={styles.three} />
       </div>
     </div>
-  );
+  )
 }
 
-export default Loading;
+export default Loading

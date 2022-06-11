@@ -1,37 +1,32 @@
-import { applyMiddleware } from 'redux';
-import Cookie from 'js-cookie';
-import cookie from 'cookie';
-import { INITIAL_STATE } from 'store/settings/reducer';
+import Cookie from 'js-cookie'
+import cookie from 'cookie'
+import { INITIAL_STATE } from 'store/settings/reducer'
 
 function parseCookies(req) {
-  return cookie.parse(req ? req.headers.cookie || '' : document.cookie);
-}
-
-function persistMiddleware() {
-  function cookiePersist(store) {
-    return (next) => (action) => {
-      next(action);
-      const { settings } = store.getState();
-      Cookie.set('settings', settings, { secure: true });
-    };
-  }
-
-  return applyMiddleware(cookiePersist);
+  return cookie.parse(req ? req.headers.cookie || '' : document.cookie)
 }
 
 export function getPersistedState(req) {
-  let settings;
+  let settings
 
   try {
-    const cookies = parseCookies(req);
-    settings = JSON.parse(cookies.settings);
+    const cookies = parseCookies(req)
+    settings = JSON.parse(cookies.settings)
   } catch (e) {
-    settings = INITIAL_STATE;
+    settings = INITIAL_STATE
   }
 
   return {
     settings,
-  };
+  }
 }
 
-export default persistMiddleware;
+function persistMiddleware(store) {
+  return (next) => (action) => {
+    next(action)
+    const { settings } = store.getState()
+    Cookie.set('settings', settings, { secure: true })
+  }
+}
+
+export default persistMiddleware

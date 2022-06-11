@@ -1,15 +1,15 @@
-import { ICON_POSITION, CHANGE_BG, CHANGE_PLAYLIST } from 'store/settings/actions';
+import { ICON_POSITION, CHANGE_BG, CHANGE_PLAYLIST } from 'store/settings/actions'
 
-import { BACKGROUNDS } from 'store/settings/backgrounds';
-import { PLAYLISTS } from 'store/settings/playlists';
+import { BACKGROUNDS } from 'store/settings/backgrounds'
+import { PLAYLISTS } from 'store/settings/playlists'
 
 export const INITIAL_STATE = {
   iconPosition: {},
   bgSrc: BACKGROUNDS[0].src,
   playlist: PLAYLISTS[0].src,
-};
+}
 
-const settings = (state = INITIAL_STATE, action) => {
+const settings = (state = INITIAL_STATE, action = {}) => {
   switch (action.type) {
     case ICON_POSITION:
       return {
@@ -18,20 +18,20 @@ const settings = (state = INITIAL_STATE, action) => {
           ...state.iconPosition,
           ...action.payload,
         },
-      };
+      }
     case CHANGE_BG:
       return {
         ...state,
         bgSrc: action.payload,
-      };
+      }
     case CHANGE_PLAYLIST:
       return {
         ...state,
         playlist: action.payload ? action.payload : INITIAL_STATE.playlist,
-      };
+      }
     default:
-      return state;
+      return state
   }
-};
+}
 
-export default settings;
+export default settings

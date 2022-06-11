@@ -1,11 +1,11 @@
 export function randomId(size = 6) {
-  let result = '';
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  const charactersLength = characters.length;
+  let result = ''
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  const charactersLength = characters.length
   for (let i = 0; i < size; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    result += characters.charAt(Math.floor(Math.random() * charactersLength))
   }
-  return result;
+  return result
 }
 
 export async function customFetch(url) {
@@ -14,21 +14,23 @@ export async function customFetch(url) {
     headers: {
       'Content-Type': 'application/json',
     },
-  });
+  })
 
-  return res.json();
+  if (res.status !== 200) throw res
+
+  return res.json()
 }
 
 export function injectScript(src) {
   return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.defer = true;
-    script.async = true;
-    script.src = src;
-    script.addEventListener('load', resolve);
-    script.addEventListener('error', (e) => reject(e.error));
-    document.head.appendChild(script);
-  });
+    const script = document.createElement('script')
+    script.defer = true
+    script.async = true
+    script.src = src
+    script.addEventListener('load', resolve)
+    script.addEventListener('error', (e) => reject(e.error))
+    document.head.appendChild(script)
+  })
 }
 
 /**
@@ -40,23 +42,21 @@ export function injectScript(src) {
  */
 export function listenOutsideClick(insideEls, callback = () => {}) {
   function isOutside({ target }, elements) {
-    return !elements
-      .filter((el) => !!el)
-      .some((el) => target === el || el.contains(target));
+    return !elements.filter((el) => !!el).some((el) => target === el || el.contains(target))
   }
 
   function onClick(e) {
     if (isOutside(e, insideEls)) {
-      callback(e);
+      callback(e)
     }
   }
 
-  window.addEventListener('click', onClick);
+  window.addEventListener('click', onClick)
 
   // unsubscribe function
   return () => {
-    window.removeEventListener('click', onClick);
-  };
+    window.removeEventListener('click', onClick)
+  }
 }
 
 /**
@@ -65,24 +65,24 @@ export function listenOutsideClick(insideEls, callback = () => {}) {
  * @return {{destroy(): void, controlMapping: {}}}
  */
 export function addMultiTouchKeyboardControl() {
-  const controlMapping = {};
+  const controlMapping = {}
 
   function handleKeydown({ key }) {
-    controlMapping[key.toLowerCase()] = true;
+    controlMapping[key.toLowerCase()] = true
   }
 
   function handleKeyup({ key }) {
-    controlMapping[key.toLowerCase()] = false;
+    controlMapping[key.toLowerCase()] = false
   }
 
-  document.addEventListener('keydown', handleKeydown);
-  document.addEventListener('keyup', handleKeyup);
+  document.addEventListener('keydown', handleKeydown)
+  document.addEventListener('keyup', handleKeyup)
 
   return {
     controlMapping,
     destroy() {
-      document.removeEventListener('keydown', handleKeydown);
-      document.removeEventListener('keyup', handleKeyup);
+      document.removeEventListener('keydown', handleKeydown)
+      document.removeEventListener('keyup', handleKeyup)
     },
-  };
+  }
 }

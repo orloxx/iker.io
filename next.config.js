@@ -1,6 +1,6 @@
-const withPWA = require('next-pwa');
+const withPWA = require('next-pwa')
 
-const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 
 module.exports = withPWA({
   pwa: {
@@ -10,4 +10,7 @@ module.exports = withPWA({
     skipWaiting: true,
   },
   reactStrictMode: true,
-});
+  eslint: {
+    dirs: ['atomic', 'pages', 'shared', 'store'],
+  },
+})

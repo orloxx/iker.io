@@ -1,44 +1,49 @@
-import React, { useEffect, useState, useRef } from 'react';
-import PropTypes from 'prop-types';
-import Draggable from 'react-draggable';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import Link from 'next/link';
-import Loading from 'atomic/loading';
-import { customFetch } from 'atomic/utils';
+import React, { useEffect, useState, useRef } from 'react'
+import PropTypes from 'prop-types'
+import Draggable from 'react-draggable'
+import { useDispatch } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/link'
+import { logError } from 'store/logger/actions'
+import Loading from 'atomic/loading'
+import { customFetch } from 'atomic/utils'
 
-import styles from 'styles/modules/window.module.scss';
+import styles from 'styles/modules/window.module.scss'
 
-const Window = ({
-  children, title, slug, type,
-}) => {
+function Window({ children, title, slug, type }) {
   const WINDOW_STYLES = {
     normal: { maxWidth: 800, maxHeight: 800 },
     system: { maxWidth: 500, maxHeight: 200 },
-  };
-  const containerStyle = WINDOW_STYLES[type] || WINDOW_STYLES.normal;
-  const [html, setHtml] = useState('');
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const $window = useRef();
+  }
+  const containerStyle = WINDOW_STYLES[type] || WINDOW_STYLES.normal
+  const [html, setHtml] = useState('')
+  const [position, setPosition] = useState({ x: 0, y: 0 })
+  const $window = useRef()
+  const dispatch = useDispatch()
 
   function getDefaultPosition() {
-    const halfX = window.innerWidth / 2 - $window.current.clientWidth / 2;
-    const halfY = window.innerHeight / 2 - $window.current.clientHeight / 2;
-    return { x: halfX, y: halfY };
+    const halfX = window.innerWidth / 2 - $window.current.clientWidth / 2
+    const halfY = window.innerHeight / 2 - $window.current.clientHeight / 2
+    return { x: halfX, y: halfY }
   }
 
   async function getPost() {
-    const response = await customFetch(`/api/posts?slug=${slug}`);
-    if (response.html) setHtml(response.html);
+    try {
+      const response = await customFetch(`/api/posts?slug=${slug}`)
+      setHtml(response.html)
+    } catch (error) {
+      dispatch(logError(`${error.status} ${error.statusText}`))
+    }
   }
 
   useEffect(() => {
-    setPosition(getDefaultPosition());
-  }, []);
+    setPosition(getDefaultPosition())
+  }, [])
 
   useEffect(() => {
-    if (slug) getPost();
-  }, [slug]);
+    if (slug) getPost()
+  }, [slug])
 
   return (
     <Draggable
@@ -62,27 +67,25 @@ const Window = ({
             // eslint-disable-next-line react/no-danger
             <div className={styles.text} dangerouslySetInnerHTML={{ __html: html }} />
           )}
-          {slug && !html && (
-            <Loading />
-          )}
+          {slug && !html && <Loading />}
         </div>
       </div>
     </Draggable>
-  );
-};
+  )
+}
 
 Window.defaultProps = {
   children: null,
   title: '',
   slug: '',
   type: 'normal',
-};
+}
 
 Window.propTypes = {
   children: PropTypes.shape(),
   title: PropTypes.string,
   slug: PropTypes.string,
   type: PropTypes.string,
-};
+}
 
-export default Window;
+export default Window

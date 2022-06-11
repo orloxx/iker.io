@@ -1,24 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import StatusBar from 'shared/status-bar';
-import { GRAVATAR } from 'atomic/constants';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import StatusBar from 'shared/status-bar'
+import { GRAVATAR } from 'atomic/constants'
 
 const APP_ICONS = [
   { src: '/wp/icon16.png', sizes: '16x16' },
   { src: '/wp/icon64.png', sizes: '64x64' },
   { src: '/wp/icon192.png', sizes: '192x192' },
   { src: '/wp/icon256.png', sizes: '256x256' },
-];
+]
 
-function CustomHead({
-  author, title, description, keywords,
-}) {
-  const { asPath } = useRouter();
+function CustomHead({ author, title, description, keywords }) {
+  const { asPath } = useRouter()
 
   return (
-    <React.Fragment>
+    <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -49,22 +47,31 @@ function CustomHead({
         ))}
       </Head>
       <StatusBar title={title} />
-    </React.Fragment>
-  );
+    </>
+  )
 }
 
 CustomHead.defaultProps = {
   author: 'Iker Garitaonandia',
   title: 'Iker Garitaonandia | Software Developer',
-  description: 'My name is Iker Garitaonandia and I\'m a professional software developer with 15 years of experience helping companies achieve digital transformation.',
-  keywords: ['Software developer', 'Engineer', 'Web developer', 'JavaScript', 'Frontend', 'HTML', 'CSS'],
-};
+  description:
+    "My name is Iker Garitaonandia and I'm a professional software developer with 15 years of experience helping companies achieve digital transformation.",
+  keywords: [
+    'Software developer',
+    'Engineer',
+    'Web developer',
+    'JavaScript',
+    'Frontend',
+    'HTML',
+    'CSS',
+  ],
+}
 
 CustomHead.propTypes = {
   author: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
   keywords: PropTypes.arrayOf(PropTypes.string),
-};
+}
 
-export default CustomHead;
+export default CustomHead

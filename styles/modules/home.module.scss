@@ -1,8 +1,6 @@
 @import "styles/common";
 
 .container {
-  //@include gradient-bg(var(--c-primary), var(--c-primary-text));
-
   background-color: var(--c-primary);
   height: 100%;
 }

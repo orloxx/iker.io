@@ -1,54 +1,51 @@
-import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faBatteryFull, faBatteryThreeQuarters, faBatteryHalf,
-  faBatteryQuarter, faBatteryEmpty,
-} from '@fortawesome/free-solid-svg-icons';
+  faBatteryFull,
+  faBatteryThreeQuarters,
+  faBatteryHalf,
+  faBatteryQuarter,
+  faBatteryEmpty,
+} from '@fortawesome/free-solid-svg-icons'
 
 function Battery() {
-  const [icon, setIcon] = useState(null);
+  const [icon, setIcon] = useState(null)
 
   function onLevelChange(battery) {
-    const { level } = battery;
+    const { level } = battery
     if (level === 1) {
-      setIcon(faBatteryFull);
+      setIcon(faBatteryFull)
     } else if (level >= 0.75) {
-      setIcon(faBatteryThreeQuarters);
+      setIcon(faBatteryThreeQuarters)
     } else if (level >= 0.5) {
-      setIcon(faBatteryHalf);
+      setIcon(faBatteryHalf)
     } else if (level >= 0.25) {
-      setIcon(faBatteryQuarter);
+      setIcon(faBatteryQuarter)
     } else {
-      setIcon(faBatteryEmpty);
+      setIcon(faBatteryEmpty)
     }
   }
 
-  function levelChangeListener({ target: battery }) {
-    onLevelChange(battery);
-  }
-
   useEffect(() => {
-    let thisBattery = null;
+    let thisBattery = null
+    const levelChangeListener = ({ target: battery }) => onLevelChange(battery)
+
     if ('getBattery' in navigator) {
       navigator.getBattery().then((battery) => {
-        thisBattery = battery;
-        onLevelChange(battery);
-        battery.addEventListener('levelchange', levelChangeListener);
-      });
+        thisBattery = battery
+        onLevelChange(battery)
+        battery.addEventListener('levelchange', levelChangeListener)
+      })
     }
 
     return () => {
       if (thisBattery) {
-        thisBattery.removeEventListener('levelchange', levelChangeListener);
+        thisBattery.removeEventListener('levelchange', levelChangeListener)
       }
-    };
-  }, []);
+    }
+  }, [])
 
-  return icon && (
-    <React.Fragment>
-      <FontAwesomeIcon icon={icon} />
-    </React.Fragment>
-  );
+  return icon && <FontAwesomeIcon icon={icon} />
 }
 
-export default Battery;
+export default Battery

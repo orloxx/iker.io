@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 
-export function getParticles() {
+export function addParticles(scene) {
   const MAX_PARTICLES = 50000
   const DIMENSIONS = 3
   const geometry = new THREE.BufferGeometry()
@@ -16,6 +16,16 @@ export function getParticles() {
   }
 
   geometry.setAttribute('position', buffer)
+
+  scene.add(mesh)
+
+  mesh.destroy = () => {
+    geometry.dispose()
+    material.dispose()
+    mesh.geometry.dispose()
+    mesh.material.dispose()
+    scene.remove(mesh)
+  }
 
   return mesh
 }

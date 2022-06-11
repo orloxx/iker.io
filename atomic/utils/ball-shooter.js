@@ -48,7 +48,7 @@ function getBallAmmunition() {
   })
 }
 
-export function addBallShooter({ scene }) {
+export function addBallShooter(scene) {
   const roomSize = [ROOM_SIZE, ROOM_SIZE, ROOM_SIZE]
   const boxRoomSize = roomSize.map((e) => e * 2)
   const boxGeometry = new BoxLineGeometry(...roomSize, ...boxRoomSize)
@@ -59,9 +59,20 @@ export function addBallShooter({ scene }) {
   room.add(...getBallAmmunition())
   scene.add(room)
 
-  return {
-    room,
+  room.destroy = () => {
+    boxGeometry.dispose()
+    lineMaterial.dispose()
+    room.children.forEach((object) => {
+      object.geometry.dispose()
+      object.material.dispose()
+      room.remove(object)
+    })
+    room.geometry.dispose()
+    room.material.dispose()
+    scene.remove(room)
   }
+
+  return room
 }
 
 export function updateBallAmmunitionGravity({ room }) {

@@ -7,9 +7,10 @@ function getRenderer({ $canvas, project }) {
     alpha: true,
     canvas: $canvas,
   })
+  const vrButton = VRButton.createButton(renderer)
 
   if (project.vr && window.navigator.xr) {
-    document.body.appendChild(VRButton.createButton(renderer))
+    document.body.appendChild(vrButton)
     renderer.xr.enabled = true
   }
   if (project.shadows) {
@@ -26,6 +27,11 @@ function getRenderer({ $canvas, project }) {
   }
   if (project.physicallyCorrectLights) {
     renderer.physicallyCorrectLights = project.physicallyCorrectLights
+  }
+
+  renderer.destroy = () => {
+    renderer.dispose()
+    document.body.removeChild(vrButton)
   }
 
   return renderer

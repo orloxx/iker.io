@@ -1,4 +1,5 @@
 import { customFetch } from 'atomic/utils'
+import { logError } from 'store/logger/actions'
 
 export const SET_CONFIG = 'threeJS/SET_CONFIG'
 
@@ -14,7 +15,7 @@ export function fetchConfig(file) {
       const config = await customFetch(file)
       dispatch(setConfig(config))
     } catch (error) {
-      console.error('iker.io store/threejs/actions:', error)
+      dispatch(logError(error))
     }
   }
 }

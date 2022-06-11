@@ -62,7 +62,7 @@ export function listenOutsideClick(insideEls, callback = () => {}) {
 /**
  * Initializes multi-key listeners for 3d-object control
  *
- * @return {{destroy(): void, controlMapping: {}}}
+ * @returns {{updateCameraPosition: Function, destroy: Function}}
  */
 export function addMultiTouchKeyboardControl() {
   const controlMapping = {}
@@ -75,14 +75,37 @@ export function addMultiTouchKeyboardControl() {
     controlMapping[key.toLowerCase()] = false
   }
 
+  function updateCameraPosition(camera) {
+    const velocity = controlMapping.shift ? 0.1 : 0.03
+    const vertical = (dir = 1) => camera.translateZ(dir * velocity)
+    const horizontal = (dir = 1) => camera.translateX(dir * velocity)
+    const mapping = {
+      arrowup: () => vertical(-1),
+      w: () => vertical(-1),
+      arrowdown: () => vertical(1),
+      s: () => vertical(1),
+      arrowleft: () => horizontal(-1),
+      a: () => horizontal(-1),
+      arrowright: () => horizontal(1),
+      d: () => horizontal(1),
+    }
+
+    Object.keys(controlMapping)
+      .filter((key) => controlMapping[key])
+      .forEach((key) => {
+        if (mapping[key]) {
+          mapping[key]()
+        }
+      })
+  }
+
+  function destroy() {
+    document.removeEventListener('keydown', handleKeydown)
+    document.removeEventListener('keyup', handleKeyup)
+  }
+
   document.addEventListener('keydown', handleKeydown)
   document.addEventListener('keyup', handleKeyup)
 
-  return {
-    controlMapping,
-    destroy() {
-      document.removeEventListener('keydown', handleKeydown)
-      document.removeEventListener('keyup', handleKeyup)
-    },
-  }
+  return { destroy, updateCameraPosition }
 }

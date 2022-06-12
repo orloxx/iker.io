@@ -31,7 +31,9 @@ function getRenderer({ $canvas, project }) {
 
   renderer.destroy = () => {
     renderer.dispose()
-    document.body.removeChild(vrButton)
+    if (project.vr && window.navigator.xr) {
+      document.body.removeChild(vrButton)
+    }
   }
 
   return renderer

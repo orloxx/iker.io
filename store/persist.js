@@ -1,25 +1,35 @@
 import Cookie from 'js-cookie'
-import cookie from 'cookie'
-import { INITIAL_STATE } from 'store/settings/reducer'
+import { INITIAL_STATE } from 'store/reducers'
+
+const REDUCERS_TO_PERSIST = ['settings']
 
 export function getPersistedState() {
-  let settings
-
   try {
-    const cookies = cookie.parse(document.cookie)
-    settings = JSON.parse(cookies.settings)
+    return REDUCERS_TO_PERSIST.reduce(
+      (prev, reducer) => ({
+        ...prev,
+        [reducer]: JSON.parse(Cookie.get(reducer)),
+      }),
+      INITIAL_STATE,
+    )
   } catch (e) {
-    settings = INITIAL_STATE
+    return INITIAL_STATE
   }
+}
 
-  return { settings }
+function isPersist(type) {
+  return type && REDUCERS_TO_PERSIST.some((r) => type.includes(r))
 }
 
 function persistMiddleware(store) {
   return (next) => (action) => {
     next(action)
-    const { settings } = store.getState()
-    Cookie.set('settings', settings, { secure: true })
+    if (isPersist(action.type)) {
+      const state = store.getState()
+      REDUCERS_TO_PERSIST.forEach((reducer) => {
+        Cookie.set(reducer, state[reducer], { secure: true })
+      })
+    }
   }
 }
 

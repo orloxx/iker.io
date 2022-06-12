@@ -5,8 +5,8 @@ import qs from 'qs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStepBackward, faStepForward, faPause, faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faSoundcloud } from '@fortawesome/free-brands-svg-icons'
+import { injectScript, listenOutsideClick } from 'utils'
 import { getCurrentPlaylist } from 'store/settings/selectors'
-import { injectScript, listenOutsideClick } from 'atomic/utils'
 
 import styles from 'styles/modules/soundcloud-player.module.scss'
 

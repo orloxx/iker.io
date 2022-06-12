@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux'
 import { faCogs, faGamepad, faQrcode } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { getCurrentBg } from 'store/settings/selectors'
-import LinkFile from 'atomic/link-file'
-import { GRAVATAR } from 'atomic/constants'
+import LinkFile from 'atoms/link-file'
+import { GRAVATAR } from 'utils/constants'
 
 import styles from 'styles/modules/desktop.module.scss'
 

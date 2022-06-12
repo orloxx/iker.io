@@ -11,6 +11,6 @@ module.exports = withPWA({
   },
   reactStrictMode: true,
   eslint: {
-    dirs: ['atomic', 'pages', 'shared', 'store'],
+    dirs: ['pages', 'src'],
   },
 })

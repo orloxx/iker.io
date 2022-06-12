@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import CustomProvider from 'store'
-import CustomHead from 'shared/custom-head'
-import Logger from 'atomic/logger'
+import CustomHead from 'molecules/custom-head'
+import Logger from 'atoms/logger'
 
 // Need to explicitly import it when adding <link> to the head
 import '@fortawesome/fontawesome-svg-core/styles.css'

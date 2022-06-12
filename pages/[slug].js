@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import Desktop from 'shared/desktop'
-import Window from 'shared/window'
+import Desktop from 'molecules/desktop'
+import Window from 'molecules/window'
 
 function Slug() {
   const router = useRouter()

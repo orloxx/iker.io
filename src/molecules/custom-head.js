@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import StatusBar from 'shared/status-bar'
-import { GRAVATAR } from 'atomic/constants'
+import StatusBar from 'molecules/status-bar'
+import { GRAVATAR } from 'utils/constants'
 
 const APP_ICONS = [
   { src: '/wp/icon16.png', sizes: '16x16' },

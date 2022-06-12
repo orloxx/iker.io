@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import { logError } from 'store/logger/actions'
-import Loading from 'atomic/loading'
-import { customFetch } from 'atomic/utils'
+import Loading from 'atoms/loading'
+import { customFetch } from 'utils'
 
 import styles from 'styles/modules/window.module.scss'
 

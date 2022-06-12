@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
-import Desktop from 'shared/desktop'
-import Window from 'shared/window'
-import useBallShooterBox from 'shared/hooks/use-ball-shooter-box'
+import Desktop from 'molecules/desktop'
+import Window from 'molecules/window'
+import useBallShooterBox from 'hooks/use-ball-shooter-box'
 
 import styles from 'styles/modules/canvas.module.scss'
 

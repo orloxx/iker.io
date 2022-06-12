@@ -1,5 +1,5 @@
 import React from 'react'
-import Desktop from 'shared/desktop'
+import Desktop from 'molecules/desktop'
 
 function Home() {
   return <Desktop />

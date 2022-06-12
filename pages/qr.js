@@ -1,8 +1,8 @@
 import React from 'react'
 // import PropTypes from 'prop-types';
-import Desktop from 'shared/desktop'
-import Window from 'shared/window'
-import QRGenerator from 'shared/qr-generator'
+import Desktop from 'molecules/desktop'
+import Window from 'molecules/window'
+import QRGenerator from 'molecules/qr-generator'
 
 function QR() {
   return (

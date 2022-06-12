@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import Battery from 'atomic/battery'
-import SoundCloudPlayer from 'atomic/soundcloud-player'
+import Battery from 'atoms/battery'
+import SoundCloudPlayer from 'atoms/soundcloud-player'
 
 import styles from 'styles/modules/status-bar.module.scss'
 

@@ -4,8 +4,8 @@ import { BACKGROUNDS } from 'store/settings/backgrounds'
 import { PLAYLISTS } from 'store/settings/playlists'
 import { changeBackground, changePlaylist } from 'store/settings/actions'
 import { getCurrentBg, getCurrentPlaylist } from 'store/settings/selectors'
-import Desktop from 'shared/desktop'
-import Window from 'shared/window'
+import Desktop from 'molecules/desktop'
+import Window from 'molecules/window'
 
 import settingsStyles from 'styles/modules/settings.module.scss'
 

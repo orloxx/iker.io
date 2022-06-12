@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Store, { persist } from 'store'
+import CustomProvider from 'store'
 import CustomHead from 'shared/custom-head'
 import Logger from 'atomic/logger'
 
@@ -9,22 +9,21 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import 'styles/globals.scss'
 import styles from 'styles/modules/home.module.scss'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component }) {
   return (
-    <Store initialState={pageProps.initialState}>
+    <CustomProvider>
       <div className={styles.container}>
         <CustomHead />
         {/* Component will re-render after each router change */}
         <Component />
         <Logger />
       </div>
-    </Store>
+    </CustomProvider>
   )
 }
 
 MyApp.propTypes = {
   Component: PropTypes.func.isRequired,
-  pageProps: PropTypes.shape().isRequired,
 }
 
-export default persist(MyApp)
+export default MyApp

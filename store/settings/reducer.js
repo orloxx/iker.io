@@ -1,4 +1,4 @@
-import { ICON_POSITION, CHANGE_BG, CHANGE_PLAYLIST } from 'store/settings/actions'
+import { SET_SETTINGS, ICON_POSITION, CHANGE_BG, CHANGE_PLAYLIST } from 'store/settings/actions'
 
 import { BACKGROUNDS } from 'store/settings/backgrounds'
 import { PLAYLISTS } from 'store/settings/playlists'
@@ -11,6 +11,8 @@ export const INITIAL_STATE = {
 
 const settings = (state = INITIAL_STATE, action = {}) => {
   switch (action.type) {
+    case SET_SETTINGS:
+      return { ...state, ...action.payload }
     case ICON_POSITION:
       return {
         ...state,

@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { Provider } from 'react-redux'
+import { Provider, useDispatch } from 'react-redux'
 import { createStore, compose, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import rootReducer from './reducers'
 import persistMiddleware, { getPersistedState } from './persist'
+import { setSettings } from './settings/actions'
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development'
 
@@ -14,35 +15,32 @@ function getCompose() {
   return extensionCompose && IS_DEVELOPMENT ? extensionCompose || compose : compose
 }
 
-function Store({ children, initialState }) {
-  const composeEnhanced = getCompose()
-  const middlewares = [persistMiddleware, thunkMiddleware]
+const composeEnhanced = getCompose()
+const middlewares = [persistMiddleware, thunkMiddleware]
+const enhancers = composeEnhanced(applyMiddleware(...middlewares))
+const store = createStore(rootReducer, enhancers)
 
-  const enhancers = composeEnhanced(applyMiddleware(...middlewares))
+function StoreWrapper({ children }) {
+  const dispatch = useDispatch()
 
-  const store = createStore(rootReducer, initialState, enhancers)
+  useEffect(() => {
+    const { settings } = getPersistedState()
+    dispatch(setSettings(settings))
+  }, [])
 
-  return <Provider store={store}>{children}</Provider>
+  return children
 }
 
-Store.defaultProps = {
-  initialState: {},
+function CustomProvider({ children }) {
+  return (
+    <Provider store={store}>
+      <StoreWrapper>{children}</StoreWrapper>
+    </Provider>
+  )
 }
 
-Store.propTypes = {
+CustomProvider.propTypes = {
   children: PropTypes.shape().isRequired,
-  initialState: PropTypes.shape(),
 }
 
-export function persist(App) {
-  // eslint-disable-next-line no-param-reassign
-  App.getInitialProps = ({ ctx }) => ({
-    pageProps: {
-      initialState: getPersistedState(ctx.req),
-    },
-  })
-
-  return App
-}
-
-export default Store
+export default CustomProvider

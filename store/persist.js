@@ -2,23 +2,17 @@ import Cookie from 'js-cookie'
 import cookie from 'cookie'
 import { INITIAL_STATE } from 'store/settings/reducer'
 
-function parseCookies(req) {
-  return cookie.parse(req ? req.headers.cookie || '' : document.cookie)
-}
-
-export function getPersistedState(req) {
+export function getPersistedState() {
   let settings
 
   try {
-    const cookies = parseCookies(req)
+    const cookies = cookie.parse(document.cookie)
     settings = JSON.parse(cookies.settings)
   } catch (e) {
     settings = INITIAL_STATE
   }
 
-  return {
-    settings,
-  }
+  return { settings }
 }
 
 function persistMiddleware(store) {

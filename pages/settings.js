@@ -24,7 +24,7 @@ function Settings() {
       <Window type="system" title="Settings">
         <form className={settingsStyles.form} action="">
           <label htmlFor="bgImage">
-            Background Image:
+            <span>Background Image:</span>
             <select name="bgImage" id="bgImage" onChange={onBgChange} value={currentBg.src}>
               {BACKGROUNDS.map((background) => (
                 <option value={background.src} key={background.src}>
@@ -34,7 +34,7 @@ function Settings() {
             </select>
           </label>
           <label htmlFor="playlistUrl">
-            Soundcloud link:
+            <span>Soundcloud link:</span>
             <select
               name="playlistSelect"
               id="playlistSelect"

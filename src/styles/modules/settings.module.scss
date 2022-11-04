@@ -2,21 +2,23 @@
   width: 100%;
   height: 100%;
   background-color: var(--c-secundary-bg);
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 1rem;
+  justify-content: center;
 
   label {
-    display: inline-block;
-    text-align: right;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
-  select, input {
-    margin-left: 0.5rem;
+  span, select, input {
+    display: block;
     font-size: 0.9rem;
     padding: 0.2rem 0.5rem 0.5rem;
   }

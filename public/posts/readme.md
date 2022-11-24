@@ -1,16 +1,16 @@
 # Hello
 
-My name is Iker Garitaonandia and I’m a **professional software developer** with **15 years** of experience helping companies achieve digital transformation. Mostly working as a web developer, and for the past 8 years I've been specializing as a frontend developer.
+My name is Iker Garitaonandia, and I’m a **professional software developer** with **+15 years** of experience helping companies achieve digital transformation. Mostly working as a web developer, and for the past 9 years I've been specializing as a frontend developer.
 
 ## Languages
 
-`Spanish` `English` `JavaScript` `Java` `PHP` `C++` `Python`
+`Spanish` `English` `JavaScript` `Java` `PHP` `Python`
 
 ## Experience
 
 **Contract Software Engineer**
 *[Maark][maark] (Jul 2020 - present)*
-Boston, USA
+100% remote
 
 ---
 **Senior Software Engineer**
@@ -25,7 +25,7 @@ Barcelona, Spain
 ---
 **Freelance Webmaster**
 *[Bari Studio][5] (Oct 2011 - Feb 2014)*
-New York, USA
+100% Remote
 
 ---
 **Frontend Developer**
@@ -54,7 +54,7 @@ Caracas, Venezuela
 
 ## Other Skills
 
-`HTML` `CSS`  `NodeJS` `React` `NextJS` `Redux` `RxJS` `Angular` `Handlebars` `AEM` `SQL` `MySQL` `noSQL` `MongoDB` `Software Development` `Object Oriented` `Functional` `Agile` `Scrum` `XP`
+`HTML` `CSS`  `NodeJS` `React` `NextJS` `Redux` `RxJS` `Angular` `Handlebars` `AEM` `SQL` `MySQL` `GraphQL` `MongoDB` `Software Development` `Object Oriented` `Functional` `Agile` `Scrum` `XP`
 
 [2]: https://www.ucab.edu.ve/
 [maark]: https://maark.com

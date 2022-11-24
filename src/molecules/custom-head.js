@@ -55,7 +55,7 @@ CustomHead.defaultProps = {
   author: 'Iker Garitaonandia',
   title: 'Iker Garitaonandia | Software Developer',
   description:
-    "My name is Iker Garitaonandia and I'm a professional software developer with 15 years of experience helping companies achieve digital transformation.",
+    'Professional software developer with +15 years of experience helping companies achieve digital transformation.',
   keywords: [
     'Software developer',
     'Engineer',

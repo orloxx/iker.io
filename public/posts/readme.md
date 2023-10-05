@@ -1,6 +1,6 @@
 # Hello
 
-My name is Iker Garitaonandia, and I’m a **professional software developer** with **+15 years** of experience helping companies achieve digital transformation. Mostly working as a web developer, and for the past 9 years I've been specializing as a frontend developer.
+My name is Iker Garitaonandia, and I’m a **professional software developer** with **+15 years** of experience helping companies achieve digital transformation. Mostly working as a web developer, and for the past 9 years I've been specializing as an AEM frontend developer.
 
 ## Languages
 
@@ -8,33 +8,38 @@ My name is Iker Garitaonandia, and I’m a **professional software developer** w
 
 ## Experience
 
-**Contract Software Engineer**
-*[Maark][maark] (Jul 2020 - present)*
+**Senior Software Engineer**
+*[Willowtree][Willowtree] (Jul 2023 - present)*
 100% remote
 
 ---
 **Senior Software Engineer**
-*[Netcentric][3] (Dec 2014 - Jul 2020)*
+*[Maark][Maark] (Jul 2020 - Jul 2023)*
+100% remote
+
+---
+**Senior Software Engineer**
+*[Netcentric][Netcentric] (Dec 2014 - Jul 2020)*
 Barcelona, Spain
 
 ---
 **Frontend Product Manager**
-*[Strands Labs][4] (June 2013 - Dec 2014)*
+*[Strands Labs][Strands] (June 2013 - Dec 2014)*
 Barcelona, Spain
 
 ---
 **Freelance Webmaster**
-*[Bari Studio][5] (Oct 2011 - Feb 2014)*
+*[Bari Studio][Bari] (Oct 2011 - Feb 2014)*
 100% Remote
 
 ---
 **Frontend Developer**
-*[Whisbi][6] (Feb 2013 - Jun 2013)*
+*[Whisbi][Whisbi] (Feb 2013 - Jun 2013)*
 Barcelona, Spain
 
 ---
 **Web Developer**
-*[La Web Marketing Interactivo][7] (Apr 2009 - Dec 2012)*
+*[La Web Marketing Interactivo][LaWeb] (Apr 2009 - Dec 2012)*
 Caracas, Venezuela
 
 ---
@@ -49,17 +54,18 @@ Caracas, Venezuela
 
 ## Education
 **Information Technology Engineer**
-*[Universidad Católica Andrés Bello][2] (2011)*
+*[Universidad Católica Andrés Bello][UCAB] (2011)*
 Caracas, Venezuela
 
 ## Other Skills
 
 `HTML` `CSS`  `NodeJS` `React` `NextJS` `Redux` `RxJS` `Angular` `Handlebars` `AEM` `SQL` `MySQL` `GraphQL` `MongoDB` `Software Development` `Object Oriented` `Functional` `Agile` `Scrum` `XP`
 
-[2]: https://www.ucab.edu.ve/
-[maark]: https://maark.com
-[3]: https://www.netcentric.biz/
-[4]: https://strands.com/
-[5]: http://www.thebaristudio.com/
-[6]: https://www.whisbi.com/
-[7]: https://www.lawebmercadeointeractivo.com/
+[UCAB]: https://www.ucab.edu.ve/
+[Willowtree]: https://willowtreeapps.com/
+[Maark]: https://maark.com
+[Netcentric]: https://www.netcentric.biz/
+[Strands]: https://strands.com/
+[Bari]: http://www.thebaristudio.com/
+[Whisbi]: https://www.whisbi.com/
+[LaWeb]: https://www.lawebmercadeointeractivo.com/

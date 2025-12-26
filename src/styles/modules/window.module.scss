@@ -1,0 +1,100 @@
+@use "../common" as *;
+
+.container {
+  width: calc(100% - 2rem);
+  max-width: 800px;
+  height: calc(100% - 2rem);
+  max-height: 800px;
+  position: fixed;
+  background-color: var(--c-primary-bg);
+  border-radius: var(--r-border);
+  box-shadow: var(--s-box-medium);
+  border: 1px solid var(--c-border);
+  overflow: auto;
+  top: 0;
+  left: 0;
+}
+
+.children {
+  width: 100%;
+  display: block;
+  height: calc(100% - #{$window-titlebar-height});
+  overflow: auto;
+}
+
+.text {
+  @extend %text;
+}
+
+.titleBar {
+  --c-titlebar-gradient1: #{$c-grey2};
+  --c-titlebar-gradient2: #{$c-grey3};
+
+  background: linear-gradient(
+      to bottom,
+      var(--c-titlebar-gradient1),
+      var(--c-titlebar-gradient2)
+  );
+  border-top: 1px solid var(--c-border-light);
+  border-bottom: 1px solid var(--c-border-dark);
+  border-top-left-radius: var(--r-border);
+  border-top-right-radius: var(--r-border);
+  height: $window-titlebar-height;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.title {
+  flex-grow: 1;
+  height: $window-titlebar-height;
+  line-height: $window-titlebar-height;
+  text-align: center;
+  cursor: grab;
+}
+
+.close, .minimize, .zoom {
+  --c-close-bg: #ff5c5c;
+  --c-close-border: #e33e41;
+  --c-close-icon: #820005;
+
+  display: block;
+  cursor: pointer;
+  background: var(--c-close-bg);
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 1px solid var(--c-close-border);
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+
+  &:hover svg {
+    display: block;
+  }
+
+  svg {
+    display: none;
+    padding: 2px 1px;
+    font-size: 0.45rem;
+    font-weight: bold;
+    color: var(--c-close-icon);
+    margin: 0 auto;
+  }
+
+  &:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+}
+
+.minimize {
+  --c-close-bg: #ffbd4c;
+  --c-close-border: #e09e3e;
+  --c-close-icon: #9a5518;
+}
+
+.zoom {
+  --c-close-bg: #00ca56;
+  --c-close-border: #14ae46;
+  --c-close-icon: #006519;
+}

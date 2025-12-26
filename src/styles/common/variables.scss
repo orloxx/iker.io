@@ -1,0 +1,34 @@
+$theme: 'light' !default;
+
+$c-white: #FFF;
+$c-light: #FCFBFB;
+$c-grey: #dedede;
+
+$c-grey1: #f3f1f3;
+$c-grey2: #ebebeb;
+$c-grey3: #d5d5d5;
+$c-grey4: #b1aeb1;
+$c-grey5: #acacac;
+
+$c-black: #000;
+$c-dark: #1B1D20;
+$c-darkgrey: #434343;
+
+$c-blue: #22577E;
+$c-red: #FD5D5D;
+$c-orange: #EC9B3B;
+$c-green: #6BCB77;
+
+$c-box-shadow: rgba(0, 0, 0, 0.12);
+$c-text-shadow: $c-black;
+
+$c-sound-cloud: #ff5500;
+
+$status-bar-height: 25px;
+$window-titlebar-height: 25px;
+
+$b-xs: 480px;
+$b-s: 680px;
+$b-m: 800px;
+$b-l: 1024px;
+$b-xl: 1280px;

@@ -1,0 +1,25 @@
+.form {
+  width: 100%;
+  height: 100%;
+  background-color: var(--c-secundary-bg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  span, select, input {
+    display: block;
+    font-size: 0.9rem;
+    padding: 0.2rem 0.5rem 0.5rem;
+  }
+}

@@ -1,0 +1,27 @@
+@use "../common" as *;
+
+.container {
+  height: calc(100% - #{$status-bar-height});
+  background-size: cover;
+  background-position: center;
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 0;
+  height: 100%;
+  padding: 1rem;
+}
+
+.credits {
+  @extend %f-small;
+
+  color: var(--c-contrast-text);
+  text-shadow: var(--s-small);
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}

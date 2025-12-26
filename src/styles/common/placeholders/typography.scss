@@ -1,0 +1,22 @@
+%f-default {
+  font-size: 1rem;
+  line-height: 125%;
+}
+
+%f-small {
+  @extend %f-default;
+
+  font-size: 0.9rem;
+}
+
+%f-smaller {
+  @extend %f-default;
+
+  font-size: 0.8rem;
+}
+
+%f-mono {
+  @extend %f-default;
+
+  font-family: monospace;
+}

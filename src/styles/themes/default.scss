@@ -1,0 +1,38 @@
+@use "../common" as *;
+@use "sass:color" as color;
+
+:root {
+  // colors
+  --c-primary: #{$c-blue};
+  --c-primary-hover: #{color.adjust($c-blue, $lightness: -1%)};
+  --c-primary-bg: #{$c-light};
+  --c-primary-text: #{$c-dark};
+  --c-secundary-bg: #{$c-grey2};
+
+  --c-contrast-bg: #{$c-dark};
+  --c-contrast-text: #{$c-light};
+  --c-focus: #{rgba($c-blue, 0.50)};
+  --c-border: #{$c-grey5};
+  --c-border-light: #{$c-grey1};
+  --c-border-dark: #{$c-grey4};
+
+  --c-info: #{$c-blue};
+  --c-error: #{$c-red};
+  --c-warning: #{$c-orange};
+  --c-success: #{$c-green};
+
+  --c-sound-cloud: #{$c-sound-cloud};
+
+  --r-border: 6px;
+
+  // Text shadows
+  --s-small: 2px 2px 3px #{$c-text-shadow};
+
+  // box shadows
+  --s-box-smaller: 0px 4px 8px #{$c-box-shadow};
+  --s-box-small: 0 5px 10px #{$c-box-shadow};
+  --s-box-medium: 0 8px 30px #{$c-box-shadow};
+  --s-box-large: 0 30px 60px #{$c-box-shadow};
+  --s-box-hover: 0 30px 60px #{$c-box-shadow};
+  --s-box-sticky: 0 12px 10px -10px #{$c-box-shadow};
+}

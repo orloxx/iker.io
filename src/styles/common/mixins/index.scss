@@ -1,0 +1,7 @@
+@mixin gradient-bg($bg1, $bg2) {
+  background-image: radial-gradient($bg1, $bg2);
+}
+
+@mixin svg-shadow($color) {
+  filter: drop-shadow($color);
+}

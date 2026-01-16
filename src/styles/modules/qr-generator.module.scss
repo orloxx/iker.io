@@ -18,6 +18,7 @@
 .buttons {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
   justify-content: center;
 
   button {
@@ -33,7 +34,9 @@
   display: block;
   margin: 1rem auto;
   width: 100%;
+  height: auto;
   max-width: 400px;
+  aspect-ratio: 1/1;
 }
 
 .caption {

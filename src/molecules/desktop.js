@@ -6,7 +6,7 @@ import LinkFile from "atoms/link-file";
 import { useSelector } from "react-redux";
 import { getCurrentBg } from "store/settings/selectors";
 import styles from "styles/modules/desktop.module.scss";
-import { GRAVATAR } from "utils/constants";
+import { GRAVATAR, GRAVATAR_CG } from "utils/constants";
 
 function Desktop() {
   const currentBg = useSelector(getCurrentBg());
@@ -25,6 +25,13 @@ function Desktop() {
           name="readme"
           src={GRAVATAR}
           alt="A cartoon of myself"
+        />
+        <LinkFile
+          href="https://codergeist.com"
+          label="Codergeist"
+          name="codergeist"
+          src={GRAVATAR_CG}
+          alt="Codergeist Logo"
         />
         <LinkFile
           href="/settings"

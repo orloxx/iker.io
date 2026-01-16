@@ -1,6 +1,9 @@
 "use client";
 
+import { faShareSquare } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import QRCode from "qrcode";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import styles from "styles/modules/qr-generator.module.scss";
@@ -17,16 +20,56 @@ function QRGenerator() {
   const [password, setPassword] = useState("");
   const [encodedImage, setEncodedImage] = useState("");
 
+  const searchParams = useSearchParams();
+
+  const queryParams = useMemo(() => {
+    return {
+      text: searchParams.get("text") || "",
+      ssid: searchParams.get("ssid") || "",
+      password: searchParams.get("password") || "",
+    };
+  }, [searchParams.get]);
+
   const finalText = useMemo(() => {
     if (type === TYPES.wifi) {
-      return `WIFI:T:WPA;S:${SSIDText};P:${password};;`;
+      const ssid = SSIDText || queryParams.ssid;
+      const passw = password || queryParams.password;
+      return `WIFI:T:WPA;S:${ssid};P:${passw};;`;
     }
-    return inputText;
-  }, [SSIDText, inputText, password, type]);
+    return inputText || queryParams.text;
+  }, [SSIDText, inputText, password, type, queryParams]);
+
+  const toggleTypeLabel = useMemo(() => {
+    return type === TYPES.text ? "Share WiFi" : "Share text";
+  }, [type]);
 
   const toggleType = useCallback(() => {
+    setInputText("");
+    setSSIDText("");
+    setPassword("");
     setType((prevType) => (prevType === TYPES.text ? TYPES.wifi : TYPES.text));
   }, []);
+
+  const shareLink = useCallback(() => {
+    const text = "Scan this QR code";
+    const current = window.location.origin + window.location.pathname;
+    const params = new URLSearchParams({
+      text: inputText,
+      ssid: SSIDText,
+      password,
+    });
+
+    try {
+      navigator.share({
+        title: text,
+        text,
+        url: `${current}?${params.toString()}`,
+      });
+    } catch (e) {
+      // Sharing not supported
+      console.error("`navigator.share` not supported in this browser", e);
+    }
+  }, [SSIDText, inputText, password]);
 
   const generateQR = useCallback(async () => {
     try {
@@ -41,6 +84,13 @@ function QRGenerator() {
   useEffect(() => {
     generateQR();
   }, [generateQR]);
+
+  useEffect(() => {
+    setType(queryParams.ssid ? TYPES.wifi : TYPES.text);
+    setInputText(queryParams.text || "");
+    setSSIDText(queryParams.ssid || "");
+    setPassword(queryParams.password || "");
+  }, [queryParams]);
 
   return (
     <form className={styles.form}>
@@ -94,7 +144,10 @@ function QRGenerator() {
       )}
       <div className={styles.buttons}>
         <button type="button" onClick={toggleType}>
-          Toggle type
+          {toggleTypeLabel}
+        </button>
+        <button type="button" onClick={shareLink}>
+          <FontAwesomeIcon icon={faShareSquare} /> Share Link
         </button>
       </div>
     </form>

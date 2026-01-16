@@ -16,9 +16,15 @@
 }
 
 .buttons {
-  text-align: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 
   button {
+    @extend %button;
+  }
+
+  button:last-child {
     @extend %button-primary;
   }
 }

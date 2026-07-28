@@ -29,6 +29,13 @@ export async function getPost(slug) {
     // markdown is ours. If posts ever come from anywhere else, sanitise here —
     // this is the last point before the HTML reaches dangerouslySetInnerHTML in
     // molecules/window.js.
+    //
+    // Still synchronous, and still passes raw HTML through verbatim, on marked
+    // v18 as on v4 — both were re-measured across that upgrade, since either
+    // one changing would have moved that trust boundary. What v18 did drop is
+    // the automatic id="" on headings (marked removed headerIds in v7); no page
+    // links to those anchors, so restoring them would mean taking on a plugin
+    // dependency for an anchor nothing uses.
     return {
       markdown,
       html: marked(markdown),

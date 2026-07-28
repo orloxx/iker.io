@@ -25,7 +25,13 @@ function persistMiddleware(store) {
     if (isPersist(action.type)) {
       const state = store.getState();
       REDUCERS_TO_PERSIST.forEach((reducer) => {
-        Cookie.set(reducer, state[reducer], { secure: true });
+        // JSON.stringify is explicit because js-cookie v3 dropped v2's implicit
+        // stringify: its write converter is encodeURIComponent(value), so an
+        // object would persist as the string "[object Object]" and the
+        // JSON.parse above would throw on the next load, silently resetting
+        // every setting to INITIAL_STATE. The stored format is unchanged, so
+        // cookies written by v2 still read back fine.
+        Cookie.set(reducer, JSON.stringify(state[reducer]), { secure: true });
       });
     }
   };

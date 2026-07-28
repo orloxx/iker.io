@@ -11,30 +11,35 @@
     "clean": "rm -rf .next node_modules public/sw.js public/sw.js.map"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^7.1.0",
-    "@fortawesome/free-brands-svg-icons": "^7.1.0",
-    "@fortawesome/free-solid-svg-icons": "^7.1.0",
-    "@fortawesome/react-fontawesome": "^3.1.1",
-    "@reduxjs/toolkit": "^2.11.2",
+    "@fortawesome/fontawesome-svg-core": "^7.3.1",
+    "@fortawesome/free-brands-svg-icons": "^7.3.1",
+    "@fortawesome/free-solid-svg-icons": "^7.3.1",
+    "@fortawesome/react-fontawesome": "^3.5.0",
+    "@reduxjs/toolkit": "^2.12.0",
     "@serwist/next": "^9.5.12",
-    "js-cookie": "^2.2.1",
-    "marked": "^4.0.12",
-    "next": "^16.1.0",
-    "node-fetch": "^2.6.6",
-    "prop-types": "^15.7.2",
-    "qrcode": "^1.5.0",
-    "qs": "^6.10.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-draggable": "^4.4.4",
-    "react-redux": "^7.2.6",
-    "redux": "^4.1.2",
+    "js-cookie": "^3.0.8",
+    "marked": "^18.0.7",
+    "next": "^16.2.12",
+    "prop-types": "^15.8.1",
+    "qrcode": "^1.5.4",
+    "qs": "^6.15.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-draggable": "^4.7.0",
+    "react-redux": "^7.2.9",
+    "redux": "^4.2.1",
     "serwist": "^9.5.12"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.10",
     "@serwist/cli": "^9.5.12",
     "esbuild": "^0.28.1",
-    "sass": "^1.45.0"
+    "sass": "^1.102.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "postcss": "^8.5.18",
+      "sharp": "^0.35.0"
+    }
   }
 }

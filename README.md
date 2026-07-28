@@ -53,9 +53,25 @@ Drop a Markdown file in `public/posts/`. `readme.md` becomes `/readme`, and any
 new file becomes `/<its-name>` — the route enumerates the directory at build
 time, so a post needs a rebuild to appear and any other path returns a 404.
 
+Nothing else needs editing: `src/lib/posts.js` is the single reader of that
+directory, and both the route list and `sitemap.xml` derive from it. Keep it
+that way — hand-listing either one is how a post ends up routable but invisible
+to search, or advertised in the sitemap and 404ing when a crawler follows it.
+
 Posts can write `{{YEARS}}` instead of a hardcoded number of years of
 experience; it resolves from `CAREER_START` in `src/utils/constants.js`, which is
 also where the page metadata and the web manifest get theirs.
+
+## Dependency overrides
+
+`package.json` pins `postcss` and `sharp` through `pnpm.overrides`. Next depends
+on both at an **exact** version, so a security fix in either cannot arrive by
+updating within our own ranges — the override is the only lever, and without it
+those advisories stay open until Next itself moves.
+
+Both are minor bumps inside the same major, and the build is what verifies them.
+Drop an override once Next's pinned version has caught up past it; keeping a
+stale one silently holds a dependency back.
 
 ## Branches and releases
 

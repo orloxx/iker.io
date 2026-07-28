@@ -10,6 +10,7 @@ import {
   KEYWORDS,
   NAME,
   SITE_TITLE,
+  SITE_URL,
   THEME_COLOR,
 } from "utils/constants";
 
@@ -35,7 +36,7 @@ export const metadata = {
     description: DESCRIPTION,
     siteName: SITE_TITLE,
     type: "article",
-    url: "https://iker.io",
+    url: SITE_URL,
     images: [{ url: GRAVATAR }],
   },
   appleWebApp: {

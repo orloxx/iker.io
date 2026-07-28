@@ -1,6 +1,5 @@
-import { readdir } from "node:fs/promises";
-import path from "node:path";
 import { getPost } from "lib/actions";
+import { getPosts } from "lib/posts";
 import Desktop from "molecules/desktop";
 import Window from "molecules/window";
 import { notFound } from "next/navigation";
@@ -11,15 +10,12 @@ import { notFound } from "next/navigation";
 // the 404 body with a 200 status. This is what makes the status code honest.
 export const dynamicParams = false;
 
+// Shares lib/posts.js with app/sitemap.js on purpose: the set of slugs that
+// answer 200 and the set the sitemap advertises are the same set, read once.
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), "public", "posts");
-  const filenames = await readdir(postsDirectory);
+  const posts = await getPosts();
 
-  return filenames
-    .filter((filename) => filename.endsWith(".md"))
-    .map((filename) => ({
-      slug: filename.replace(/\.md$/, ""),
-    }));
+  return posts.map(({ slug }) => ({ slug }));
 }
 
 export default async function SlugPage({ params }) {

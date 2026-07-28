@@ -7,6 +7,11 @@ export const CAREER_START = new Date(2006, 8);
 
 export const NAME = "Iker Garitaonandia";
 
+// The canonical origin. Everything that has to write an absolute URL reads it
+// from here — the OpenGraph card, the sitemap line in robots.txt, and every
+// entry in sitemap.xml. No trailing slash: callers append their own path.
+export const SITE_URL = "https://iker.io";
+
 // Used by both the page title and the manifest name. The CV describes me as a
 // "professional software developer", so that is the one wording.
 export const ROLE = "Software Developer";

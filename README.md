@@ -1,34 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# iker.io
+
+This is the source code for [iker.io](https://iker.io) — my personal site, an
+online CV dressed up as a desktop operating system. Client-rendered React on
+Next.js (App Router, JavaScript), Redux state persisted to cookies, no backend.
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
+pnpm install
+```
+
+Run the development server:
+
+```bash
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Building for Production
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Build the application:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+pnpm build
+```
 
-## Learn More
+This runs `next build` and then `serwist build`, which writes the service worker
+to `public/sw.js` — that file is generated, not committed.
 
-To learn more about Next.js, take a look at the following resources:
+Start the production server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Commands
 
-## Deploy on Vercel
+| Command      | What it does                                             |
+| ------------ | -------------------------------------------------------- |
+| `pnpm dev`   | Dev server on :3000                                       |
+| `pnpm build` | Production build + service worker                         |
+| `pnpm start` | Serve the build                                           |
+| `pnpm lint`  | Biome check and fix — run this, not `npx biome`            |
+| `pnpm clean` | Wipe `.next`, `node_modules` and the generated `sw.js`     |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Adding a post
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Drop a Markdown file in `public/posts/`. `readme.md` becomes `/readme`, and any
+new file becomes `/<its-name>` — the route enumerates the directory at build
+time, so a post needs a rebuild to appear and any other path returns a 404.
+
+Posts can write `{{YEARS}}` instead of a hardcoded number of years of
+experience; it resolves from `CAREER_START` in `src/utils/constants.js`, which is
+also where the page metadata and the web manifest get theirs.
+
+## Branches and releases
+
+`develop` is the preview deployment, `main` is production. Work happens on
+`feature/<name>` or `bugfix/<name>` branches cut from `develop` and squash-merged
+back into it. A release is a merge of `develop` into `main`, tagged with a plain
+semver version (`4.0.0`, no `v` prefix).

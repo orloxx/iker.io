@@ -1,6 +1,6 @@
 # Hello
 
-My name is Iker Garitaonandia, and I’m a **professional software developer** with **+18 years** of experience helping companies achieve digital transformation. Mostly working as a web developer, and for the past 10 years I've been specializing as an AEM frontend developer.
+My name is Iker Garitaonandia, and I’m a **professional software developer** with **+{{YEARS}} years** of experience helping companies achieve digital transformation. Mostly working as a web developer, and for the past 10 years I've been specializing as an AEM frontend developer.
 
 ## Languages
 

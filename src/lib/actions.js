@@ -3,11 +3,26 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { marked } from "marked";
+import { EXPERIENCE_YEARS } from "utils/constants";
+
+// Posts may write {{YEARS}} instead of hardcoding how long I've been doing this;
+// it resolves to the figure derived from CAREER_START, the same one the page
+// metadata and the manifest use. See utils/constants.js.
+const TOKENS = {
+  "{{YEARS}}": String(EXPERIENCE_YEARS),
+};
+
+function resolveTokens(markdown) {
+  return Object.entries(TOKENS).reduce(
+    (text, [token, value]) => text.replaceAll(token, value),
+    markdown,
+  );
+}
 
 export async function getPost(slug) {
   try {
     const filePath = path.join(process.cwd(), "public", "posts", `${slug}.md`);
-    const markdown = await readFile(filePath, "utf-8");
+    const markdown = resolveTokens(await readFile(filePath, "utf-8"));
 
     // Unsanitised on purpose: `slug` only ever resolves to a file committed to
     // public/posts (see the dynamicParams note in app/[slug]/page.js), so the

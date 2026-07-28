@@ -1,4 +1,5 @@
 import Logger from "atoms/logger";
+import ServiceWorkerRegister from "atoms/sw-register";
 import StatusBar from "molecules/status-bar";
 import PropTypes from "prop-types";
 import CustomProvider from "store";
@@ -71,6 +72,7 @@ export default function RootLayout({ children }) {
             <StatusBar title={metadata.title} />
             {children}
             <Logger />
+            <ServiceWorkerRegister />
           </div>
         </CustomProvider>
       </body>

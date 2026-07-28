@@ -61,5 +61,12 @@ also where the page metadata and the web manifest get theirs.
 
 `develop` is the preview deployment, `main` is production. Work happens on
 `feature/<name>` or `bugfix/<name>` branches cut from `develop` and squash-merged
-back into it. A release is a merge of `develop` into `main`, tagged with a plain
-semver version (`4.0.0`, no `v` prefix).
+back into it. Nothing is ever committed or cherry-picked directly on `main` —
+including hotfixes, because a bad production deploy is rolled back on Vercel, not
+raced with a commit.
+
+A release is a merge of `develop` into `main`, tagged with a plain semver version
+(`4.0.0`, no `v` prefix). **The `version` in `package.json` and the tag move
+together, in the same release** — otherwise the version is a string nobody
+verifies, which is how this repo reached `4.0.0` with no tags at all. `4.0.0`
+tags the commit that was in production when the tagging started.

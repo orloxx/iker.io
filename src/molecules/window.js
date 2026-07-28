@@ -62,7 +62,7 @@ function Window({
           {!!html && (
             <div
               className={styles.text}
-              // biome-ignore lint/security/noDangerouslySetInnerHtml: HTML is sanitized with DOMPurify on the server
+              // biome-ignore lint/security/noDangerouslySetInnerHtml: the only source of `html` is marked() over a repo-committed file in public/posts, read server-side by lib/actions.js — it is never user input. There is no sanitiser here, so the moment posts come from anywhere else (a CMS, an API, a form, user text passed into a Window) this suppression stops being true and a real one has to be added.
               dangerouslySetInnerHTML={{ __html: html }}
             />
           )}

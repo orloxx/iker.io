@@ -20,9 +20,13 @@ export default async function sitemap() {
     // the build is the most accurate "last modified" available for it — the
     // site only changes when it is rebuilt and redeployed.
     { url: SITE_URL, lastModified: new Date() },
-    ...posts.map(({ slug, lastModified }) => ({
-      url: `${SITE_URL}/${slug}`,
-      lastModified,
-    })),
+    // Posts carry no lastModified, on purpose. The only date a build can see is
+    // the file's mtime, and a host that clones the repo sets that to the clone
+    // — git restores no mtimes — so every post claimed to have changed on every
+    // unrelated deploy (BUG-009). lastmod is optional in the sitemap protocol
+    // and a hint at best to crawlers, so omitting it costs nothing and asserts
+    // nothing; the mtime asserted something false. Only add it back with a date
+    // that lives in the content and survives a fresh clone.
+    ...posts.map(({ slug }) => ({ url: `${SITE_URL}/${slug}` })),
   ];
 }

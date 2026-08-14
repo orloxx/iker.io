@@ -1,0 +1,31 @@
+# Changelog
+
+Every release, newest first — one entry per tag on `main`. The entry is written in the
+release commit, beside the `package.json` bump. This file is the index, not the story:
+the detail lives in the issues each entry cites and in `git log`.
+
+## 4.2.1 — 2026-07-30
+
+BUG-009: the sitemap's post `<lastmod>` dropped rather than re-sourced — git restores
+no mtimes, so Vercel's clone stamped every post with the build and the sitemap claimed
+the CV changed on every deploy. The field is optional, and a source that always says
+«just now» gets discounted anyway.
+
+## 4.2.0 — 2026-07-28
+
+M1 — crawler files: `robots.txt` and `sitemap.xml`, the post routes derived from the
+single reader of `public/posts/` so a post cannot be routable but unlisted; `/qr` and
+`/settings` disallowed (DECISIONS #5). M2 — dependency health: all 45 advisories
+closed by upgrading, none dismissed — React 19, react-redux 9, marked 18, js-cookie 3,
+`node-fetch` removed — with the whole runtime surface driven in Chrome before release.
+
+## 4.1.0 — 2026-07-28
+
+The 2026-07-28 bugfix round: real HTTP status codes (BUG-001), a real Serwist PWA
+(BUG-002), `constants.js` as the one source of the site's content facts (BUG-006), a
+real README (BUG-007), and the first semver tags on `main` (BUG-004).
+
+## 4.0.0 — 2026-07-28
+
+The desktop CV with the QR share feature — the site as it stood when the version
+convention arrived (BUG-004).

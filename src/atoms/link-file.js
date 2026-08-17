@@ -64,6 +64,9 @@ function LinkFile({ href, label, name, icon = faFile, src = "", alt = "" }) {
             alt={alt}
             width={64}
             height={64}
+            // The optimizer 400s on SVG unless dangerouslyAllowSVG is on, and
+            // an SVG has nothing to optimize anyway. Serve it as-is.
+            unoptimized={src.endsWith(".svg")}
           />
         )}
         <span className={styles.label}>{label}</span>

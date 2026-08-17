@@ -34,6 +34,13 @@ function Desktop() {
           alt="Codergeist Logo"
         />
         <LinkFile
+          href="https://tufiscal.es"
+          label="tufiscal"
+          name="tufiscal"
+          src="/tufiscal.svg"
+          alt="tufiscal logo"
+        />
+        <LinkFile
           href="/settings"
           label="Settings"
           name="settings"

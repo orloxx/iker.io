@@ -4,6 +4,13 @@ Every release, newest first — one entry per tag on `main`. The entry is writte
 release commit, beside the `package.json` bump. This file is the index, not the story:
 the detail lives in the issues each entry cites and in `git log`.
 
+## 4.3.1 — 2026-08-18
+
+The two advisories that opened after M2 closed all 45: nanoid 3.3.18
+(GHSA-2v37-7h3g-55p8) under postcss, brace-expansion 5.0.9 (GHSA-rgw5-rvv9-x895) under
+Serwist's minimatch. Both transitive and both inside their parents' ranges, so the
+lockfile moved alone — no direct dependency, no new override.
+
 ## 4.3.0 — 2026-08-18
 
 A tufiscal icon on the desktop, linking out to tufiscal.es — the mark copied in from

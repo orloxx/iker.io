@@ -4,6 +4,12 @@ Every release, newest first — one entry per tag on `main`. The entry is writte
 release commit, beside the `package.json` bump. This file is the index, not the story:
 the detail lives in the issues each entry cites and in `git log`.
 
+## 4.3.0 — 2026-08-18
+
+A tufiscal icon on the desktop, linking out to tufiscal.es — the mark copied in from
+cg-autonomo rather than hotlinked, so `next/image` keeps its gravatar-only remote
+pattern. Also the first release to carry this file, backfilled to 4.0.0.
+
 ## 4.2.1 — 2026-07-30
 
 BUG-009: the sitemap's post `<lastmod>` dropped rather than re-sourced — git restores

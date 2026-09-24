@@ -4,6 +4,20 @@ Every release, newest first — one entry per tag on `main`. The entry is writte
 release commit, beside the `package.json` bump. This file is the index, not the story:
 the detail lives in the issues each entry cites and in `git log`.
 
+## 4.4.0 — 2026-09-24
+
+The CV rewritten for automated screeners: Maark, WillowTree and TELUS Digital are one
+position through two acquisitions, so they are one block with the lineage stated
+instead of three entries that read as job changes; every recent role now says what was
+done in it. The site title, description and keywords moved to *Staff Software Engineer*
+to match. Lists inside a window got back the markers `reset.scss` strips, and each
+role's header breaks onto three lines.
+
+The seven advisories that opened after 4.3.1 are closed: next 16.3.6 (two critical
+RCEs), qs 6.16.0, and browserslist 4.29.1 through an override, since `@serwist/next`
+pins it exactly. Next now requires `postcss` and `sharp` past the versions their
+overrides forced, so both overrides are gone.
+
 ## 4.3.1 — 2026-08-18
 
 The two advisories that opened after M2 closed all 45: nanoid 3.3.18

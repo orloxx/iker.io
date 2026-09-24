@@ -4,6 +4,11 @@ Every release, newest first — one entry per tag on `main`. The entry is writte
 release commit, beside the `package.json` bump. This file is the index, not the story:
 the detail lives in the issues each entry cites and in `git log`.
 
+## 4.4.2 — 2026-09-24
+
+The CV opens with the same text as the LinkedIn About section, in first person
+throughout, so the two say one thing in one voice.
+
 ## 4.4.1 — 2026-09-24
 
 The CV leads with AI-assisted development: the Wyndham bullet says what the move to

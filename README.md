@@ -64,14 +64,15 @@ also where the page metadata and the web manifest get theirs.
 
 ## Dependency overrides
 
-`package.json` pins `postcss` and `sharp` through `pnpm.overrides`. Next depends
-on both at an **exact** version, so a security fix in either cannot arrive by
+`package.json` pins `browserslist` through `pnpm.overrides`. `@serwist/next`
+depends on it at an **exact** version, so a security fix cannot arrive by
 updating within our own ranges — the override is the only lever, and without it
-those advisories stay open until Next itself moves.
+the advisory stays open until Serwist itself moves.
 
-Both are minor bumps inside the same major, and the build is what verifies them.
-Drop an override once Next's pinned version has caught up past it; keeping a
-stale one silently holds a dependency back.
+An override is only ever a minor bump inside the same major, and the build is
+what verifies it. Drop one once the parent's pinned version has caught up past
+it; keeping a stale one silently holds a dependency back. (Next's pins on
+`postcss` and `sharp` were overridden the same way until Next caught up.)
 
 ## Branches and releases
 

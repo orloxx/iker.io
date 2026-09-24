@@ -4,8 +4,8 @@ My name is Iker Garitaonandia, a **Staff Software Engineer, Tech Lead and Soluti
 Architect** with **+{{YEARS}} years** building enterprise web platforms, over a decade of
 it specialising in **Adobe Experience Manager (AEM)** and **React**. I lead large
 replatforming projects end to end — architecture, delivery and the teams that build
-them — and currently lead four squads on Wyndham Hotels' replatforming, where I brought
-AI-assisted development into the team's workflow.
+them — and currently lead four squads on Wyndham Hotels' replatforming, where I led the move
+to AI-assisted development with Claude Code and Cursor.
 
 ## Languages
 
@@ -27,8 +27,10 @@ TELUS since January 2023), and WillowTree was merged into TELUS Digital in Novem
 - **Solutions Architect and Tech Lead for Wyndham Hotels' AEM replatforming** — offered
   the role from the start; grew it from a squad of 4 to **4 squads and 12 developers**
   under my lead, working full-stack across AEM and React.
-- **Introduced AI-assisted development workflows** mid-project, taking a team that
-  started without them through the adoption.
+- **Led the move to AI-assisted development** with Claude Code and Cursor — automated
+  development and code review, with shared skills, rulesets, and guidelines and
+  documentation written by the AI itself, so every squad works the same way. The
+  result: faster delivery, with smaller teams covering more.
 - **Frontend Lead on Inspira's replatforming** (formerly Millennium Trust Company),
   rebuilding the site for the company's rebrand; co-led a team of 4 developers.
 - Built and maintained features for **John Hancock** during its merge into **Manulife**'s
@@ -90,7 +92,7 @@ Caracas, Venezuela
 `AEM` `React` `JavaScript` `TypeScript` `Next.js` `Node.js` `Java` `PHP` `Python`
 `HTML` `CSS` `Redux` `RxJS` `Angular` `Handlebars` `GraphQL` `SQL` `MySQL` `MongoDB`
 `Solutions Architecture` `Technical Leadership` `Team Leadership` `Replatforming`
-`Design Systems` `AI-assisted Development` `Mentoring` `Hiring` `Agile` `Scrum` `XP`
+`Design Systems` `AI-assisted Development` `Claude Code` `Cursor` `Mentoring` `Hiring` `Agile` `Scrum` `XP`
 
 [UCAB]: https://www.ucab.edu.ve/
 [TELUS]: https://www.telusdigital.com/

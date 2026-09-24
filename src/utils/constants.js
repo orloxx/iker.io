@@ -39,11 +39,12 @@ export function getExperienceYears(now = new Date()) {
 
 export const EXPERIENCE_YEARS = getExperienceYears();
 
-export const DESCRIPTION = `Staff Software Engineer, Tech Lead and Solutions Architect with +${EXPERIENCE_YEARS} years building enterprise web platforms, specialising in AEM and React.`;
+export const DESCRIPTION = `Staff Software Engineer and Tech Lead bringing AI-assisted development to engineering teams, with +${EXPERIENCE_YEARS} years building enterprise web platforms.`;
 
 export const KEYWORDS = [
   "Staff Software Engineer",
   "Tech Lead",
+  "AI-assisted development",
   "Solutions Architect",
   "AEM",
   "React",

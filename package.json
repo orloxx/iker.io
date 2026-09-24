@@ -19,10 +19,10 @@
     "@serwist/next": "^9.5.12",
     "js-cookie": "^3.0.8",
     "marked": "^18.0.7",
-    "next": "^16.2.12",
+    "next": "^16.3.6",
     "prop-types": "^15.8.1",
     "qrcode": "^1.5.4",
-    "qs": "^6.15.3",
+    "qs": "^6.16.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-draggable": "^4.7.0",
@@ -37,8 +37,7 @@
   },
   "pnpm": {
     "overrides": {
-      "postcss": "^8.5.18",
-      "sharp": "^0.35.0"
+      "browserslist": "^4.29.1"
     }
   }
 }

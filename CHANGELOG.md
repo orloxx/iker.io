@@ -4,6 +4,13 @@ Every release, newest first — one entry per tag on `main`. The entry is writte
 release commit, beside the `package.json` bump. This file is the index, not the story:
 the detail lives in the issues each entry cites and in `git log`.
 
+## 4.4.1 — 2026-09-24
+
+The CV leads with AI-assisted development: the Wyndham bullet says what the move to
+Claude Code and Cursor was — automated development and review, shared skills and
+rulesets, guidelines the AI wrote — and what it bought, and the site description and
+keywords follow. Strands is dated as Frontend Developer, then Customer Lead.
+
 ## 4.4.0 — 2026-09-24
 
 The CV rewritten for automated screeners: Maark, WillowTree and TELUS Digital are one

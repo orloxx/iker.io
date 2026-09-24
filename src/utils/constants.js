@@ -12,9 +12,9 @@ export const NAME = "Iker Garitaonandia";
 // entry in sitemap.xml. No trailing slash: callers append their own path.
 export const SITE_URL = "https://iker.io";
 
-// Used by both the page title and the manifest name. The CV describes me as a
-// "professional software developer", so that is the one wording.
-export const ROLE = "Software Developer";
+// Used by both the page title and the manifest name. The CV opens with this title,
+// so that is the one wording.
+export const ROLE = "Staff Software Engineer";
 export const SITE_TITLE = `${NAME} | ${ROLE}`;
 
 /**
@@ -39,12 +39,15 @@ export function getExperienceYears(now = new Date()) {
 
 export const EXPERIENCE_YEARS = getExperienceYears();
 
-export const DESCRIPTION = `Professional software developer with +${EXPERIENCE_YEARS} years of experience helping companies achieve digital transformation.`;
+export const DESCRIPTION = `Staff Software Engineer, Tech Lead and Solutions Architect with +${EXPERIENCE_YEARS} years building enterprise web platforms, specialising in AEM and React.`;
 
 export const KEYWORDS = [
-  "Software developer",
-  "Engineer",
-  "Web developer",
+  "Staff Software Engineer",
+  "Tech Lead",
+  "Solutions Architect",
+  "AEM",
+  "React",
+  "TypeScript",
   "JavaScript",
   "Frontend",
   "HTML",

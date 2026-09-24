@@ -1,74 +1,96 @@
 # Hello
 
-My name is Iker Garitaonandia, and I’m a **professional software developer** with **+{{YEARS}} years** of experience helping companies achieve digital transformation. Mostly working as a web developer, and for the past 10 years I've been specializing as an AEM frontend developer.
+My name is Iker Garitaonandia, a **Staff Software Engineer, Tech Lead and Solutions
+Architect** with **+{{YEARS}} years** building enterprise web platforms, over a decade of
+it specialising in **Adobe Experience Manager (AEM)** and **React**. I lead large
+replatforming projects end to end — architecture, delivery and the teams that build
+them — and currently lead four squads on Wyndham Hotels' replatforming, where I brought
+AI-assisted development into the team's workflow.
 
 ## Languages
 
-`Spanish` `English` `JavaScript` `TypeScript` `Java` `PHP` `Python`
+`Spanish` (native) · `English` (professional)
 
 ## Experience
 
-**Staff Software Engineer**
-*[TELUS Digital][TELUS] (Jul 2020 - present)*
-100% remote
+**Staff Software Engineer — Solutions Architect & Tech Lead**
+*[TELUS Digital][TELUS] — formerly [WillowTree][WillowTree], formerly [Maark][Maark] (Jul 2020 - present)*
+100% remote · Barcelona, Spain
 
-WillowTree was acquired by TELUS Digital.
+One continuous position since July 2020, with the same team throughout. The company changed
+name through acquisitions: Maark was acquired by WillowTree in 2023 (itself owned by
+TELUS since January 2023), and WillowTree was merged into TELUS Digital in November
+2025.
+
+*Staff Software Engineer (Aug 2023 - present, promoted) · Senior Software Engineer (Jul 2020 - Jul 2023)*
+
+- **Solutions Architect and Tech Lead for Wyndham Hotels' AEM replatforming** — offered
+  the role from the start; grew it from a squad of 4 to **4 squads and 12 developers**
+  under my lead, working full-stack across AEM and React.
+- **Introduced AI-assisted development workflows** mid-project, taking a team that
+  started without them through the adoption.
+- **Frontend Lead on Inspira's replatforming** (formerly Millennium Trust Company),
+  rebuilding the site for the company's rebrand; co-led a team of 4 developers.
+- Built and maintained features for **John Hancock** during its merge into **Manulife**'s
+  shared multi-brand design system — one component platform on AEM and React, branded
+  per company.
+- Also delivered AEM work for Mercury Marine (Brunswick Corporation), Marriott Hotels
+  and TELUS Casa.
 
 ---
-**Staff Software Engineer**
-*[WillowTree][WillowTree] (Aug 2023 - Aug 2025)*
-100% remote
-
-Maark was acquired by WillowTree.
-
----
-**Senior Software Engineer**
-*[Maark][Maark] (Jul 2020 - Jul 2023)*
-100% remote
-
----
-**Senior Software Engineer**
+**Senior Software Engineer (Frontend)**
 *[Netcentric][Netcentric] (Dec 2014 - Jul 2020)*
 Barcelona, Spain
 
+Adobe AEM Premium Partner — every project AEM-based.
+
+*Senior Software Engineer (Dec 2015 - Jul 2020, promoted) · Frontend Developer (Dec 2014 - Dec 2015)*
+
+- **Led a team of 4 developers replatforming Henkel's Adhesives division on AEM**
+  (2017); delivered the MVP in **6 months** and maintained the platform until 2020.
+- Frontend development on AEM sites for **BMW**, **Mercedes-Benz** and **Henkel**.
+- Mentored developers, trained juniors in the company's internal academy, and ran
+  technical hiring interviews.
+
 ---
-**Frontend Product Manager**
-*[Strands Labs][Strands] (June 2013 - Dec 2014)*
+**Frontend Developer → Customer Lead**
+*[Strands Labs][Strands] (Jun 2013 - Dec 2014)*
 Barcelona, Spain
 
----
-**Freelance Webmaster**
-*[Bari Studio][Bari] (Oct 2011 - Feb 2014)*
-100% Remote
+- Joined as a frontend developer on Strands' **Personal Financial Management (PFM)**
+  product and was moved into **Customer Lead** — one of the company's two lead roles,
+  alongside Product Lead.
+- Owned client-specific customisations of the product and the relationship with the
+  clients requesting them.
 
 ---
-**Frontend Developer**
-*[Whisbi][Whisbi] (Feb 2013 - Jun 2013)*
-Barcelona, Spain
+**Earlier roles (2006 - 2013)**
 
----
-**Web Developer**
-*[La Web Marketing Interactivo][LaWeb] (Apr 2009 - Dec 2012)*
-Caracas, Venezuela
+- Frontend Developer — [Whisbi][Whisbi], Barcelona (Feb 2013 - Jun 2013)
+- Freelance Webmaster — [Bari Studio][Bari], remote (Oct 2011 - Feb 2014, alongside
+  full-time roles)
+- Web Developer — [La Web Mercadeo Interactivo][LaWeb], Caracas (Apr 2009 - Dec 2012)
+- Developer — 3G Data Soluciones, Caracas (Jul 2008 - Feb 2009)
+- Junior Developer — Tecnología Creativa, Caracas (Sep 2006 - Dec 2007)
 
----
-**Developer**
-*3G Data Soluciones (Jul 2008 - Feb 2009)*
-Caracas, Venezuela
+## Side project
 
----
-**Junior Developer**
-*Tecnología Creativa (Sep 2006 - Dec 2007)*
-Caracas, Venezuela
+**[tufiscal][tufiscal]** — AI-first tax-management SaaS for Spanish freelancers:
+invoicing, expenses, tax estimates and filing with the Spanish tax agency. Designed,
+built and run solo on Next.js, TypeScript and PostgreSQL.
 
 ## Education
+
 **Information Technology Engineer**
 *[Universidad Católica Andrés Bello][UCAB] (2011)*
 Caracas, Venezuela
 
-## Other Skills
+## Skills
 
-`HTML` `CSS`  `NodeJS` `React` `NextJS` `Redux` `RxJS` `Angular` `Handlebars` `AEM` `SQL` `MySQL` `GraphQL` `MongoDB` `Software Development` `Object Oriented` `Functional` `Agile` `Scrum` `XP`
+`AEM` `React` `JavaScript` `TypeScript` `Next.js` `Node.js` `Java` `PHP` `Python`
+`HTML` `CSS` `Redux` `RxJS` `Angular` `Handlebars` `GraphQL` `SQL` `MySQL` `MongoDB`
+`Solutions Architecture` `Technical Leadership` `Team Leadership` `Replatforming`
+`Design Systems` `AI-assisted Development` `Mentoring` `Hiring` `Agile` `Scrum` `XP`
 
 [UCAB]: https://www.ucab.edu.ve/
 [TELUS]: https://www.telusdigital.com/
@@ -79,3 +101,4 @@ Caracas, Venezuela
 [Bari]: http://www.thebaristudio.com/
 [Whisbi]: https://www.whisbi.com/
 [LaWeb]: https://www.lawebmercadeointeractivo.com/
+[tufiscal]: https://tufiscal.es

@@ -13,8 +13,8 @@ AI-assisted development into the team's workflow.
 
 ## Experience
 
-**Staff Software Engineer — Solutions Architect & Tech Lead**
-*[TELUS Digital][TELUS] — formerly [WillowTree][WillowTree], formerly [Maark][Maark] (Jul 2020 - present)*
+**Staff Software Engineer — Solutions Architect & Tech Lead**\
+*[TELUS Digital][TELUS] — formerly [WillowTree][WillowTree], formerly [Maark][Maark] (Jul 2020 - present)*\
 100% remote · Barcelona, Spain
 
 One continuous position since July 2020, with the same team throughout. The company changed
@@ -38,8 +38,8 @@ TELUS since January 2023), and WillowTree was merged into TELUS Digital in Novem
   and TELUS Casa.
 
 ---
-**Senior Software Engineer (Frontend)**
-*[Netcentric][Netcentric] (Dec 2014 - Jul 2020)*
+**Senior Software Engineer (Frontend)**\
+*[Netcentric][Netcentric] (Dec 2014 - Jul 2020)*\
 Barcelona, Spain
 
 Adobe AEM Premium Partner — every project AEM-based.
@@ -53,8 +53,8 @@ Adobe AEM Premium Partner — every project AEM-based.
   technical hiring interviews.
 
 ---
-**Frontend Developer → Customer Lead**
-*[Strands Labs][Strands] (Jun 2013 - Dec 2014)*
+**Frontend Developer → Customer Lead**\
+*[Strands Labs][Strands] (Jun 2013 - Dec 2014)*\
 Barcelona, Spain
 
 - Joined as a frontend developer on Strands' **Personal Financial Management (PFM)**
@@ -81,8 +81,8 @@ built and run solo on Next.js, TypeScript and PostgreSQL.
 
 ## Education
 
-**Information Technology Engineer**
-*[Universidad Católica Andrés Bello][UCAB] (2011)*
+**Information Technology Engineer**\
+*[Universidad Católica Andrés Bello][UCAB] (2011)*\
 Caracas, Venezuela
 
 ## Skills

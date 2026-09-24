@@ -59,6 +59,8 @@ Adobe AEM Premium Partner — every project AEM-based.
 *[Strands Labs][Strands] (Jun 2013 - Dec 2014)*\
 Barcelona, Spain
 
+*Customer Lead (Mar 2014 - Dec 2014) · Frontend Developer (Jun 2013 - Mar 2014)*
+
 - Joined as a frontend developer on Strands' **Personal Financial Management (PFM)**
   product and was moved into **Customer Lead** — one of the company's two lead roles,
   alongside Product Lead.

@@ -1,11 +1,10 @@
 # Hello
 
-My name is Iker Garitaonandia, a **Staff Software Engineer, Tech Lead and Solutions
-Architect** with **+{{YEARS}} years** building enterprise web platforms, over a decade of
-it specialising in **Adobe Experience Manager (AEM)** and **React**. I lead large
-replatforming projects end to end — architecture, delivery and the teams that build
-them — and currently lead four squads on Wyndham Hotels' replatforming, where I led the move
-to AI-assisted development with Claude Code and Cursor.
+I'm a Staff Software Engineer and Tech Lead with {{YEARS}} years building enterprise web platforms for global brands. I lead large replatforming projects end to end — architecture, delivery and the teams that build them — and currently lead four squads (12 developers) on Wyndham Hotels' replatforming, where I led the move to AI-assisted development with Claude Code and Cursor: automated development and code review, shared skills and rulesets, and guidelines the AI writes itself. Faster delivery, with smaller teams covering more.
+
+I've spent over a decade specialising in Adobe Experience Manager (AEM) and React, for clients including Wyndham Hotels, Marriott Hotels, Manulife / John Hancock, Inspira, Mercury Marine, TELUS, BMW, Mercedes-Benz and Henkel.
+
+I hold a degree in Information Technology Engineering, with academic research in machine learning and text classification.
 
 ## Languages
 

@@ -8,7 +8,7 @@ I hold a degree in Information Technology Engineering, with academic research in
 
 ## Languages
 
-`Spanish` (native) · `English` (professional)
+`Spanish` (native) · `English` (bilingual)
 
 ## Experience
 

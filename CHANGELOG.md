@@ -4,6 +4,10 @@ Every release, newest first — one entry per tag on `main`. The entry is writte
 release commit, beside the `package.json` bump. This file is the index, not the story:
 the detail lives in the issues each entry cites and in `git log`.
 
+## 4.4.3 — 2026-09-25
+
+The CV lists English as bilingual rather than professional, matching LinkedIn.
+
 ## 4.4.2 — 2026-09-24
 
 The CV opens with the same text as the LinkedIn About section, in first person

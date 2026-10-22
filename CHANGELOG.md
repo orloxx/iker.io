@@ -4,6 +4,12 @@ Every release, newest first — one entry per tag on `main`. The entry is writte
 release commit, beside the `package.json` bump. This file is the index, not the story:
 the detail lives in the issues each entry cites and in `git log`.
 
+## 4.5.0 — 2026-10-22
+
+Three more icons on the desktop — Truco Venezolano, Ukulele Veneco and Sorting Bits,
+each linking out to its app, each project's own favicon copied in rather than hotlinked.
+LinkedIn and Github now sit ahead of Settings and QR Create.
+
 ## 4.4.3 — 2026-09-25
 
 The CV lists English as bilingual rather than professional, matching LinkedIn.

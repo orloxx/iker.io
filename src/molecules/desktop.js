@@ -41,12 +41,6 @@ function Desktop() {
           alt="tufiscal logo"
         />
         <LinkFile
-          href="/settings"
-          label="Settings"
-          name="settings"
-          icon={faCogs}
-        />
-        <LinkFile
           href="https://www.linkedin.com/in/ikertxu/"
           label="LinkedIn"
           name="linkedin"
@@ -59,10 +53,37 @@ function Desktop() {
           icon={faGithub}
         />
         <LinkFile
+          href="/settings"
+          label="Settings"
+          name="settings"
+          icon={faCogs}
+        />
+        <LinkFile
           href="/qr"
           label="QR Create"
           name="qr-create"
           icon={faQrcode}
+        />
+        <LinkFile
+          href="https://tru.co.ve"
+          label="Truco Venezolano"
+          name="truco"
+          src="/truco.svg"
+          alt="Truco Venezolano logo"
+        />
+        <LinkFile
+          href="https://ukulele-veneco-app.vercel.app"
+          label="Ukulele Veneco"
+          name="ukulele-veneco"
+          src="/ukulele-veneco.svg"
+          alt="Ukulele Veneco logo"
+        />
+        <LinkFile
+          href="https://cg-sorting-bits.vercel.app"
+          label="Sorting Bits"
+          name="sorting-bits"
+          src="/sorting-bits.svg"
+          alt="Sorting Bits logo"
         />
       </div>
       <div className={styles.credits}>{currentBg.credits}</div>

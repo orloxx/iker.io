@@ -6,16 +6,26 @@ import { serwist } from "@serwist/next/config";
 //
 // The prerendered pages come from `.next/prerender-manifest.json`, not from
 // serwist's own glob of `.next/server/app/**/*.html` (`precachePrerendered`,
-// off below): Vercel's build adapter takes those HTML files out of the tree
-// before `serwist build` runs, so on Vercel the glob finds none of them while a
-// local build still does. Route handlers and the `/_…` error documents sit in
-// the manifest too but were never in the precache. The revision is the build
-// id: the pages are fetched again once per deploy.
+// off below). With a build adapter configured — Vercel sets one through
+// `NEXT_ADAPTER_PATH` — Next 16.4 writes the prerendered HTML to
+// `.next/server/route-cache/…` instead, so on Vercel the glob finds none of
+// it, while a build without an adapter still writes to `.next/server/app`.
+// Vercel's layout reproduces locally with any adapter module, e.g.
+// `NEXT_ADAPTER_PATH=./adapter.cjs next build` for
+// `module.exports = { name: "noop", async onBuildComplete() {} }`.
+//
+// `routeType: "page"` leaves out the route handlers and `initialStatus` the
+// pages prerendered as an error; neither was ever in the precache, nor were the
+// `/_…` error documents. The revision is the build id: the pages are fetched
+// again once per deploy.
 const next = (file) => readFileSync(`.next/${file}`, "utf8");
 const buildId = next("BUILD_ID").trim();
-const pages = Object.keys(
-  JSON.parse(next("prerender-manifest.json")).routes,
-).filter((route) => !route.startsWith("/_") && !/\.[a-z0-9]+$/i.test(route));
+const pages = Object.entries(JSON.parse(next("prerender-manifest.json")).routes)
+  .filter(
+    ([route, v]) =>
+      v.routeType === "page" && !v.initialStatus && !route.startsWith("/_"),
+  )
+  .map(([route]) => route);
 
 export default serwist({
   swSrc: "src/app/sw.js",

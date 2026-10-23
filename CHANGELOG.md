@@ -4,6 +4,10 @@ Every release, newest first — one entry per tag on `main`. The entry is writte
 release commit, beside the `package.json` bump. This file is the index, not the story:
 the detail lives in the issues each entry cites and in `git log`.
 
+## 4.5.2 — 2026-10-23
+
+`brace-expansion` and `source-map-js` move to their patched releases in the lockfile, and `npm audit` is clean. Nothing in the site changes.
+
 ## 4.5.1 — 2026-10-23
 
 Next 16.4.2, which closes two critical unauthenticated RCEs in Next 16.0–16.4.0 (a `use cache` function returning

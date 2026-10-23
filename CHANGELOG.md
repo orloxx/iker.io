@@ -4,6 +4,15 @@ Every release, newest first — one entry per tag on `main`. The entry is writte
 release commit, beside the `package.json` bump. This file is the index, not the story:
 the detail lives in the issues each entry cites and in `git log`.
 
+## 4.5.1 — 2026-10-23
+
+Next 16.4.2, which closes two critical unauthenticated RCEs in Next 16.0–16.4.0 (a `use cache` function returning
+typed arrays, and the Image Optimization API on SVG through a `sharp` older than 0.35.5; the site uses neither),
+and the service worker's precache list read from `.next/prerender-manifest.json`. With a build adapter, which
+Vercel sets, Next 16.4 writes the prerendered HTML under `.next/server/route-cache/` instead of
+`.next/server/app/`, so serwist's glob had stopped finding the four pages (51 URLs on Vercel, 55 locally); it is 55
+again.
+
 ## 4.5.0 — 2026-10-22
 
 Three more icons on the desktop — Truco Venezolano, Ukulele Veneco and Sorting Bits,

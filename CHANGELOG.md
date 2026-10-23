@@ -10,8 +10,8 @@ Next 16.4.2, which closes two critical unauthenticated RCEs in Next 16.0–16.4.
 typed arrays, and the Image Optimization API on SVG through a `sharp` older than 0.35.5; the site uses neither),
 and the service worker's precache list read from `.next/prerender-manifest.json`. With a build adapter, which
 Vercel sets, Next 16.4 writes the prerendered HTML under `.next/server/route-cache/` instead of
-`.next/server/app/`, so serwist's glob had stopped finding the four pages (51 URLs on Vercel, 55 locally); it is 55
-again.
+`.next/server/app/`, so serwist's glob had stopped finding the four pages (51 URLs on Vercel after the bump, 55 locally); it is
+55 on Vercel too.
 
 ## 4.5.0 — 2026-10-22
 
